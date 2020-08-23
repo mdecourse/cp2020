@@ -2,8 +2,8 @@
 <p>這裡是國立虎尾科技大學機械設計工程系大一的計算機程式課程網頁.</p>
 <p>CP2020 將在 <a href="https://kaggle.com">https://kaggle.com</a>, <a href="https://colab.research.google.com">https://colab.research.google.com</a> 以及可攜程式系統上進行.</p>
 <p>以下是 CP2020 課程進行流程:</p>
-<p style="padding-left: 30px;">W1 學員填寫基本資料</p>
-<p style="padding-left: 30px;">W1 告知將利用 <a href="https://gitter.im/">Gitter</a> 與 <a href="https://www.discourse.org/">Discourse</a> 進行課程議題討論</p>
+<p style="padding-left: 30px;">W1 學員登入學校配發的 @gm 郵件帳號後, <a href="https://forms.gle/3hfnf6D2QCemdDQn9">填寫基本資料</a></p>
+<p style="padding-left: 30px;">W1 告知將利用 <a href="https://gitter.im/">Gitter</a> 進行課程議題討論</p>
 <p style="padding-left: 30px;">W1 就電腦軟硬體與網路環境的使用進行介紹</p>
 <p style="padding-left: 30px;">W2 學員建立 <a href="https://github.com/">Github</a>, <a href="https://gitlab.com">Gitlab,</a> <a href="https://www.heroku.com/">Heroku</a> 與 <a href="https://www.authorea.com/">Authorea</a> 帳號</p>
 <p style="padding-left: 30px;">Ｗ2 學員利用 Github Pages 與 CMSiMDE 建立個人網頁</p>
@@ -102,7 +102,186 @@ for i in range(10):
 <li>直接在網際環境中搭建 Jupyter Notebook 程式環境</li>
 </ol>
 <p>不同程式環境中的組態設定與功能差異</p>
-<p>其他參考教材: <a href="https://www.py4e.com/">https://www.py4e.com/</a></p><h2>Kaggle</h2>
+<p>其他參考教材: <a href="https://www.py4e.com/">https://www.py4e.com/</a></p><h2>亂數分組</h2>
+<p><a href="http://mde.tw/lab/content/%E4%BA%82%E6%95%B8%E5%88%86%E7%B5%84.html">參考資料</a></p>
+<p>get_student_list.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from flask import Flask, request 
+from flask_cors import CORS
+  
+import requests
+import bs4
+import ssl
+  
+'''
+https://s1.mde.nfu.edu.tw:7443/?semester=1082&amp;courseno=0767
+cd
+2a 1082/0767
+2b 1082/0780
+  
+2a 1072/0777
+2b 1072/0790
+2a 1062/0788
+2a 1062/0802
+  
+wcm
+1082/0744
+  
+1072/0754
+1062/0765
+  
+wcmj
+1082/2418
+'''
+  
+app = Flask(__name__)
+CORS(app)
+  
+@app.route('/studlist')
+@app.route('/')
+def studlist():
+    semester = request.args.get('semester')
+    courseno = request.args.get('courseno')
+    if semester == None:
+        semester = '1082'
+    if courseno == None:
+        courseno = '0744'
+      
+    url = 'https://osa.nfu.edu.tw/query/studlist_ajax.php'
+    post_var = {'pselyr': semester, 'pseqno': courseno}
+  
+    result = requests.post(url, data = post_var)
+  
+    soup = bs4.BeautifulSoup(result.content, 'lxml')
+    table = soup.find('table', {'class': 'tbcls'})
+    data = []
+    rows = table.find_all('tr')
+    for row in rows:
+        cols = row.find_all('td')
+        cols = [ele.text.strip() for ele in cols]
+        data.append([ele for ele in cols if ele]) # Get rid of empty values
+    output = ""
+    for i in data[2:]:
+        #print(i[0])
+        output +=i[0] + "\n"
+    return output
+    #return  str(pselyr) + " + " +str(pseqno)
+  
+# 即使在近端仍希望以 https 模式下執行
+context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+context.load_cert_chain('localhost.crt', 'localhost.key')
+  
+# 取 flaskapp.py 中的 uwsgi 變數設定
+uwsgi = False
+if uwsgi:
+    # 表示程式在雲端執行
+    application = app
+else:
+    # 表示在近端執行, 以 python3 wsgi.py 執行
+    app.run(host='127.0.0.1', port=5443, debug=True, ssl_context=context)</pre>
+<p>even_grouping.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
+import requests
+  
+# getNumList 主要在每組最低人數下, 將不足 10 人的分組
+# 平均分配至各組
+def getNumList(total, eachGrp=10):
+    # total is the number of students
+    # each group at least 10 students
+    #eachGrp = 10;
+    # may divide into "grpNum" number of group
+    grpNum = total // eachGrp;
+    # check grpNum
+    #print(grpNum)
+    # vacan list
+    splits = []
+    # find remainder when total number divid into "grpNum" number of group
+    remainder = total % grpNum
+    # number of people in one group by calculation
+    calGrp = total // grpNum
+      
+    for i in range(grpNum):
+        splits.append(calGrp)
+          
+    # check first splits
+    #print(splits)
+    
+    for i in range(remainder):
+        splits[i] += 1
+      
+    # check final splits
+    #print(splits);
+    return splits;
+  
+# 儲存學生名單資料的 url
+target_url = "http://mde.tw/cp2020/downloads/get_student_list/2020spring_cd_2a_list.txt"
+# 利用 requests 讀取 url 中的資料
+f = requests.get(target_url)
+# get student list from target_url
+# 利用 splitlines() 將資料放入數列 studList
+studList = f.text.splitlines()
+# 每組預計分組的最低人數
+num_in_one_group = 10
+# 每組學員暫存數列
+gpList = []
+# 全班分組數列
+group = []
+# 各組人數數列
+numList = []
+# get numList
+numList = getNumList(len(studList), num_in_one_group)
+# check numList
+# 列出已經補齊的各組人數數列
+print("預計各組人數數列:" + str(numList))
+  
+output = ""
+gth = 1
+inc = 0
+  
+# 弄亂 studList
+random.shuffle(studList)
+output += "以下為尚未排序前的各組學員學號: \n"
+for i in numList:
+    # 列印區隔符號
+    output += '=' * 20 + "\n";
+    output += "group " + str(gth) + " 有 " + str(i) + " 人: \n"
+    # 每組學員暫存數列, 在此 reset
+    gpList = []
+    for j in range(i):
+        output += studList[j+inc] + "\n"
+        # 在各分組數列中加入將對應的學員學號
+        gpList.append(studList[j+inc])
+        
+    gth = gth + 1
+    inc = inc + j
+    # 將各組學員數列依照學號排序
+    gpList.sort()
+    group.append(gpList)
+  
+# 列出尚未排序前的分組結果
+print(output)
+# 列出已經完成排序的分組數列
+print("已經排序後的分組數列:" + str(group))
+  
+output = ""
+# 列出已經排序後的分組名單
+output += '=' * 25 + "\n"
+output += '以下為排序後的各組成員名單:\n'
+gth = 1
+  
+# 先列出純文字以 \n 跳行組員資料
+for i in range(len(group)):
+    # 列印區隔符號
+    output += '=' * 20 + "\n"
+    output += "group" + str(gth) + "\n"
+    gpList = []
+      
+    for j in range(len(group[i])):
+        output += str(group[i][j]) + "\n"
+        
+    gth = gth + 1
+      
+print(output)</pre>
+<p></p><h2>Kaggle</h2>
 <p><a href="https://di2.io/2019/03/is-kaggle-suitable-to-teach-programming-with-python/">https://di2.io/2019/03/is-kaggle-suitable-to-teach-programming-with-python/</a></p>
 <p><a href="https://fayz.in/stories/s/1417/0/?ckt_id=ZGL1ZGVk&amp;title=Importance_of_github_kaggle">https://fayz.in/stories/s/1417/0/?ckt_id=ZGL1ZGVk&amp;title=Importance_of_github_kaggle</a></p>
 <p><a href="https://www.programmersought.com/article/92261138300/">https://www.programmersought.com/article/92261138300/</a></p>
@@ -111,7 +290,7 @@ for i in range(10):
 <p style="padding-left: 30px;"><a href="https://awesomeopensource.com/project/apachecn/Interview">https://awesomeopensource.com/project/apachecn/Interview</a></p>
 <p style="padding-left: 30px;"><a href="https://awesomeopensource.com/project/girls-in-ai/Girls-In-AI">https://awesomeopensource.com/project/girls-in-ai/Girls-In-AI</a></p>
 <p style="padding-left: 30px;"><a href="https://awesomeopensource.com/project/Mikoto10032/DeepLearning">https://awesomeopensource.com/project/Mikoto10032/DeepLearning</a></p>
-<p style="padding-left: 30px;"><a href="https://awesomeopensource.com/project/ypwhs/dogs_vs_cats">https://awesomeopensource.com/project/ypwhs/dogs_vs_cats</a> </p><h2>Flask-Flutter</h2>
+<p style="padding-left: 30px;"><a href="https://awesomeopensource.com/project/ypwhs/dogs_vs_cats">https://awesomeopensource.com/project/ypwhs/dogs_vs_cats</a></p><h2>Flask-Flutter</h2>
 <p><a href="https://medium.com/@pyzimos/flutter-chatbot-with-python-flask-backend-heroku-deployment-706baafbb8f1">https://medium.com/@pyzimos/flutter-chatbot-with-python-flask-backend-heroku-deployment-706baafbb8f1</a></p>
 <p><a href="https://heartbeat.fritz.ai/digit-recognizer-with-flutter-and-tensorflow-lite-33f5145b5f32">https://heartbeat.fritz.ai/digit-recognizer-with-flutter-and-tensorflow-lite-33f5145b5f32</a></p>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/9HaIGMyAyug" width="560"></iframe></p><h2>Deep Learning</h2>
