@@ -213,7 +213,7 @@ def getNumList(total, eachGrp=10):
     return splits;
   
 # 儲存學生名單資料的 url
-target_url = "http://mde.tw/cd2020/downloads/2020spring_cd_2a_list.txt"
+target_url = "http://mde.tw/cp2020/downloads/get_student_list/2020spring_cd_2a_list.txt"
 # 利用 requests 讀取 url 中的資料
 f = requests.get(target_url)
 # get student list from target_url
@@ -280,6 +280,13 @@ for i in range(len(group)):
         
     gth = gth + 1
       
+print(output)</pre>
+<h4>使用 Brython</h4>
+<p><a href="http://mde.tw/lab/content/Python.html">http://mde.tw/lab/content/Python.html</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 利用 Brython 內建的 open 函式, 直接開啟 url 
+output = open('http://mde.tw/cp2020/downloads/get_student_list/2020spring_cd_2a_list.txt')
+ 
+# 利用 print(), 將所讀取的資料列出
 print(output)</pre>
 <p></p><h2>Kaggle</h2>
 <p><a href="https://di2.io/2019/03/is-kaggle-suitable-to-teach-programming-with-python/">https://di2.io/2019/03/is-kaggle-suitable-to-teach-programming-with-python/</a></p>
