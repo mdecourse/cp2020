@@ -148,8 +148,8 @@ def studlist():
       
     url = 'https://osa.nfu.edu.tw/query/studlist_ajax.php'
     post_var = {'pselyr': semester, 'pseqno': courseno}
-  
-    result = requests.post(url, data = post_var)
+    headers = {'X-Requested-With': 'XMLHttpRequest'}
+    result = requests.post(url, data = post_var, headers = headers)
   
     soup = bs4.BeautifulSoup(result.content, 'lxml')
     table = soup.find('table', {'class': 'tbcls'})
@@ -283,10 +283,9 @@ for i in range(len(group)):
 print(output)</pre>
 <h4>使用 Brython</h4>
 <p><a href="http://mde.tw/lab/content/Python.html">http://mde.tw/lab/content/Python.html</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 利用 Brython 內建的 open 函式, 直接開啟 url 
-output = open('http://mde.tw/cp2020/downloads/get_student_list/2020spring_cd_2a_list.txt')
- 
-# 利用 print(), 將所讀取的資料列出
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 利用 Brython 內建的 open 開啟 url 後, 以 read() 將資料取出
+output = open('http://mde.tw/cp2020/downloads/get_student_list/2020spring_cd_2a_list.txt').read()
+# 利用 print  將 output 資料列出
 print(output)</pre>
 <p></p><h2>Kaggle</h2>
 <p><a href="https://di2.io/2019/03/is-kaggle-suitable-to-teach-programming-with-python/">https://di2.io/2019/03/is-kaggle-suitable-to-teach-programming-with-python/</a></p>

@@ -38,14 +38,14 @@ def studlist():
         semester = '1082'
     if courseno == None:
         courseno = '0744'
-      
+    
+    headers = {'X-Requested-With': 'XMLHttpRequest'}
+
     url = 'https://osa.nfu.edu.tw/query/studlist_ajax.php'
     post_var = {'pselyr': semester, 'pseqno': courseno}
   
-    result = requests.post(url, data = post_var)
-  
+    result = requests.post(url, data = post_var, headers = headers)
     soup = bs4.BeautifulSoup(result.content, 'lxml')
-    return result.content
     table = soup.find('table', {'class': 'tbcls'})
     data = []
     rows = table.find_all('tr')

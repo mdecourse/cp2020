@@ -103,6 +103,10 @@ for i in range(10):
 </ol>
 <p>不同程式環境中的組態設定與功能差異</p>
 <p>其他參考教材: <a href="https://www.py4e.com/">https://www.py4e.com/</a></p><h2>亂數分組</h2>
+<p>四技設一甲計算機程式學員名單:</p>
+<p style="padding-left: 30px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762</a> </p>
+<p>四技設一乙計算機程式學員名單:</p>
+<p style="padding-left: 30px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776</a> </p>
 <p><a href="http://mde.tw/lab/content/%E4%BA%82%E6%95%B8%E5%88%86%E7%B5%84.html">參考資料</a></p>
 <p>get_student_list.py</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from flask import Flask, request 
@@ -148,8 +152,8 @@ def studlist():
       
     url = 'https://osa.nfu.edu.tw/query/studlist_ajax.php'
     post_var = {'pselyr': semester, 'pseqno': courseno}
-  
-    result = requests.post(url, data = post_var)
+    headers = {'X-Requested-With': 'XMLHttpRequest'}
+    result = requests.post(url, data = post_var, headers = headers)
   
     soup = bs4.BeautifulSoup(result.content, 'lxml')
     table = soup.find('table', {'class': 'tbcls'})
