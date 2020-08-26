@@ -133,52 +133,58 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='討論區.html'>Next</a> >> 討論區<br /><h1>評分</h1>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''
-根據評分表單中的 自評分數, 互評得分, 教師評分, 計算學員課程成績
-'''
- 
-def diff(分數1, 分數2):
-    return abs(分數1 - 分數2)
-     
-def getHigh(分數1, 分數2):
-    if  分數1 &gt; 分數2:
-        return 分數1
-    else:
-        return 分數2
+    <div id="tipue_search_content">Python << <a href='Python.html'>Previous</a> <a href='亂數分組.html'>Next</a> >> 亂數分組<br /><h1>工作流程</h1>
+<p>建立 CP 2020 課程網頁</p>
+<ol>
+<li style="padding-left: 30px;">以 mdecourse 帳號登入 github.com</li>
+<li style="padding-left: 30px;">建立 cp2020 空倉儲, 選擇由系統建立 README.md (延伸題目: 假如不新 README.md, 則又該如何操作?）</li>
+<li style="padding-left: 30px;">在近端啟動隨身程式系統 (或者自行在操作系統安裝所需套件)</li>
+<li style="padding-left: 30px;">將遠端的 cp2020 倉儲 git clone 到近端 (延伸題目: git clone 是甚麼?)</li>
+<li style="padding-left: 30px;">利用 git submodule add 導入 cmsimde 當作目錄</li>
+<li style="padding-left: 30px;">從近端 cmsimde 目錄中取出 up_dir 中的內容至 cp2020 倉儲根目錄</li>
+<li style="padding-left: 30px;">在近端可以進入 cmsimde 目錄, 以 python wsgi.py 啟動動態網頁 (延伸題目: 何謂動態網頁? 有何功能?)</li>
+<li style="padding-left: 30px;">在近端編輯動態網頁內容後, 轉為靜態網頁 (如何轉?)</li>
+<li style="padding-left: 30px;">完成靜態網頁轉換之後, 利用近端 git 指令將新版本新增, 提交並推送到遠端</li>
+</ol>
+<p>在近端編寫第一個 Python 程式, 每修改一次都利用 git 進行提交, 修改並提交 4 次後, 可以在任何版本下回復到先前的任一版本內容.</p>
+<p style="padding-left: 30px;"><a href="./../downloads/cphw1.7z">cphw1.7z</a></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">i = 1
 
-def getLow(分數1, 分數2):
-    if  分數1 &lt; 分數2:
-        return 分數1
-    else:
-        return 分數2
- 
-def 分組評分(自評分數, 教師評分):
-    return getLow(自評分數, 教師評分)
-    if diff(自評分數, 教師評分) &gt; 5:
-        return getLow(自評分數, 教師評分)
-    else:
-        return int(自評分數*0.4 + 教師評分*0.6)
-     
-def 全班比分(互評得分, 分組評分):
-    if diff(互評得分, 分組評分) &lt; 5:
-        學員成績 = getHigh(互評得分, 分組評分)
-    else:
-        學員成績 = int(互評得分*0.4 + 分組評分*0.6)
-    return 學員成績
- 
-def 學員成績(自評分數, 互評得分, 教師評分):
-    學員課程成績 = 全班比分(互評得分, 分組評分(自評分數, 教師評分))
-    return 學員課程成績
-    
-for i in range(10):
-    self_score = 50 + i*5
-    for j in range(10):
-        peer_score = 50 + j*5
-        for k in range(10):
-            teacher_score = 50 + k*5
-            print(self_score, peer_score, teacher_score, "=", 學員成績(self_score, peer_score, teacher_score))</pre>
-<br />About << <a href='About.html'>Previous</a> <a href='討論區.html'>Next</a> >> 討論區</div>
+print(i)</pre>
+<p>進入 y:\tmp\cphw1 從 git init 開始</p>
+<p>每一次改版, i  增量 1</p>
+<p>git add .</p>
+<p>git commit -m "i=1"</p>
+<p>git push</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Y:\tmp\cphw1&gt;git log
+commit cb568bc032bb4e4364c347b5b6225c7849450c5f (HEAD -&gt; master)
+Author: mdecourse &lt;mdecourse@gmail.com&gt;
+Date:   Wed Aug 26 15:18:39 2020 +0800
+
+    i=4
+
+commit d9ef5402c330aac9791a9cd20403ad583854ceb6
+Author: mdecourse &lt;mdecourse@gmail.com&gt;
+Date:   Wed Aug 26 15:18:19 2020 +0800
+
+    i=3
+
+commit 4b40d3a60e7e37b7847d9fb70c3a0380ab20f9fe
+Author: mdecourse &lt;mdecourse@gmail.com&gt;
+Date:   Wed Aug 26 15:17:56 2020 +0800
+
+    i=2
+
+commit 1852efb2003bd52c4baa27cc7f0c38b8faf55d14
+Author: mdecourse &lt;mdecourse@gmail.com&gt;
+Date:   Wed Aug 26 15:17:27 2020 +0800
+
+    i=1</pre>
+<p style="padding-left: 30px;">在近端使用電腦儲存檔案, 最理想的情況是要利用 git 或 Fossil SCM 等分散式版次管理套件, 將各版本的內容進行提交並註記改版緣由之後, 再從近端推送到遠端.</p>
+<p style="padding-left: 30px;">使用分散式版次管理的目的</p>
+<p style="padding-left: 60px;">可以註記每次改版的提交者, 並能利用 git checkout 到先前的各版本</p>
+<p style="padding-left: 60px;">資料存一份在遠端, 避免因為近端電腦損毀而丟失資料.</p>
+<p style="padding-left: 30px;"></p><br />Python << <a href='Python.html'>Previous</a> <a href='亂數分組.html'>Next</a> >> 亂數分組</div>
         
     <!-- footer -->
       <div class="container">
