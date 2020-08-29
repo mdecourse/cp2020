@@ -171,7 +171,7 @@ Date:   Wed Aug 26 15:17:27 2020 +0800
 <p>cad</p>
 <p>2a 1091/0788</p>
 <p>2b 1091/0801</p>
-<p>學員名單 URL: <input id="studListUrl" size="50" type="text" value="https://nfulist.herokuapp.com?semester=1091&amp;courseno=0788"/><br/> 課程代號: <input id="courseName" size="15" type="text" value="cp2020"/><br/> <input id="submit" type="submit" value="開始分組"/><br/> <textarea cols="80" id="output" rows="10"></textarea></p>
+<p>學員名單 URL: <input id="studListUrl" size="60" type="text" value="https://nfulist.herokuapp.com?semester=1091&amp;courseno=0788"/><br/> 課程代號: <input id="courseName" size="15" type="text" value="cp2020"/><br/> <input id="submit" type="submit" value="開始分組"/><br/> <textarea cols="80" id="output" rows="10"></textarea></p>
 <script src="/downloads/dart/random_grouping/random_grouping.js"></script>
 <p>四技設一甲計算機程式學員名單:</p>
 <p style="padding-left: 30px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762</a></p>
@@ -329,7 +329,7 @@ List getNumList(int total){
  }</pre>
 <p>index.html</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;h4&gt;亂數分組:&lt;/h4&gt;
-學員名單 URL: &lt;input type="text" id="studListUrl" size="50" value="https://nfulist.herokuapp.com"&gt;&lt;br /&gt;
+學員名單 URL: &lt;input type="text" id="studListUrl" size="60" value="https://nfulist.herokuapp.com"&gt;&lt;br /&gt;
 課程代號: &lt;input type="text" id="courseName" size="15" value="cp2020"&gt;&lt;br /&gt;
 &lt;input type="submit" value="開始分組" id="submit"&gt;&lt;br /&gt;
 &lt;textarea id="output" cols="80" rows="10"&gt;&lt;/textarea&gt;</pre>
@@ -494,5 +494,15 @@ print(output)</pre>
 <p>2b 1091/0801</p>
 <p>cd<br/>2a 1082/0767<br/>2b 1082/0780<br/> <br/>2a 1072/0777<br/>2b 1072/0790<br/>2a 1062/0788<br/>2a 1062/0802<br/> <br/>wcm<br/>1082/0744<br/> <br/>1072/0754<br/>1062/0765<br/> <br/>wcmj<br/>1082/2418</p>
 <p></p>
-<h2>Deep Learning</h2>
+<h2>Brython</h2>
+<p><a href="https://github.com/BrythonServer/brython-server">https://github.com/BrythonServer/brython-server</a></p>
+<p><a href="https://mdecp2018.github.io/finalproject-bgx">https://mdecp2018.github.io/finalproject-bgx</a></p><h2>Deep Learning</h2>
 <p><a href="https://www.kaggle.com/learn/deep-learning">https://www.kaggle.com/learn/deep-learning</a></p>
+<h1>Projects</h1>
+<h4>雲端電腦輔助機械設計工具的比較</h4>
+<p><a href="https://total3dprinting.org/onshape-vs-fusion-360/">https://total3dprinting.org/onshape-vs-fusion-360/</a> 是電腦輔助設計實習與協同產品設計實習課程中的議題之一, 比較 onshape 與 fusion 360 的功能與特性.</p>
+<h4>利用 Python 建立雲端程式工具</h4>
+<p>結合 Brython, Javascript Gist 與近端程式系統, 利用 Flask 為主體, 建立一個能夠部署在 Heroku 的 Python 網際程式編寫與執行系統.</p>
+<p style="padding-left: 30px;">參考: <a href="http://mde.tw/lab/content/Python.html">http://mde.tw/lab/content/Python.html</a></p>
+<p style="padding-left: 60px;">原先的系統是直接將導引給 Brython 執行的 Python 程式, 直接寫在網頁中, 然後透過 Javascript 與 html 按鈕逐一帶出已經編寫存入網頁的程式, 然後修改執行.</p>
+<p style="padding-left: 60px;">假如, 能夠使用 <a href="http://mde.tw/lab/content/Javascript.html">http://mde.tw/lab/content/Javascript.html</a> 與 <a href="http://mde.tw/lab/content/Dart.html">http://mde.tw/lab/content/Dart.html</a> 中的方法, 將 Python 程式存於 Gist 或 Github Pages 網站, 然後透過 ajax 的方式帶至網際瀏覽器中執行, 並能利用 Javascript 按鈕將在網頁編寫執行的 Python 程式存至近端, 放入特定倉儲中進行版次管理.</p>
