@@ -18,7 +18,31 @@
 <v t="leo.20200818165413.1"><vh>body</vh>
 <v t="leo.20200818170041.1"><vh>reveal div</vh>
 <v t="leo.20200818170222.1"><vh>slides div</vh>
-<v t="leo.20200818170328.1"><vh>slide 1</vh></v>
+<v t="leo.20200818170328.1"><vh>cp2020 cover</vh></v>
+<v t="leo.20200902203620.1"><vh>syllabus in markdown</vh></v>
+<v t="leo.20200902204030.1"><vh>syllabus in html</vh></v>
+<v t="leo.20200902210131.1"><vh>cadlab 電腦網路介紹</vh>
+<v t="leo.20200902210150.1"><vh>電腦網路</vh></v>
+</v>
+<v t="leo.20200902210912.1"><vh>電腦硬體介紹</vh>
+<v t="leo.20200902210912.2"><vh>電腦硬體</vh></v>
+</v>
+<v t="leo.20200902211342.1"><vh>Windows 10 使用</vh>
+<v t="leo.20200902211342.2"><vh>Windows 10</vh></v>
+</v>
+<v t="leo.20200902210634.1"><vh>建立可攜程式系統(1/3)</vh>
+<v t="leo.20200902210634.2"><vh>下載可攜程式系統</vh></v>
+</v>
+<v t="leo.20200902212047.1"><vh>下載並設定工具(2/3)</vh>
+<v t="leo.20200902212047.2"><vh>下載並設定工具</vh></v>
+</v>
+<v t="leo.20200902212524.1"><vh>下載可攜程式系統(3/3)</vh>
+<v t="leo.20200902212524.2"><vh>SciTE 設定</vh></v>
+</v>
+<v t="leo.20200902211737.1"><vh>HW1</vh>
+<v t="leo.20200902211737.2"><vh>了解使用環境的電腦與網路</vh></v>
+</v>
+<v t="leo.20200902203049.1"><vh>slide 1</vh></v>
 <v t="leo.20200818170535.1"><vh>slide 2</vh></v>
 <v t="leo.20200818170636.1"><vh>slide3</vh>
 <v t="leo.20200818170909.1"><vh>slide 3-1</vh></v>
@@ -208,12 +232,12 @@ vertical: body pane on the botton</t>
     @others
 &lt;/div&gt;</t>
 <t tx="leo.20200818170328.1">&lt;section&gt;
-    &lt;a href="https://revealjs.com"&gt;
-        &lt;img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo"&gt;
+    &lt;a href="http://lab.mde.tw"&gt;
+        &lt;img src="./../images/kmol_1172x340_color_3yrs.png" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo"&gt;
     &lt;/a&gt;
-    &lt;h3&gt;The HTML Presentation Framework&lt;/h3&gt;
+    &lt;h3&gt;CP2020 Introduction to Computer Programming&lt;/h3&gt;
     &lt;p&gt;
-        &lt;small&gt;Created by &lt;a href="http://hakim.se"&gt;Hakim El Hattab&lt;/a&gt; and &lt;a href="https://github.com/hakimel/reveal.js/graphs/contributors"&gt;contributors&lt;/a&gt;&lt;/small&gt;
+        &lt;small&gt;Created by &lt;a href="http://lab.mde.tw"&gt;KMOLab&lt;/a&gt;&lt;/small&gt;
     &lt;/p&gt;
 &lt;/section&gt;
 
@@ -648,5 +672,133 @@ console.log( '"customevent" has fired' );
         - &lt;a href="https://github.com/hakimel/reveal.js"&gt;Source code &amp;amp; documentation&lt;/a&gt;
     &lt;/p&gt;
 &lt;/section&gt;</t>
+<t tx="leo.20200902203049.1">&lt;section&gt;
+    &lt;a href="https://revealjs.com"&gt;
+        &lt;img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo"&gt;
+    &lt;/a&gt;
+    &lt;h3&gt;The HTML Presentation Framework&lt;/h3&gt;
+    &lt;p&gt;
+        &lt;small&gt;Created by &lt;a href="http://hakim.se"&gt;Hakim El Hattab&lt;/a&gt; and &lt;a href="https://github.com/hakimel/reveal.js/graphs/contributors"&gt;contributors&lt;/a&gt;&lt;/small&gt;
+    &lt;/p&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20200902203620.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+        ## 2020 計算機程式
+        * Python as the first computer language
+        * git as the distributed version control system
+        * github as the remote repository hosting
+        * web-based oriented program development
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+</t>
+<t tx="leo.20200902204030.1">&lt;section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom"&gt;
+    &lt;h2&gt;2020 計算機程式&lt;/h2&gt;
+    &lt;ul&gt;
+       &lt;li&gt; Python as the first computer language&lt;/li&gt;
+       &lt;li&gt; git as the distributed version control system&lt;/li&gt;
+        &lt;li&gt; github as the remote repository hosting&lt;/li&gt;
+       &lt;li&gt;  web-based oriented program development&lt;/li&gt;
+    &lt;/ul&gt;
+    
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20200902210131.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+    @others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+</t>
+<t tx="leo.20200902210150.1">## cadlab 電腦網路
+* IPv4 與 IPv6
+* cp2020 將使用純 IPv6 設定
+* 網路代理伺服器 proxy server
+* 學校網路架構</t>
+<t tx="leo.20200902210634.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+    @others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+</t>
+<t tx="leo.20200902210634.2">## Python 可攜程式系統(1/3)
+* 直接下載 fall2020.7z
+* 有關 .7z
+* 啟動 start.bat
+* 關閉 stop.bat</t>
+<t tx="leo.20200902210912.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+    @others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+</t>
+<t tx="leo.20200902210912.2">## 電腦硬體
+* 電腦定義 - 輸出入, 資料處理, 儲存
+* motherboard, keyboard, mouse, finger, monitor
+* cpu, gpu, ram, rom, harddisk, dvd drive
+* power supply, battery</t>
+<t tx="leo.20200902211342.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+    @others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+</t>
+<t tx="leo.20200902211342.2">## Windows 10 
+* 64 位元操作系統
+* 網路設定
+* ctrl + shift + esc
+* 網路設定
+* 命令列, batch commands</t>
+<t tx="leo.20200902211737.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+    @others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+</t>
+<t tx="leo.20200902211737.2">## HW1 了解使用環境的電腦與網路
+* 整理電腦軟硬體資料
+* 整理網路設定資料
+* 學習如何建立可攜程式系統
+* 所有組員建立 cp2020 倉儲</t>
+<t tx="leo.20200902212047.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+    @others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+</t>
+<t tx="leo.20200902212047.2">## Python 可攜程式系統(2/3)
+* 設定 portablegit
+* 下載 putty
+* 下載 sharex portable
+* 有關 scite</t>
+<t tx="leo.20200902212524.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+    @others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+</t>
+<t tx="leo.20200902212524.2">## Python 可攜程式系統(3/3)
+* SciTEGlobal.properties
+* load.on.activate=1
+* code.page=65001
+* python.properties
+* 以 pythonw.exe 解譯</t>
 </tnodes>
 </leo_file>
