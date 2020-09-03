@@ -100,7 +100,11 @@ for i in range(10):
 <p style="padding-left: 60px;">下載校方購買的電子書與期刊</p>
 <p style="padding-left: 60px;"></p><h1>Topics</h1>
 <h2>W1</h2>
-<h2>W2</h2>
+<p>W1 學員登入學校配發的 @gm 郵件帳號後,<span> </span><a href="https://forms.gle/3hfnf6D2QCemdDQn9">填寫基本資料</a></p>
+<p>W1 告知將利用<span> </span><a href="https://gitter.im/">Gitter</a><span> </span>進行課程議題討論 (其餘各種問題可以至 <a href="https://forum.eng.nfu.edu.tw/">discourse</a> 討論)</p>
+<p>W1 就電腦軟硬體與網路環境的使用進行介紹</p>
+<p>Notice: 一甲 9/24 (四) 下午要補 10/2 中秋節連假的課程時段</p>
+<p></p><h2>W2</h2>
 <h4>下載可攜 Python 套件</h4>
 <p>當你發現從 <a href="https://forum.eng.nfu.edu.tw/t/topic/39">https://forum.eng.nfu.edu.tw/t/topic/39</a> 可以直接下載 fall2020_cp.7z 壓縮檔案之後, 直接利用 7zip 解開壓縮, 然後在 64 位元 Windows 10 啟動 start.bat, 就可以直接在 SciTE 編輯器中解譯 Python 程式, 而且可以利用 pip 工具安裝所需的 Python 模組之後, 接下來必須:</p>
 <ol>
@@ -139,7 +143,20 @@ for i in range(2, 12):
 <p>其於 SciTE 編輯器執行畫面:</p>
 <p><img alt="" class="add_border" height="398" src="/images/cp_w2_python_for_loop_application1.png" width="600"/></p>
 <p>請問, 當成功以 <a>https://localhost:9443</a> 對 CMSiMDE 動態網站連線時出現以下畫面, 代表甚麼意思?</p>
-<p><img alt="" class="add_border" height="297" src="/images/https_9443_panic.png" width="600"/></p><h2>W3</h2>
+<p><img alt="" class="add_border" height="297" src="/images/https_9443_panic.png" width="600"/></p>
+<p>當我們成功完成 CMSiMDE 動態網站內容, 且利用  generate_pages 按鈕轉為靜態網站資料後, 要利用 git 指令新增提交退送時, 碰到以下問題:</p>
+<p><img alt="" class="add_border" height="354" src="/images/cp_git_config_user_email_name.png" width="600"/></p>
+<p>接著配合畫面中的提示, 利用 git config 指令操作結束後, 接著嘗試以 git push 將改版資料推送到遠端, 結果又出現下列畫面:</p>
+<p><img alt="" class="add_border" height="354" src="/images/cp_push_rejected_need_git_pull.png" width="600"/></p>
+<p>根據提示, 以 git pull 拉下遠端與近端的差異資料後, 又出現下列畫面, 因為提示中拉下的資料與 Leo Editor 有關, 因此在命令列視窗中輸入 leo, 試著開啟 Leo Editor, 結果出現的小視窗無論如何操作都會落入重複迴圈, 於是在 y:\home\.leo 目錄中, 以 SciTE 編輯器建立一個 .leoID.txt 檔案, 內容為任何字串, 然後以 stop.bat 關閉可攜系統之後, 再以 start.bat 開啟系統, 終於能夠開啟 Leo Editor, 並利用 git push 將近端資料成功送到 github.</p>
+<p><img alt="" class="add_border" height="423" src="/images/cp_doing_git_pull.png" width="600"/></p>
+<ol>
+<li>請問, git config --global 指令執行成功後, 這些設定會存在哪裡?</li>
+<li>另外假如我們不是使用可攜程式套件而是使用電腦輔助設計室中電腦所安裝的 Python 以及 git, 但是卻想在其他用戶所存放的 git config identity 中, 提交屬於自己帳號下的 comment, 該如何操作?</li>
+<li>上述的流程設定, 必須每一次推送時都輸入 github 所登錄的帳號與密碼, 假如在協同者面前輸入帳號密碼時, 其他人都一直盯著我的鍵盤看, 該如何是好?</li>
+<li>上述在 git push 之前需要 git pull 的原因是甚麼?</li>
+<li>上述 Leo Editor 啟動時, 為何會進入重複迴圈?</li>
+</ol><h2>W3</h2>
 <p>Ｗ3 統整 W1 與 W2 教材內容至各學員個人網頁</p>
 <p>Ｗ3 完成亂數分組,  每班分成四組</p><h1>Python</h1>
 <p>Principles of Computation with Python:</p>
