@@ -98,7 +98,50 @@ for i in range(10):
 <p style="padding-left: 60px;">下載安裝校方提供軟體</p>
 <p style="padding-left: 90px;">每半年認證一次</p>
 <p style="padding-left: 60px;">下載校方購買的電子書與期刊</p>
-<p style="padding-left: 60px;"></p><h1>Python</h1>
+<p style="padding-left: 60px;"></p><h1>Topics</h1>
+<h2>W1</h2>
+<h2>W2</h2>
+<h4>下載可攜 Python 套件</h4>
+<p>當你發現從 <a href="https://forum.eng.nfu.edu.tw/t/topic/39">https://forum.eng.nfu.edu.tw/t/topic/39</a> 可以直接下載 fall2020_cp.7z 壓縮檔案之後, 直接利用 7zip 解開壓縮, 然後在 64 位元 Windows 10 啟動 start.bat, 就可以直接在 SciTE 編輯器中解譯 Python 程式, 而且可以利用 pip 工具安裝所需的 Python 模組之後, 接下來必須:</p>
+<ol>
+<li>了解如何自己建立與 fall2020_cp.7z 相同功能的可攜 Python 套件</li>
+<li>了解如何在可攜套件中加入 portablegit, sharex, putty 等工具, 並學習如何使用</li>
+<li>了解如何在 github 以 submodule (或不以 submodule) 建立 cmsimde 倉儲</li>
+<li>了解如何在近端維護 CMSiMDE 內容管理系統</li>
+</ol>
+<h4>for 重複迴圈的應用</h4>
+<p>接下來要在頁面中插入 11 張圖, 希望寬度為 600 且 img 屬性加入 add_border.</p>
+<p>第一張圖以手動方式插入後, 手動進入 html 編輯, 加入 class="add_border" 屬性後, 取得插入圖檔的 html 如下:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;p&gt;&lt;img class="add_border" height="342" src="/images/1_cp_git_and_cmsimde.png" width="600"&gt;&lt;/p&gt;</pre>
+<p>隨後的 10 張圖希望利用 Python 迴圈產生後再從 html 編輯插入.</p>
+<p><img class="add_border" height="342" src="/images/1_cp_git_and_cmsimde.png" width="600"/></p>
+<p><img class="add_border" height="342" src="/images/2_cp_git_and_cmsimde.png" width="600"/></p>
+<p><img class="add_border" height="342" src="/images/3_cp_git_and_cmsimde.png" width="600"/></p>
+<p><img class="add_border" height="342" src="/images/4_cp_git_and_cmsimde.png" width="600"/></p>
+<p><img class="add_border" height="342" src="/images/5_cp_git_and_cmsimde.png" width="600"/></p>
+<p><img class="add_border" height="342" src="/images/6_cp_git_and_cmsimde.png" width="600"/></p>
+<p><img class="add_border" height="342" src="/images/7_cp_git_and_cmsimde.png" width="600"/></p>
+<p><img class="add_border" height="342" src="/images/8_cp_git_and_cmsimde.png" width="600"/></p>
+<p><img class="add_border" height="342" src="/images/9_cp_git_and_cmsimde.png" width="600"/></p>
+<p><img class="add_border" height="342" src="/images/10_cp_git_and_cmsimde.png" width="600"/></p>
+<p><img class="add_border" height="342" src="/images/11_cp_git_and_cmsimde.png" width="600"/></p>
+<p>上述利用迴圈插入具有規律的字串程式碼為:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''
+參考用的 html 字串為
+&lt;p&gt;&lt;img class="add_border" height="342" src="/images/1_cp_git_and_cmsimde.png" width="600"&gt;&lt;/p&gt;
+'''
+firstSegment = '''&lt;p&gt;&lt;img class="add_border" height="342" src="/images/'''
+
+secondSegment = '''_cp_git_and_cmsimde.png" width="600"&gt;&lt;/p&gt;'''
+
+for i in range(2, 12):
+    print(firstSegment + str(i) + secondSegment)</pre>
+<p>其於 SciTE 編輯器執行畫面:</p>
+<p><img alt="" class="add_border" height="398" src="/images/cp_w2_python_for_loop_application1.png" width="600"/></p>
+<p>請問, 當成功以 <a>https://localhost:9443</a> 對 CMSiMDE 動態網站連線時出現以下畫面, 代表甚麼意思?</p>
+<p><img alt="" class="add_border" height="297" src="/images/https_9443_panic.png" width="600"/></p><h2>W3</h2>
+<p>Ｗ3 統整 W1 與 W2 教材內容至各學員個人網頁</p>
+<p>Ｗ3 完成亂數分組,  每班分成四組</p><h1>Python</h1>
 <p>Principles of Computation with Python:</p>
 <p style="padding-left: 30px;"><a href="https://oli.cmu.edu/courses/principles-of-computation-with-python-open-free/">https://oli.cmu.edu/courses/principles-of-computation-with-python-open-free/</a></p>
 <p><img alt="" class="add_border" height="891" src="/images/intro_programming_with_python.png" width="600"/></p>
@@ -517,3 +560,5 @@ print(output)</pre>
 <p style="padding-left: 60px;">假如, 能夠使用 <a href="http://mde.tw/lab/content/Javascript.html">http://mde.tw/lab/content/Javascript.html</a> 與 <a href="http://mde.tw/lab/content/Dart.html">http://mde.tw/lab/content/Dart.html</a> 中的方法, 將 Python 程式存於 Gist 或 Github Pages 網站, 然後透過 ajax 的方式帶至網際瀏覽器中執行, 並能利用 Javascript 按鈕將在網頁編寫執行的 Python 程式存至近端, 放入特定倉儲中進行版次管理.</p>
 <h4>圖形介面程式開發</h4>
 <p><a href="https://link.springer.com/book/10.1007/978-1-4842-5857-6">Beginning PyQt</a> 終於出書, 之前 <a href="https://riverbankcomputing.com/software/pyqt/download5">PyQt5</a> 曾被用來開發平面機構分析與合成套件 - <a href="https://github.com/KmolYuan/Pyslvs-UI">Pyslvs-UI</a>, 接下來 <a href="https://riverbankcomputing.com/software/pyqt/download5">PyQt5</a> 或 <a href="https://www.qt.io/qt-for-python">Qt for Python</a> 還能用來開發甚麼機械設計相關工具套件?</p>
+<h4>Discourse 論壇與 <a href="https://pypi.org/project/pydiscourse/">Pydiscourse</a></h4>
+<p><a href="https://forum.eng.nfu.edu.tw/">https://forum.eng.nfu.edu.tw/</a> 以 Ruby 編寫, 若能透過 <a href="https://github.com/tindie/pydiscourse">Pydiscourse</a> 與 <a href="https://docs.discourse.org/">https://docs.discourse.org/</a> 中的 Discourse API 結合, 將可延伸 <a href="http://lab.mde.tw/blog/sync-pelican-and-blogger-content.html">http://lab.mde.tw/blog/sync-pelican-and-blogger-content.html</a> 中的 Markdown 文章, 在<a href="https://github.com/leo-editor/leo-editor">Leo Editor</a> 的編輯下, 將內容同步至 <a href="https://github.com/getpelican/pelican">Pelican</a> 與 <a href="https://www.blogger.com/">Blogger</a> 網誌.</p>
