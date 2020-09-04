@@ -17,51 +17,68 @@
 <p><a href="https://calendar.google.com/calendar/embed?src=mde.nfu.edu.tw_3439313938333136353439%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;mode=week&amp;src=mde.nfu.edu.tw_35303530373431313438%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;src=yen%40gm.nfu.edu.tw&amp;ctz=Asia%2FTaipei">全頁檢視</a></p>
 <p><iframe height="600" src="https://calendar.google.com/calendar/embed?src=mde.nfu.edu.tw_3439313938333136353439%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;mode=week&amp;src=mde.nfu.edu.tw_35303530373431313438%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;src=yen%40gm.nfu.edu.tw&amp;ctz=Asia%2FTaipei" width="800"></iframe></p>
 <h2>評分</h2>
+<p>本課程的評分標準:</p>
+<ol>
+<li>從未遲到者得 10%</li>
+<li>從未缺席或無正當理由離席超過 20 分鐘者得 20%</li>
+<li>從未缺交各週作業或無抄襲他人作業者得 30%</li>
+<li>作業與報告內容充實, 每一項課程內容都拍攝具參考價值之教學影片者得 20%</li>
+<li>完成創新性課程內容改進, 能積極協助組員解決各種難題者得 10%</li>
+<li>個人倉儲內容讓人嘆為觀止者得 10%</li>
+</ol>
+<p>根據上述課程評分標準, 由組員之自評成績決定課程期中成績, 視為本課程之學員期望成績, 期中考後, 則依據各週之組員自評成績, 組員互評成績與教師評分成績, 按照下列流程計算學員之學期成績.</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''
 根據評分表單中的 自評分數, 互評得分, 教師評分, 計算學員課程成績
 '''
- 
+# diff 函式傳回兩輸入分數的絕對差值 
 def diff(分數1, 分數2):
     return abs(分數1 - 分數2)
      
+# getHigh函式傳回兩分數中較高者
 def getHigh(分數1, 分數2):
     if  分數1 &gt; 分數2:
         return 分數1
     else:
         return 分數2
 
+# getLow 函式傳回兩分數中較低者
 def getLow(分數1, 分數2):
     if  分數1 &lt; 分數2:
         return 分數1
     else:
         return 分數2
- 
+
+# 分組評分函式取自評與教師評分比較, 若差距大於 5 分取其低者
+# 否則依自評 40%, 教師 60% 計算
 def 分組評分(自評分數, 教師評分):
     return getLow(自評分數, 教師評分)
     if diff(自評分數, 教師評分) &gt; 5:
         return getLow(自評分數, 教師評分)
     else:
         return int(自評分數*0.4 + 教師評分*0.6)
-     
+
+# 全班比分函式取互評與分組評分比較, 若差距小於 5 分取其高者
+# 否則依互評得分 40%, 分組評分 60% 計算     
 def 全班比分(互評得分, 分組評分):
     if diff(互評得分, 分組評分) &lt; 5:
         學員成績 = getHigh(互評得分, 分組評分)
     else:
         學員成績 = int(互評得分*0.4 + 分組評分*0.6)
     return 學員成績
- 
+
+# 學員之學期成績依照上述分組評分與全班比分函式計算 
 def 學員成績(自評分數, 互評得分, 教師評分):
     學員課程成績 = 全班比分(互評得分, 分組評分(自評分數, 教師評分))
     return 學員課程成績
-    
+
+# 利用迴圈從 50 起每次增量 5 分, 分別列出各評分組合下的成績計算結果    
 for i in range(10):
     self_score = 50 + i*5
     for j in range(10):
         peer_score = 50 + j*5
         for k in range(10):
             teacher_score = 50 + k*5
-            print(self_score, peer_score, teacher_score, "=", 學員成績(self_score, peer_score, teacher_score))</pre>
-<h2>討論區</h2>
+            print(self_score, peer_score, teacher_score, "=", 學員成績(self_score, peer_score, teacher_score))</pre><h2>討論區</h2>
 <p><a href="https://gitter.im/mdecourse/cp2020">https://gitter.im/mdecourse/cp2020</a></p>
 <h1>Computer</h1>
 <p><a href="https://oli.cmu.edu/product-category/computer-science-programming-indep/">https://oli.cmu.edu/product-category/computer-science-programming-indep/</a> </p>
@@ -99,7 +116,13 @@ for i in range(10):
 <p style="padding-left: 90px;">每半年認證一次</p>
 <p style="padding-left: 60px;">下載校方購買的電子書與期刊</p>
 <p style="padding-left: 60px;"></p><h1>Topics</h1>
-<h2>W1</h2>
+<p>課程助教:</p>
+<p>40723150 (lead), 40723110, 40723115, 40723138, 40723148</p>
+<p>40723145 (lead), 40723102, 40723103, 40723153, 40723245</p>
+<p>40723212 (lead), 40723216, 40723223, 40723246</p>
+<p>負責事項:</p>
+<p>電腦輔助設計室電腦第三磁區系統維護</p>
+<p>每週四 19:00 - 21:00 在電腦輔助設計室為操作實習與助教協助回答問題時間</p><h2>W1</h2>
 <p>W1 學員登入學校配發的 @gm 郵件帳號後,<span> </span><a href="https://forms.gle/3hfnf6D2QCemdDQn9">填寫基本資料</a></p>
 <p>W1 告知將利用<span> </span><a href="https://gitter.im/">Gitter</a><span> </span>進行課程議題討論 (其餘各種問題可以至 <a href="https://forum.eng.nfu.edu.tw/">discourse</a> 討論)</p>
 <p>W1 就電腦軟硬體與網路環境的使用進行介紹</p>
