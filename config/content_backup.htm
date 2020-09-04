@@ -129,8 +129,12 @@ for i in range(10):
 <p>Putty 套件可用於 Windows 與 Linux 操作系統, 可以讓使用者以 SSH 加密機制遠端登入到其他伺服器主機, 由於電腦輔助設計室電腦的第三磁區上課時會轉為純 IPv6 協定上網, 當使用者要將近端改版資料推送到遠端時, 由於 Github 至今仍只支援 IPv4 網路協定, 因此無論是以 https 或 ssh 方式連線, 都必須透過能同時支援 IPv4 與 IPv6 的代理主機.</p>
 <p>以 https 協定對 Github 連線的代理主機設定位於 home/.gitconfig, 而在 Windows 10 操作系統中採 SSH 對 Github 連線, 就必須將代理主機與 private key 的設定, 透過 Putty 完成.</p>
 <h4>以 SSH 協定與 Github 連線</h4>
-<p>建立一對 OpenSSH key pair, private key 保留在近端, 將 public key 註記在 Github 所屬帳號設定中.</p>
-<p>git@github.com:mdecourse/cd2020.git</p><h1>Topics</h1>
+<p>1. 建立一對 OpenSSH key pair, private key 保留在近端, 將 public key 登記在 Github 所屬帳號設定中.</p>
+<p>2. 近端可攜系統啟動時, 必須確認已經設定</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">set GIT_SSH=%Disk%:\putty\plink.exe</pre>
+<p>表示 git 將透過 putty 工具以 ssh 加密協定對 Github 連線</p>
+<p>3. 在 Putty 中設定對 github.com ssh 時必須提供的 Proxy 代理主機設定與 Auth 認證所需的近端 private key, 而且必須利用 puttygen 將 OpenSSH 格式轉為 putty 檔案格式</p>
+<p>4. 無論在 git clone 或 git push (URL 位於倉儲 .git/config 中), URL 必須使用 <a href="mailto:git@github.com:帳號/倉儲名稱.git">git@github.com:帳號/倉儲名稱.git</a> 連線</p><h1>Topics</h1>
 <p>課程助教:</p>
 <p>40723150 (lead), 40723110, 40723115, 40723138, 40723148</p>
 <p>40723145 (lead), 40723102, 40723103, 40723153, 40723245</p>
@@ -606,9 +610,25 @@ print(output)</pre>
 <p></p>
 <h2>Brython</h2>
 <p><a href="https://github.com/BrythonServer/brython-server">https://github.com/BrythonServer/brython-server</a></p>
-<p><a href="https://mdecp2018.github.io/finalproject-bgx">https://mdecp2018.github.io/finalproject-bgx</a></p><h2>Deep Learning</h2>
-<p><a href="https://www.kaggle.com/learn/deep-learning">https://www.kaggle.com/learn/deep-learning</a></p>
-<h1>Projects</h1>
+<p><a href="https://mdecp2018.github.io/finalproject-bgx">https://mdecp2018.github.io/finalproject-bgx</a></p><h2>Heroku</h2>
+<p>登入 @gm <a href="https://drive.google.com/file/d/1itKaIPSdIRZQ-qiLkUpxEPOLzSpP3eNY/view?usp=sharing">下載 Heroku cli 可攜.7z</a></p>
+<p><a href="https://www.heroku.com/">https://www.heroku.com/</a> 是提供雲端應用程式服務的網站, 在計算機程式課程中, 可以透過 Heroku 內建伺服 PHP 的功能, 將 CMSiMDE 系統的靜態網站送到 Heroku 進行伺服, 也可以設法利用 Heroku 執行 CMSiMDE 的動態網站, 只是根據 Heroku 系統的規定, 每 24 小時雲端主機重啟之後, 非以 Git 提交推送的資料將會被 reset.</p>
+<p>因此在未設定 persistent 資料儲存方案的 Heroku 應用, 只適合配置用於直接查詢會轉介其他系統資料的網際 Python 應用.</p>
+<p>以下將列出在計算機程式課程中的三種 Heroku 應用:</p>
+<ol>
+<li>將 CMSiMDE 的靜態網頁送到 Heroku 伺服</li>
+<li>利用 Heroku 配置 Webster 與 Wordnet 字典查詢服務 (透過 SQLite 資料庫)</li>
+<li>利用 Heroku 上的 Flask 網際 ajax 程式, 從學校教務伺服器中取出課程相關資料</li>
+</ol>
+<p><a href="https://github.com/mdecourse/scrum1-cmsimde">https://github.com/mdecourse/scrum1-cmsimde</a></p>
+<p style="padding-left: 30px;"><a href="https://scrum1-cmsimde.herokuapp.com">https://scrum1-cmsimde.herokuapp.com</a> </p>
+<p><a href="https://github.com/mdecourse/lookupdict">https://github.com/mdecourse/lookupdict</a></p>
+<p style="padding-left: 30px;"><a href="https://lookupdict.herokuapp.com">https://lookupdict.herokuapp.com</a> </p>
+<p><a href="https://github.com/mdecourse/nfulist">https://github.com/mdecourse/nfulist</a></p>
+<p style="padding-left: 30px;"><a href="https://nfulist.herokuapp.com">https://nfulist.herokuapp.com</a> </p>
+<p><a href="https://github.com/mdecourse/scrum1-2020cp1">https://github.com/mdecourse/scrum1-2020cp1</a></p>
+<p style="padding-left: 30px;"><a href="http://scrum1-2020cp1.herokuapp.com/">http://scrum1-2020cp1.herokuapp.com/</a></p><h2>Deep Learning</h2>
+<p><a href="https://www.kaggle.com/learn/deep-learning">https://www.kaggle.com/learn/deep-learning</a></p><h1>Projects</h1>
 <h4>雲端電腦輔助機械設計工具的比較</h4>
 <p><a href="https://total3dprinting.org/onshape-vs-fusion-360/">https://total3dprinting.org/onshape-vs-fusion-360/</a> 是電腦輔助設計實習與協同產品設計實習課程中的議題之一, 比較 onshape 與 fusion 360 的功能與特性.</p>
 <h4>利用 Python 建立雲端程式工具</h4>
