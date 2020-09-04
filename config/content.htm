@@ -115,7 +115,26 @@ for i in range(10):
 <p style="padding-left: 60px;">下載安裝校方提供軟體</p>
 <p style="padding-left: 90px;">每半年認證一次</p>
 <p style="padding-left: 60px;">下載校方購買的電子書與期刊</p>
-<p style="padding-left: 60px;"></p><h1>Topics</h1>
+<h2>SSH</h2>
+<h4>SSH 網路連線加密機制</h4>
+<p>SSH 指 Secure SHell, 是一種網路連線加密機制, 當我們在 Mac OS 或 Linux 操作系統中的 Terminal 或 XTerm 時, 可以利用 ssh 帳號@遠端主機 ip 或符號名稱, 就可以輸入認證密碼, 登入到遠端主機.</p>
+<p>一般針對公開的 Github 倉儲, 任何人都可以直接透過 https 協定 clone 倉儲, 無需認證, 但是倉儲協同者若要從近端將改版資料送到 Github, 就必須通過認證, 假如採 https 協定, 則倉儲協同者在推送改版資料時, 必須提供帳號與密碼.</p>
+<p>除了 https 協定, Github 也接受倉儲的協同者以 SSH 連線的方式, git clone private 倉儲, 或以 SSH 連線的方式將近端改版資料推送到遠端倉儲.</p>
+<p>SSH 的連線加密機制依賴 private key 與 public key 之間的配對, 當使用者建立 SSH key pair 時, private key 必須保護在近端, 而 public key 則必須送到進行認證的遠端伺服器中.</p>
+<h4>建立 OpenSSH key pair</h4>
+<p>Github 伺服器所支援的 SSH 為 OpenSSH 檔案格式的協定, 因此使用者要送到 Github 伺服器上的 OpenSSH 格式 public key, 可以透過 portablegit 中的 sh.exe 進入 SHell, 然後利用以下指令建立採 <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">rsa</a> 加密演算法的 key pair:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">ssh-keygen -t rsa -b 4096 -C "使用者學號"</pre>
+<p>在 -C 後的使用者學號字串, 會直接附加在 OpenSSH public key 檔案的最後端, 讓使用者得以辨識 public key 的對應使用者, 而所建立的 OpenSSH private key 則可以透過 puttygen 轉換為 putty 特有檔案格式.</p>
+<h4>Putty 作為 SSH 連線客戶端工具</h4>
+<p>Putty 套件可用於 Windows 與 Linux 操作系統, 可以讓使用者以 SSH 加密機制遠端登入到其他伺服器主機, 由於電腦輔助設計室電腦的第三磁區上課時會轉為純 IPv6 協定上網, 當使用者要將近端改版資料推送到遠端時, 由於 Github 至今仍只支援 IPv4 網路協定, 因此無論是以 https 或 ssh 方式連線, 都必須透過能同時支援 IPv4 與 IPv6 的代理主機.</p>
+<p>以 https 協定對 Github 連線的代理主機設定位於 home/.gitconfig, 而在 Windows 10 操作系統中採 SSH 對 Github 連線, 就必須將代理主機與 private key 的設定, 透過 Putty 完成.</p>
+<h4>以 SSH 協定與 Github 連線</h4>
+<p>1. 建立一對 OpenSSH key pair, private key 保留在近端, 將 public key 登記在 Github 所屬帳號設定中.</p>
+<p>2. 近端可攜系統啟動時, 必須確認已經設定</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">set GIT_SSH=%Disk%:\putty\plink.exe</pre>
+<p>表示 git 將透過 putty 工具以 ssh 加密協定對 Github 連線</p>
+<p>3. 在 Putty 中設定對 github.com ssh 時必須提供的 Proxy 代理主機設定與 Auth 認證所需的近端 private key, 而且必須利用 puttygen 將 OpenSSH 格式轉為 putty 檔案格式</p>
+<p>4. 無論在 git clone 或 git push (URL 位於倉儲 .git/config 中), URL 必須使用 <a href="mailto:git@github.com:帳號/倉儲名稱.git">git@github.com:帳號/倉儲名稱.git</a> 連線</p><h1>Topics</h1>
 <p>課程助教:</p>
 <p>40723150 (lead), 40723110, 40723115, 40723138, 40723148</p>
 <p>40723145 (lead), 40723102, 40723103, 40723153, 40723245</p>
