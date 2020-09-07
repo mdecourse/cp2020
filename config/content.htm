@@ -100,7 +100,362 @@ for i in range(10):
 <p><a href="https://oli.cmu.edu/courses/pc-hardware-open-free/">https://oli.cmu.edu/courses/pc-hardware-open-free/</a> </p>
 <h2>PC Software</h2>
 <p><a href="https://oli.cmu.edu/courses/pc-software-open-free/">https://oli.cmu.edu/courses/pc-software-open-free/</a> </p>
-<h2>Logics and Proofs</h2>
+<h3>API</h3>
+<p>API 為 Application Programming Interface, 意即應用程式介面, 用於延伸特定程式套件的功能, 以 Google 所提供的雲端應用程式為例, 常見的 API 有 Google GMail API, Google Blogger API, Google Drive API 等, 而 Github 則提供 Github API.</p>
+<p>當使用者登入 GMail 帳號後, 連接至 <a href="https://console.developers.google.com">https://console.developers.google.com</a> 即可進入 Google 所有程式庫 API 的設定.</p>
+<h4>Google GMail API</h4>
+<p>Gmail Json to Token data</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import pickle
+from google_auth_oauthlib.flow import InstalledAppFlow
+from httplib2 import Http
+from googleapiclient.discovery import build
+
+creds = None
+SCOPES = 'https://www.googleapis.com/auth/gmail.send' # Allows sending only, not reading
+
+flow = InstalledAppFlow.from_client_secrets_file(
+    './../scrum1_gmail.json', SCOPES)
+creds = flow.run_local_server(port=0)
+# Save the credentials for the naext run
+with open('./../scrum1_gmail.pickle', 'wb') as token:
+    pickle.dump(creds, token)
+
+service = build('gmail', 'v1', credentials=creds)
+print(service)</pre>
+<p>send mail</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from email.mime.text import MIMEText
+from base64 import urlsafe_b64encode
+from httplib2 import Http
+from googleapiclient.discovery import build
+import pickle
+
+SENDER = "your_sender@domain_name"
+RECIPIENT = "your_recipient@domain_name"
+SUBJECT = "gmail api 寄信測試"
+CONTENT = ''' 這是文章內容, http://the.web.site'''
+
+creds = None
+with open('./../scrum1_gmail.pickle', 'rb') as token:
+    creds = pickle.load(token)
+service = build('gmail', 'v1', credentials=creds)
+
+# https://developers.google.com/gmail/api/guides/sending
+def create_message(sender, to, subject, message_text):
+  """Create a message for an email.
+
+  Args:
+    sender: Email address of the sender.
+    to: Email address of the receiver.
+    subject: The subject of the email message.
+    message_text: The text of the email message.
+
+  Returns:
+    An object containing a base64url encoded email object.
+  """
+  message = MIMEText(message_text)
+  message['to'] = to
+  message['from'] = sender
+  message['subject'] = subject
+  encoded_message = urlsafe_b64encode(message.as_bytes())
+  return {'raw': encoded_message.decode()}
+
+
+# https://developers.google.com/gmail/api/guides/sending
+def send_message(service, user_id, message):
+  """Send an email message.
+
+  Args:
+    service: Authorized Gmail API service instance.
+    user_id: User's email address. The special value "me"
+    can be used to indicate the authenticated user.
+    message: Message to be sent.
+
+  Returns:
+    Sent Message.
+  """
+  try:
+    message = (service.users().messages().send(userId=user_id, body=message)
+               .execute())
+    print('Message Id: %s' % message['id'])
+    return message
+  #except errors.HttpError, error:
+  except:
+    print('An error occurred: %s' % error)
+
+
+raw_msg = create_message(SENDER, RECIPIENT, SUBJECT, CONTENT)
+send_message(service, "me", raw_msg)</pre>
+<h4>Google Blogger API</h4>
+<p>Blogger Json to Token data</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># https://developers.google.com/blogger/docs/3.0/using
+# pip install google_auth_oauthlib
+# under Mac command + b to execute
+'''
+No module named 'googleapiclient'
+    pip install google-api-python-client 
+No module named 'google_auth_oauthlib'
+    pip install google_auth_oauthlib
+Add to Blogger need oauth2client
+    pip install oauth2client
+'''
+import pickle
+import os
+from googleapiclient.discovery import build
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+
+
+SCOPES = ['https://www.googleapis.com/auth/blogger', ]
+
+# we check if the file tBo store the credentials exists
+if not os.path.exists('mdecourse_blogger_token.dat'):
+
+    flow = InstalledAppFlow.from_client_secrets_file('mdecourse_blogger_desktop.json', SCOPES)
+    credentials = flow.run_local_server()
+
+    with open('mdecourse_blogger_token.dat', 'wb') as credentials_dat:
+        pickle.dump(credentials, credentials_dat)
+else:
+    with open('mdecourse_blogger_token.dat', 'rb') as credentials_dat:
+        credentials = pickle.load(credentials_dat)
+service = build('blogger', 'v3', credentials=credentials)
+g.es(service)</pre>
+<p>add to mblogger</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">@language python
+from markdown import markdown
+from oauth2client import client
+#from googleapiclient import sample_tools
+import os
+# 配合使用 credential token
+import pickle
+from googleapiclient.discovery import build
+#from google_auth_oauthlib.flow import InstalledAppFlow
+#from google.auth.transport.requests import Request
+
+os.environ['TZ'] = 'Asia/Taipei'
+with open('./../../yen_gm_blogger_token.dat', 'rb') as credentials_dat:
+    credentials = pickle.load(credentials_dat)
+service = build('blogger', 'v3', credentials=credentials)
+
+def get_cat_tag_content(data):
+    # 請注意, 因為 data 來自 .md 的檔案 內容, 第1行為 ---
+    # 用跳行符號分割
+    data_list = data.split("\n")
+    #第 2 行為 title
+    title= data_list[1]
+    #第 4 行為 category
+    category = data_list[3]
+    #第 5 行為 tags
+    tags = data_list[4]
+    # 有多項資料的 content 型別為數列
+    # 再將第 9 行之後的資料數列串回成以跳行隔開的資料
+    content = "\n".join(data_list[8:])
+    # 先將截斷摘要與內文的 pelican md 檔按符號, 換成 Blogger 的 &lt;!--more--&gt;
+    content = content.replace('&lt;!-- PELICAN_END_SUMMARY --&gt;', '&lt;!--more--&gt;')
+    # 接著若內容有 ~~~python 與 ~~~ 則換成 Wordpress 格式
+    #content = content.replace('~~~python', '[code lang="python"]')
+    #content = content.replace('~~~', '[/code]')
+    return title, category, tags, content
+
+# 從目前所在節點的 body pan 中取出類別, tags 以及文章內容
+# p.h 為 @clean filename.md
+# 因為要使用 @clean 節點掛上為後的 blogger post_id, 因此改為讀 .md 檔案
+md_filename = p.h.split(" ")[1]
+with open(md_filename, 'r', encoding="utf-8") as content_file:
+    md_content = content_file.read()
+# title_str, category_str, tags_str, content = get_cat_tag_content(p.b)
+title_str, category_str, tags_str, content = get_cat_tag_content(md_content)
+category = category_str.split(":")[1]
+tags = tags_str.split(":")[1].split(",")
+tags.append(category)
+# title 是一個單獨的字串
+title = title_str.split(":")[1]
+# 將 markdown 格式 content 轉為 html
+content = markdown(content)
+# 以下處理 content 的 &lt;h2&gt; 標題
+content = content.replace("&lt;h2&gt;", "&lt;h2&gt;&lt;font size='4'&gt;")
+content = content.replace("&lt;/h2&gt;", "&lt;/font&gt;&lt;/h2&gt;")
+# g.es(content)
+
+try:
+    '''
+    users = service.users()
+    # 取得使用者 profile 資料
+    user = users.get(userId='self').execute()
+    print('網誌名稱: %s' % user['displayName'])
+    '''
+    blogs = service.blogs()
+    # 取得使用者所建立網誌名稱
+    blogs = blogs.listByUser(userId='self').execute()
+    # post_id is now blogs["items"][0]["id"]
+    #blog_id = blogs["items"][0]["id"]
+    blog_id = "7949497010793271992"
+    #for blog in blogs['items']:
+        #print(blog['name'], blog['url'])
+    posts = service.posts()
+    # 新增網誌 post 時, 需要 post_id
+    body = {
+    "kind": "blogger#post",
+    "id": blog_id,
+    "title": title,
+    # 利用 markdown 函式, 將 .md 的內文轉為 html, 作為 Blogger 的文章內容
+    "content": content,
+    "labels": tags
+    }
+    insert = posts.insert(blogId=blog_id, body=body)
+    posts_doc = insert.execute()
+    post_id = posts_doc["id"]
+    #print(posts_doc)
+    # 改用 credential token 後不會產生 blogger.dat
+    #os.remove("blogger.dat")
+    # 利用最後的 child 節點來儲存 post_id
+    to_save_post_id = p.insertAsLastChild()   
+    # 改為內文為空的節點, id 直接標在 head 標題 
+    to_save_post_id.b = ""
+    to_save_post_id.h = post_id
+    # 因為新增節點, commander 必須 redraw
+    c.redraw()
+    g.es("post_id 為", post_id)
+    g.es("已經將資料送往 MBlogger!")
+except(client.AccessTokenRefreshError):
+    g.es("error")
+
+</pre>
+<p>edit to mblogger</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">@language python
+from markdown import markdown
+from oauth2client import client
+#from googleapiclient import sample_tools
+import os
+# 配合使用 credential token
+import pickle
+from googleapiclient.discovery import build
+#from google_auth_oauthlib.flow import InstalledAppFlow
+#from google.auth.transport.requests import Request
+
+os.environ['TZ'] = 'Asia/Taipei'
+with open('./../../yen_gm_blogger_token.dat', 'rb') as credentials_dat:
+    credentials = pickle.load(credentials_dat)
+service = build('blogger', 'v3', credentials=credentials)
+
+def get_cat_tag_content(data):
+    # 請注意, 因為 data 來自 .md 的檔案 內容, 第1行為 ---
+    # 用跳行符號分割
+    data_list = data.split("\n")
+    #第 2 行為 title
+    title= data_list[1]
+    #第 4 行為 category
+    category = data_list[3]
+    #第 5 行為 tags
+    tags = data_list[4]
+    # 有多項資料的 content 型別為數列
+    # 再將第 9 行之後的資料數列串回成以跳行隔開的資料
+    content = "\n".join(data_list[8:])
+    # 先將截斷摘要與內文的 pelican md 檔按符號, 換成 Blogger 的 &lt;!--more--&gt;
+    content = content.replace('&lt;!-- PELICAN_END_SUMMARY --&gt;', '&lt;!--more--&gt;')
+    # 接著若內容有 ~~~python 與 ~~~ 則換成 Wordpress 格式
+    #content = content.replace('~~~python', '[code lang="python"]')
+    #content = content.replace('~~~', '[/code]')
+    return title, category, tags, content
+
+# 從目前所在節點的 body pan 中取出類別, tags 以及文章內容
+# p.h 為 @clean filename.md
+# 因為要使用 @clean 節點掛上為後的 blogger post_id, 因此改為讀 .md 檔案
+md_filename = p.h.split(" ")[1]
+with open(md_filename, 'r', encoding="utf-8") as content_file:
+    md_content = content_file.read()
+# title_str, category_str, tags_str, content = get_cat_tag_content(p.b)
+title_str, category_str, tags_str, content = get_cat_tag_content(md_content)
+category = category_str.split(":")[1]
+tags = tags_str.split(":")[1].split(",")
+tags.append(category)
+# title 是一個單獨的字串
+title = title_str.split(":")[1]
+# 將 markdown 格式 content 轉為 html
+content = markdown(content)
+# 以下處理 content 的 &lt;h2&gt; 標題
+content = content.replace("&lt;h2&gt;", "&lt;h2&gt;&lt;font size='4'&gt;")
+content = content.replace("&lt;/h2&gt;", "&lt;/font&gt;&lt;/h2&gt;")
+# g.es(content)
+
+try:
+    blogs = service.blogs()
+    # 取得使用者所建立網誌名稱
+    blogs = blogs.listByUser(userId='self').execute()
+    #blog_id = blogs["items"][0]["id"]
+    blog_id = "7949497010793271992"
+    # 設法取得原 post 的 id
+    postid_outline = p.getLastChild()
+    # 直接從標題取得 post 的 id 號碼
+    post_id = postid_outline.h
+    posts = service.posts()
+    # 更新網誌文章時的 body
+    body = {
+    "kind": "blogger#post",
+    "title": title,
+    "content": content
+    }
+    # need to save postId to outline head
+    update = posts.update(blogId=blog_id, postId=post_id, body=body, publish=True)
+    update_doc = update.execute()
+    # 使用 credential token 後, 無需刪除 blogger.dat
+    #os.remove("blogger.dat")
+    g.es("post_id 為", post_id)
+    g.es("已經將更新資料送往 M Blogger!")
+except(client.AccessTokenRefreshError):
+    g.es("error")
+</pre>
+<h4>Google Drive API</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># for uploadToGDrive3
+# pip install google-api-python-client
+# https://github.com/googleapis/google-api-python-client
+import pickle
+from googleapiclient.discovery import build
+from apiclient.http import MediaFileUpload
+
+# for filegdupload
+import pickle
+import codecs
+import json
+
+# for use under wcm.kmol.info flask server
+
+def uploadToGdrive3(fileName, mimeType):
+    # get upload folder id
+    # GDrive 上 uploaded 目錄的 fileID
+    with open("./../gdrive_uploaded_id.txt", 'r') as content_file:
+        folderID = content_file.read()
+
+    creds = None
+    with open('./../gdrive_write_token.pickle', 'rb') as token:
+        creds = pickle.load(token)
+    # 讀進既有的 token, 建立 service
+    driveService = build('drive', 'v3', credentials=creds)
+
+    metadata = {
+        'name': fileName,
+        'mimeType': mimeType,
+        # 注意: 必須提供數列格式資料
+        'parents': [folderID]
+        }
+
+    filePath = _curdir + "/downloads/" + fileName
+    media = MediaFileUpload(filePath,
+                                            mimetype=mimeType,
+                                            chunksize=1024*1024,
+                                            resumable=True
+                                            )
+
+    gdFile = driveService.files().create(
+        body=metadata,
+        media_body=media,
+        fields='id'
+    ).execute()
+    fileID = gdFile.get("id")
+
+    return fileID
+</pre>
+<p><br/><br/></p><h2>Logics and Proofs</h2>
 <p><a href="https://oli.cmu.edu/courses/logic-proofs-copy/">https://oli.cmu.edu/courses/logic-proofs-copy/</a></p><h2>Media Programming</h2>
 <p><a href="https://oli.cmu.edu/courses/media-programming-copy/">https://oli.cmu.edu/courses/media-programming-copy/</a> </p><h1>Network</h1>
 <p>電腦網路系統與設定簡介</p>
