@@ -406,7 +406,56 @@ except(client.AccessTokenRefreshError):
     g.es("error")
 </pre>
 <h4>Google Drive API</h4>
-<p></p><h2>Logics and Proofs</h2>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># for uploadToGDrive3
+# pip install google-api-python-client
+# https://github.com/googleapis/google-api-python-client
+import pickle
+from googleapiclient.discovery import build
+from apiclient.http import MediaFileUpload
+
+# for filegdupload
+import pickle
+import codecs
+import json
+
+# for use under wcm.kmol.info flask server
+
+def uploadToGdrive3(fileName, mimeType):
+    # get upload folder id
+    # GDrive 上 uploaded 目錄的 fileID
+    with open("./../gdrive_uploaded_id.txt", 'r') as content_file:
+        folderID = content_file.read()
+
+    creds = None
+    with open('./../gdrive_write_token.pickle', 'rb') as token:
+        creds = pickle.load(token)
+    # 讀進既有的 token, 建立 service
+    driveService = build('drive', 'v3', credentials=creds)
+
+    metadata = {
+        'name': fileName,
+        'mimeType': mimeType,
+        # 注意: 必須提供數列格式資料
+        'parents': [folderID]
+        }
+
+    filePath = _curdir + "/downloads/" + fileName
+    media = MediaFileUpload(filePath,
+                                            mimetype=mimeType,
+                                            chunksize=1024*1024,
+                                            resumable=True
+                                            )
+
+    gdFile = driveService.files().create(
+        body=metadata,
+        media_body=media,
+        fields='id'
+    ).execute()
+    fileID = gdFile.get("id")
+
+    return fileID
+</pre>
+<p><br/><br/></p><h2>Logics and Proofs</h2>
 <p><a href="https://oli.cmu.edu/courses/logic-proofs-copy/">https://oli.cmu.edu/courses/logic-proofs-copy/</a></p><h2>Media Programming</h2>
 <p><a href="https://oli.cmu.edu/courses/media-programming-copy/">https://oli.cmu.edu/courses/media-programming-copy/</a> </p><h1>Network</h1>
 <p>電腦網路系統與設定簡介</p>
