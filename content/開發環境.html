@@ -133,59 +133,27 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Python << <a href='Python.html'>Previous</a> <a href='亂數分組.html'>Next</a> >> 亂數分組<br /><h1>工作流程</h1>
-<p>建立 CP 2020 課程網頁</p>
-<ol>
-<li style="padding-left: 30px;">以 mdecourse 帳號登入 github.com</li>
-<li style="padding-left: 30px;">建立 cp2020 空倉儲, 選擇由系統建立 README.md (延伸題目: 假如不新 README.md, 則又該如何操作?）</li>
-<li style="padding-left: 30px;">在近端啟動隨身程式系統 (或者自行在操作系統安裝所需套件)</li>
-<li style="padding-left: 30px;">將遠端的 cp2020 倉儲 git clone 到近端 (延伸題目: git clone 是甚麼?)</li>
-<li style="padding-left: 30px;">利用 git submodule add 導入 cmsimde 當作目錄</li>
-<li style="padding-left: 30px;">從近端 cmsimde 目錄中取出 up_dir 中的內容至 cp2020 倉儲根目錄</li>
-<li style="padding-left: 30px;">在近端可以進入 cmsimde 目錄, 以 python wsgi.py 啟動動態網頁 (延伸題目: 何謂動態網頁? 有何功能?)</li>
-<li style="padding-left: 30px;">在近端編輯動態網頁內容後, 轉為靜態網頁 (如何轉?)</li>
-<li style="padding-left: 30px;">完成靜態網頁轉換之後, 利用近端 git 指令將新版本新增, 提交並推送到遠端</li>
-</ol>
-<p>在近端編寫第一個 Python 程式, 每修改一次都利用 git 進行提交, 修改並提交 4 次後, 可以在任何版本下回復到先前的任一版本內容.</p>
-<p style="padding-left: 30px;"><a href="./../downloads/cphw1.7z">cphw1.7z</a></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">i = 1
-
-print(i)</pre>
-<p>進入 y:\tmp\cphw1 從 git init 開始</p>
-<p>每一次改版, i  增量 1</p>
-<p>git add .</p>
-<p>git commit -m "i=1"</p>
-<p>git push</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Y:\tmp\cphw1&gt;git log
-commit cb568bc032bb4e4364c347b5b6225c7849450c5f (HEAD -&gt; master)
-Author: mdecourse &lt;mdecourse@gmail.com&gt;
-Date:   Wed Aug 26 15:18:39 2020 +0800
-
-    i=4
-
-commit d9ef5402c330aac9791a9cd20403ad583854ceb6
-Author: mdecourse &lt;mdecourse@gmail.com&gt;
-Date:   Wed Aug 26 15:18:19 2020 +0800
-
-    i=3
-
-commit 4b40d3a60e7e37b7847d9fb70c3a0380ab20f9fe
-Author: mdecourse &lt;mdecourse@gmail.com&gt;
-Date:   Wed Aug 26 15:17:56 2020 +0800
-
-    i=2
-
-commit 1852efb2003bd52c4baa27cc7f0c38b8faf55d14
-Author: mdecourse &lt;mdecourse@gmail.com&gt;
-Date:   Wed Aug 26 15:17:27 2020 +0800
-
-    i=1</pre>
-<p style="padding-left: 30px;">在近端使用電腦儲存檔案, 最理想的情況是要利用 git 或 Fossil SCM 等分散式版次管理套件, 將各版本的內容進行提交並註記改版緣由之後, 再從近端推送到遠端.</p>
-<p style="padding-left: 30px;">使用分散式版次管理的目的</p>
-<p style="padding-left: 60px;">可以註記每次改版的提交者, 並能利用 git checkout 到先前的各版本</p>
-<p style="padding-left: 60px;">資料存一份在遠端, 避免因為近端電腦損毀而丟失資料.</p>
-<p style="padding-left: 30px;"></p>
-<br />Python << <a href='Python.html'>Previous</a> <a href='亂數分組.html'>Next</a> >> 亂數分組</div>
+    <div id="tipue_search_content">討論區 << <a href='討論區.html'>Previous</a> <a href='Computer.html'>Next</a> >> Computer<br /><h1>開發環境</h1>
+<p>利用隨身碟中的可攜程式環境</p>
+<p style="padding-left: 30px;">從 <a href="https://a.kmol.info:88">https://a.kmol.info:88</a> (只能從系上 IPv6 網段連接)下載</p>
+<p style="padding-left: 30px;">必須自行安裝所需模組與程式庫</p>
+<p style="padding-left: 30px;">必須自行配置加速硬體與操作系統程式庫</p>
+<p><a href="https://kaggle.com">https://kaggle.com</a></p>
+<p style="padding-left: 30px;">主要用於 Data Science 相關程式開發與競賽用</p>
+<p style="padding-left: 30px;">直接利用瀏覽器執行程式, 近端電腦無需安裝模組與套件</p>
+<p style="padding-left: 30px;">可以使用雲端硬體加速功能</p>
+<p style="padding-left: 30px;">可以多人協同編寫同一程式, 編寫的程式可以直接在網路上分享</p>
+<p><a href="https://colab.research.google.com">https://colab.research.google.com</a></p>
+<p style="padding-left: 30px;">直接利用瀏覽器執行程式, 近端電腦無需安裝模組與套件</p>
+<p style="padding-left: 30px;">可以使用 GPU 與 TPU 加速運算</p>
+<p style="padding-left: 30px;">可以多人協同編寫同一程式, 編寫的程式可以直接在網路上分享</p>
+<p style="padding-left: 30px;">colab <a href="https://colab.research.google.com/notebooks/basic_features_overview.ipynb">功能介紹</a></p>
+<p>透過網際 brython 環境</p>
+<p style="padding-left: 30px;"><a href="http://mde.tw/lab/content/Python.html">http://mde.tw/lab/content/Python.html</a> </p>
+<p style="padding-left: 30px;">僅支援部分 Python 功能</p>
+<p style="padding-left: 30px;">執行速度較 CPython 慢許多</p>
+<p></p>
+<p></p><br />討論區 << <a href='討論區.html'>Previous</a> <a href='Computer.html'>Next</a> >> Computer</div>
         
     <!-- footer -->
       <div class="container">
