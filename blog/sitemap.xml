@@ -5,91 +5,98 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://mdecourse.github.io/cp2020/blog/</loc>
-<lastmod>2020-09-14T09:06:06-00:00</lastmod>
+<lastmod>2020-09-29T11:34:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mdecourse.github.io/cp2020/blog/archives.html</loc>
-<lastmod>2020-09-14T09:06:06-00:00</lastmod>
+<lastmod>2020-09-29T11:34:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mdecourse.github.io/cp2020/blog/tags.html</loc>
-<lastmod>2020-09-14T09:06:06-00:00</lastmod>
+<lastmod>2020-09-29T11:34:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mdecourse.github.io/cp2020/blog/categories.html</loc>
-<lastmod>2020-09-14T09:06:06-00:00</lastmod>
+<lastmod>2020-09-29T11:34:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mdecourse.github.io/cp2020/blog/pages/about/</loc>
-<lastmod>2020-09-03T10:19:17+08:00</lastmod>
+<lastmod>2020-09-02T16:19:44+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://mdecourse.github.io/cp2020/blog/your-time-is-over.html</loc>
+<lastmod>2020-09-29T11:33:53+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mdecourse.github.io/cp2020/blog/computer-programming-for-mechanical-design-engineer.html</loc>
-<lastmod>2020-09-08T11:00:00+08:00</lastmod>
+<lastmod>2020-09-14T09:08:40+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mdecourse.github.io/cp2020/blog/use-git-for-file-management.html</loc>
-<lastmod>2020-09-01T11:00:00+08:00</lastmod>
+<lastmod>2020-09-02T16:19:44+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mdecourse.github.io/cp2020/blog/2020-Fall-Intro-to-computer-programming.html</loc>
-<lastmod>2020-08-13T11:00:00+08:00</lastmod>
+<lastmod>2020-09-02T16:19:44+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mdecourse.github.io/cp2020/blog/category/cp-mde.html</loc>
-<lastmod>2020-09-08T11:00:00+08:06</lastmod>
+<lastmod>2020-09-14T09:08:40+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mdecourse.github.io/cp2020/blog/category/git.html</loc>
-<lastmod>2020-09-01T11:00:00+08:06</lastmod>
+<lastmod>2020-09-02T16:19:44+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mdecourse.github.io/cp2020/blog/category/misc.html</loc>
-<lastmod>2020-08-13T11:00:00+08:06</lastmod>
+<lastmod>2020-09-29T11:33:53+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mdecourse.github.io/cp2020/blog/tag/2020fallcp.html</loc>
-<lastmod>2020-09-08T11:00:00+08:06</lastmod>
+<lastmod>2020-09-29T11:33:53+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://mdecourse.github.io/cp2020/blog/author/yen.html</loc>
-<lastmod>2020-09-08T11:00:00+08:06</lastmod>
+<lastmod>2020-09-29T11:33:53+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
