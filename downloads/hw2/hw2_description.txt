@@ -1,0 +1,13 @@
+HW2 問題描述:
+
+http://mde.tw/cp2020/content/W3.html 中各班分組學員的倉儲連結與網頁連結, 原先是假設 409, 408 與 406 開頭學員, 採學號登記 github 帳號, 407 與 405 學員以 s 加上學號作為 github 學號, 但實際上部分 409 學員的 github 學號帳號已經被登記, 且各年級的復學生可能並未依照當年的 github 帳號規定登記, 因此 W3.html 中的內容必須設法更改.
+
+另外, 從課程網頁中已知可以從教務處主機取出即時的學員資料, 但是格式為一整列, 各學號以 space 隔開, 而以 ethercalc 表單由學員輸入的 github 帳號, 則包含各學員學號與實際登錄的 github 帳號, 分為兩行, 各列資料以 tab 區隔, 若再加上 W3.html  中各班已經分組完成的數列, 請問如何以程式方法產生正確的 W3.html 中各學員的倉儲與網站連結.
+
+四技設一甲計算機程式學員名單:
+
+https://nfulist.herokuapp.com/?semester=1091&courseno=0762
+
+四技設一乙計算機程式學員名單:
+
+https://nfulist.herokuapp.com/?semester=1091&courseno=0776

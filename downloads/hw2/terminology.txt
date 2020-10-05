@@ -1,0 +1,20 @@
+read file
+重複迴圈
+空白隔開 (space)
+back slash \
+slash /
+\t == tab 隔開
+\n 跳行 next line
+列 row (左右) 3201 3202 3203
+行 column 柱子 (上下)
+3201
+3202
+3203
+duplicate 複製
+fatal: destination path 'cp2020' already exists and is not an empty directory.
+
+configuration file 設定檔案
+
+.git/config
+
+routine process 例行流程
