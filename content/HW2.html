@@ -1,0 +1,212 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>CP2020 Intro to Computer Programming</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>CP2020 計算機程式</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">CP2020 計算機程式</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='評分.html'>評分</a><li><a href='討論區.html'>討論區</a><li><a href='開發環境.html'>開發環境</a></li></ul><li class='has-children'><a href='Computer.html'>Computer</a><ul class='dropdown'><li><a href='PC Hardware.html'>PC Hardware</a><li class='has-children'><a href='PC Software.html'>PC Software</a><ul class='dropdown'><li><a href='C++.html'>C++</a><li><a href='API.html'>API</a></li></ul><li><a href='Logics and Proofs.html'>Logics and Proofs</a><li><a href='Media Programming.html'>Media Programming</a></li></ul><li class='has-children'><a href='Network.html'>Network</a><ul class='dropdown'><li><a href='SSH.html'>SSH</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li><a href='Video.html'>Video</a><li class='has-children'><a href='W1.html'>W1</a><ul class='dropdown'><li><a href='W1_list.html'>W1_list</a></li></ul><li class='has-children'><a href='W2.html'>W2</a><ul class='dropdown'><li><a href='程式語言.html'>程式語言</a></li></ul><li class='has-children'><a href='W3.html'>W3</a><ul class='dropdown'><li><a href='HW1.html'>HW1</a></li></ul><li class='has-children'><a href='W4-W9.html'>W4-W9</a><ul class='dropdown'><li><a href='HW2.html'>HW2</a></li></ul><li><a href='W10-W14.html'>W10-W14</a><li><a href='W15-W18.html'>W15-W18</a></li></ul><li class='has-children'><a href='Python.html'>Python</a><ul class='dropdown'><li><a href='工作流程.html'>工作流程</a><li><a href='亂數分組.html'>亂數分組</a><li><a href='Kaggle.html'>Kaggle</a><li class='has-children'><a href='Flask-Flutter.html'>Flask-Flutter</a><ul class='dropdown'><li><a href='cmsimde.html'>cmsimde</a><li><a href='pdf-project.html'>pdf-project</a><li><a href='nfu-project.html'>nfu-project</a></li></ul><li><a href='Heroku.html'>Heroku</a><li><a href='Machine Learning.html'>Machine Learning</a></li></ul><li><a href='Projects.html'>Projects</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">W4-W9 << <a href='W4-W9.html'>Previous</a> <a href='W10-W14.html'>Next</a> >> W10-W14<br /><h1>HW2</h1>
+<p>有關作業二:</p>
+<p style="padding-left: 30px;">由於部分學員在建立 Github 帳號時, 無法使用學號登記帳號, 因此造成 <a href="http://mde.tw/cp2020/content/W3.html">W3</a> 部分分組組員的倉儲與網站連結產生錯誤, 今已知乙班的原始分組數列如下:</p>
+<p style="padding-left: 30px;"><span>一乙:</span></p>
+<p style="padding-left: 30px;"><span>[[40823148, 40923203, 40923208, 40923209, 40923210, 40923223, 40923225, 40923230, 40923238, 40923239, 40923244, 40923249], [40523148, 40923201, 40923202, 40923218, 40923219, 40923228, 40923231, 40923232, 40923240, 40923247, 40923248, 40923250], [40823152, 40923205, 40923212, 40923214, 40923217, 40923226, 40923236, 40923241, 40923242, 40923246, 40923251], [40723217, 40728238, 40923206, 40923216, 40923220, 40923227, 40923233, 40923237, 40923243, 40923252, 40923253], [40523138, 40923204, 40923207, 40923211, 40923213, 40923221, 40923224, 40923229, 40923234, 40923235, 40923245]]</span></p>
+<p style="padding-left: 30px;">但是一甲的分組數列當時並未能儲存.</p>
+<p style="padding-left: 30px;">另外, 從亂數分組頁面可以從<a href="https://github.com/mdecourse/nfulist">教務處伺服器與 Heroku</a> 上的網站結合下取得兩班最終修課學員名單:</p>
+<p>四技設一甲計算機程式學員名單:</p>
+<p style="padding-left: 30px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762</a></p>
+<p>四技設一乙計算機程式學員名單:</p>
+<p style="padding-left: 30px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776</a></p>
+<p style="padding-left: 30px;">請各組以協同討論但各自將以下題目的解題流程說明與程式放入個人網頁的方式完成作業二.</p>
+<p style="padding-left: 30px;">作業二之一:</p>
+<p style="padding-left: 60px;"><span style="background-color: #ffff00;">請問該如何取得與上述一乙相同格式的一甲分組數列? 請詳細說明解題步驟後列出一甲的分組數列.</span></p>
+<p style="padding-left: 30px;">作業二之二:</p>
+<p style="padding-left: 60px;"><span style="background-color: #ffff00;">請問根據上述原始分組資料與最終教務處的選課學員名單, 兩班課程中是否有人加選或者退選? 請說明解題方法與結果.</span></p>
+<p style="padding-left: 30px;">作業二之三:</p>
+<p style="padding-left: 60px;"><span style="background-color: #ffff00;">從倉儲 <a href="https://github.com/mdecourse/cp2020/tree/master/downloads/hw2" style="background-color: #ffff00;">downloads/hw2</a> 目錄中可以找到兩班各學員實際登記 Github 的帳號資料, 例如: <a href="https://github.com/mdecourse/cp2020/blob/master/downloads/hw2/cpb_github_account.txt" style="background-color: #ffff00;">一乙學號與 Github 帳號對照表</a>, 請問該如何利用程式方法產生正確的 <a href="http://mde.tw/cp2020/content/W3.html" style="background-color: #ffff00;">W3</a> 網頁 html 資料?</span></p>
+<p></p>
+<h4>參考資料:</h4>
+<p style="padding-left: 30px;">變數: <a href="https://books.trinket.io/pfe/02-variables.html">https://books.trinket.io/pfe/02-variables.html</a> </p>
+<p style="padding-left: 30px;">條件式: <a href="https://books.trinket.io/pfe/03-conditional.html">https://books.trinket.io/pfe/03-conditional.html</a> </p>
+<p style="padding-left: 30px;">重複迴圈: <a href="https://books.trinket.io/pfe/05-iterations.html">https://books.trinket.io/pfe/05-iterations.html</a> </p>
+<p style="padding-left: 30px;">數列: <a href="https://books.trinket.io/pfe/08-lists.html">https://books.trinket.io/pfe/08-lists.html</a> </p>
+<p style="padding-left: 30px;">開啟檔案: <a href="https://books.trinket.io/pfe/07-files.html">https://books.trinket.io/pfe/07-files.html </a></p>
+<p style="padding-left: 30px;">超文件: <a href="https://www.w3schools.com/html/">https://www.w3schools.com/html/</a> </p>
+<p style="padding-left: 30px;">bs4: <a href="https://readthedocs.org/projects/beautiful-soup-4/downloads/pdf/latest/">https://readthedocs.org/projects/beautiful-soup-4/downloads/pdf/latest/</a> </p><br />W4-W9 << <a href='W4-W9.html'>Previous</a> <a href='W10-W14.html'>Next</a> >> W10-W14</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
