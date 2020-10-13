@@ -663,7 +663,8 @@ MathJax = {
 <p><a href="https://drive.google.com/file/d/1-WFEho0KiH5KE1EDFcNCnMuhnbDy-AaH/view?usp=sharing">9bw3cp_downlaod_v2_submodule_add_cmsimde.mp4</a></p>
 <p style="padding-left: 30px;">說明如何在系上從 <a href="http://a.kmol.info:88">http://a.kmol.info:88</a> 下載第二版的可攜程式環境</p>
 <p style="padding-left: 30px;">再次提醒 <a href="https://git-scm.com/docs/git-config">git config</a> 的用法, 包括 --global user.email, --global user.name 與 --global http.proxy</p>
-<p style="padding-left: 30px;">說明如何在近端利用執行 <a href="https://github.com/mdecourse/cmsimde/blob/master/up_dir/http-server.py">http-server.py</a> 檢視 <a href="https://github.com/mdecourse/cmsimde">CMSiMDE</a> 的靜態網頁</p><h2>W1</h2>
+<p style="padding-left: 30px;">說明如何在近端利用執行 <a href="https://github.com/mdecourse/cmsimde/blob/master/up_dir/http-server.py">http-server.py</a> 檢視 <a href="https://github.com/mdecourse/cmsimde">CMSiMDE</a> 的靜態網頁</p>
+<p style="padding-left: 30px;">說明當倉儲已經具有子模組則要從遠端 git clone 資料到近端, 必須使用 git clone --recurse-submodules URL.git 進行資料下載</p><h2>W1</h2>
 <p>每班按照學號使用固定電腦, 若電腦故障則必須在一週內負責告知助教, 並將電腦第三磁區複製回原始狀態, 若電腦硬體故障則需回報給助教設法請廠商進行維護, 期間則至使用最後一列備用電腦.</p>
 <p>準備在個人的電腦, 筆電或電腦輔助設計室中的電腦, 製作合用的可攜程式系統.</p>
 <p>W1 學員登入學校配發的 @gm 郵件帳號後,<span> </span><a href="https://forms.gle/3hfnf6D2QCemdDQn9">填寫基本資料</a></p>
@@ -897,7 +898,85 @@ for i in range(2, 12):
 <p>Genetic Algorithms:</p>
 <p><a href="https://link.springer.com/book/10.1007/978-1-4471-0577-0">https://link.springer.com/book/10.1007/978-1-4471-0577-0</a> (1999)</p><h2>W15-W18</h2>
 <p><span>分組總結報告</span></p>
-<h1>Python</h1>
+<h3>HW4</h3>
+<p>我們是否能夠透過 <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>, 將 <a href="http://mde.tw/cp2020/content/HW3.html">HW3</a> 所寫的程式轉為網際架構, 並且部署在 <a href="https://ubuntu.com/">Ubuntu</a> 20.04 與 <a href="https://www.heroku.com/">Heroku</a>?</p>
+<h4>參考:</h4>
+<p style="padding-left: 30px;"><a href="https://github.com/mdecourse/nfulist">https://github.com/mdecourse/nfulist</a></p>
+<p style="padding-left: 30px;">四技設一甲計算機程式學員名單:</p>
+<p style="padding-left: 60px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762</a></p>
+<p style="padding-left: 30px;">四技設一乙計算機程式學員名單:</p>
+<p style="padding-left: 60px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776</a></p>
+<p style="padding-left: 30px;"><a href="https://mde.tw/lab/blog/use-github-and-gitlab-pages.html">同步資料到 gitlab</a></p>
+<p style="padding-left: 30px;">用 <a href="https://www.authorea.com/">Authorea</a> 寫分組報告</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from flask import Flask, request 
+from flask_cors import CORS
+  
+import requests
+import bs4
+#import ssl
+  
+'''
+https://nfulist.herokuapp.com/?semester=1082&amp;courseno=0767
+cd
+2a 1082/0767
+2b 1082/0780
+  
+2a 1072/0777
+2b 1072/0790
+2a 1062/0788
+2a 1062/0802
+  
+wcm
+1082/0744
+  
+1072/0754
+1062/0765
+  
+wcmj
+1082/2418
+'''
+  
+app = Flask(__name__)
+CORS(app)
+  
+@app.route('/studlist')
+@app.route('/')
+def studlist():
+    semester = request.args.get('semester')
+    courseno = request.args.get('courseno')
+    if semester == None:
+        semester = '1082'
+    if courseno == None:
+        courseno = '0744'
+    
+    headers = {'X-Requested-With': 'XMLHttpRequest'}
+
+    url = 'https://qry.nfu.edu.tw/studlist_ajax.php'
+    post_var = {'pselyr': semester, 'pseqno': courseno}
+  
+    result = requests.post(url, data = post_var, headers = headers)
+    soup = bs4.BeautifulSoup(result.content, 'lxml')
+    table = soup.find('table', {'class': 'tbcls'})
+    data = []
+    rows = table.find_all('tr')
+    for row in rows:
+        cols = row.find_all('td')
+        cols = [ele.text.strip() for ele in cols]
+        data.append([ele for ele in cols if ele]) # Get rid of empty values
+    output = ""
+    for i in data[2:]:
+        #print(i[0])
+        output +=i[0] + "\n"
+    return output
+    #return  str(pselyr) + " + " +str(pseqno)
+  
+# 即使在近端仍希望以 https 模式下執行
+#context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+#context.load_cert_chain('localhost.crt', 'localhost.key')
+  
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=8080, debug=True)</pre>
+<p></p><h1>Python</h1>
 <p>Principles of Computation with Python:</p>
 <p style="padding-left: 30px;"><a href="https://oli.cmu.edu/courses/principles-of-computation-with-python-open-free/">https://oli.cmu.edu/courses/principles-of-computation-with-python-open-free/</a></p>
 <p><img alt="" class="add_border" height="891" src="/images/intro_programming_with_python.png" width="600"/></p>
@@ -917,8 +996,7 @@ for i in range(2, 12):
 <p>不同程式環境中的組態設定與功能差異</p>
 <p>其他參考教材:</p>
 <p style="padding-left: 30px;"><a href="https://www.py4e.com/">https://www.py4e.com/</a></p>
-<p style="padding-left: 30px;"><a href="https://automatetheboringstuff.com/">https://automatetheboringstuff.com/</a></p>
-<h2>工作流程</h2>
+<p style="padding-left: 30px;"><a href="https://automatetheboringstuff.com/">https://automatetheboringstuff.com/</a></p><h2>工作流程</h2>
 <p>建立 CP 2020 課程網頁</p>
 <ol>
 <li style="padding-left: 30px;">以 mdecourse 帳號登入 github.com</li>
