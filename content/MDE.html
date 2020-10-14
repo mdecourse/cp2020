@@ -1,116 +1,139 @@
-<h1>About</h1>
-<p>這裡是國立虎尾科技大學機械設計工程系大一的計算機程式課程網頁.</p>
-<p>CP2020 將在 <a href="https://kaggle.com">https://kaggle.com</a>, <a href="https://colab.research.google.com">https://colab.research.google.com</a> 以及可攜程式系統上進行.</p>
-<p>以下是 CP2020 課程進行流程:</p>
-<p style="padding-left: 30px;">W1 學員登入學校配發的 @gm 郵件帳號後, <a href="https://forms.gle/3hfnf6D2QCemdDQn9">填寫基本資料</a></p>
-<p style="padding-left: 30px;">W1 告知將利用 <a href="https://gitter.im/">Gitter</a> 進行課程議題討論 (其餘各種問題可以至 <a href="https://forum.eng.nfu.edu.tw">discourse</a> 討論)</p>
-<p style="padding-left: 60px;"><a href="https://gitter.im/mdecourse/cp2020">https://gitter.im/mdecourse/cp2020</a></p>
-<p style="padding-left: 60px;"><a href="https://forum.eng.nfu.edu.tw">https://forum.eng.nfu.edu.tw</a> </p>
-<p style="padding-left: 30px;">W1 就電腦軟硬體與網路環境的使用進行介紹</p>
-<p style="padding-left: 30px;">W2 學員建立 <a href="https://github.com/">Github</a>, <a href="https://gitlab.com">Gitlab,</a> <a href="https://www.heroku.com/">Heroku</a> 與 <a href="https://www.authorea.com/">Authorea</a> 帳號</p>
-<p style="padding-left: 60px;">Github: 各學員在學號帳號下建立 cp2020 倉儲.</p>
-<p style="padding-left: 60px;">Gitlab: 各學員將 cp2020 倉儲同步至 gitlab.</p>
-<p style="padding-left: 60px;">Heroku: 雲端應用程式系統, 可部署靜態網頁與網際 Python 程式.</p>
-<p style="padding-left: 60px;">Authorea: 各組用來編寫協同期末專案報告 pdf 檔案.</p>
-<p style="padding-left: 30px;"><span>W2</span> 學員利用 <a href="https://pages.github.com/">Github Pages</a> 與 <a href="https://github.com/mdecourse/cmsimde">CMSiMDE</a> 建立個人網頁</p>
-<p style="padding-left: 30px;">W2 學員學習如何利用 Git 與 Github 維護個人網頁</p>
-<p style="padding-left: 30px;">Ｗ3 統整 W1 與 W2 教材內容至各學員個人網頁</p>
-<p style="padding-left: 30px;">Ｗ3 完成亂數分組,  每班分成五組</p>
-<p style="padding-left: 30px;">W4 - W9 Python 基本語法與功能</p>
-<p style="padding-left: 30px;">Ｗ10 - W14 分組 Python 專案</p>
-<p style="padding-left: 30px;">Ｗ15 - W18 分組總結報告</p>
-<h4>電腦輔助設計室與協同設計室行事曆</h4>
-<p><a href="https://calendar.google.com/calendar/embed?src=mde.nfu.edu.tw_3439313938333136353439%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;mode=week&amp;src=mde.nfu.edu.tw_35303530373431313438%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;src=yen%40gm.nfu.edu.tw&amp;ctz=Asia%2FTaipei">全頁檢視</a></p>
-<p><iframe height="600" src="https://calendar.google.com/calendar/embed?src=mde.nfu.edu.tw_3439313938333136353439%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;mode=week&amp;src=mde.nfu.edu.tw_35303530373431313438%40resource.calendar.google.com&amp;ctz=Asia%2FTaipei&amp;src=yen%40gm.nfu.edu.tw&amp;ctz=Asia%2FTaipei" width="800"></iframe></p>
-<h2>評分</h2>
-<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdDN22BdIxF5IDiT9vnovehpFBBjmPVylJiLy19XoJxG0GMrA/viewform?usp=sf_link">計算機程式自評與互評表單</a> (每週課程結束後, 請登入 @gm 後填寫)</p>
-<p><img alt="" height="379" src="/images/feedback loop student-teacher interaction.png" width="800"/></p>
-<p>(上圖取自 https://link.springer.com/book/10.1007/978-3-642-03446-6)</p>
-<p>本課程的評分標準:</p>
-<ol>
-<li>從未遲到者得 10%</li>
-<li>從未缺席且從未無正當理由離席超過 15 分鐘者得 20%</li>
-<li>從未缺交各週作業且從未抄襲他人作業且從未不當引用網路資料者得 30%</li>
-<li>作業與報告內容充實, 每一項課程內容都拍攝具參考價值之教學影片者得 20%</li>
-<li>完成具體且創新之課程內容改進項目, 並能積極協助組員解決各種難題者得 10%</li>
-<li>個人之倉儲內容, 網頁, 網誌與簡報內容均令人嘆為觀止者得 10%</li>
-</ol>
-<p>根據上述課程評分標準, 由組員之自評成績決定課程期中成績, 視為本課程之學員期望成績, 期中考後, 則依據各週之組員自評成績, 組員互評成績與教師評分成績, 按照下列流程計算學員之學期成績.</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''
-根據評分表單中的 自評分數, 互評得分, 教師評分, 計算學員課程成績
-'''
-# diff 函式傳回兩輸入分數的絕對差值 
-def diff(分數1, 分數2):
-    return abs(分數1 - 分數2)
-     
-# getHigh函式傳回兩分數中較高者
-def getHigh(分數1, 分數2):
-    if  分數1 &gt; 分數2:
-        return 分數1
-    else:
-        return 分數2
+<!DOCTYPE html><html>
+        <head>
+        <title>CP2020 Intro to Computer Programming</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
 
-# getLow 函式傳回兩分數中較低者
-def getLow(分數1, 分數2):
-    if  分數1 &lt; 分數2:
-        return 分數1
-    else:
-        return 分數2
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
 
-# 分組評分函式取自評與教師評分比較, 若差距大於 5 分取其低者
-# 否則依自評 40%, 教師 60% 計算
-def 分組評分(自評分數, 教師評分):
-    return getLow(自評分數, 教師評分)
-    if diff(自評分數, 教師評分) &gt; 5:
-        return getLow(自評分數, 教師評分)
-    else:
-        return int(自評分數*0.4 + 教師評分*0.6)
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>CP2020 計算機程式</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">CP2020 計算機程式</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='評分.html'>評分</a><li><a href='討論區.html'>討論區</a><li><a href='開發環境.html'>開發環境</a><li class='has-children'><a href='MDE.html'>MDE</a><ul class='dropdown'><li><a href='Terminology.html'>Terminology</a></li></ul><li><a href='WCMS.html'>WCMS</a></li></ul><li class='has-children'><a href='Computer.html'>Computer</a><ul class='dropdown'><li><a href='PC Hardware.html'>PC Hardware</a><li class='has-children'><a href='PC Software.html'>PC Software</a><ul class='dropdown'><li><a href='C++.html'>C++</a><li><a href='API.html'>API</a></li></ul><li><a href='Logics and Proofs.html'>Logics and Proofs</a><li><a href='Media Programming.html'>Media Programming</a></li></ul><li class='has-children'><a href='Network.html'>Network</a><ul class='dropdown'><li><a href='SSH.html'>SSH</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li class='has-children'><a href='Video.html'>Video</a><ul class='dropdown'><li><a href='W1Video.html'>W1Video</a><li><a href='W2Video.html'>W2Video</a><li><a href='W3Video.html'>W3Video</a></li></ul><li class='has-children'><a href='W1.html'>W1</a><ul class='dropdown'><li><a href='W1_list.html'>W1_list</a></li></ul><li class='has-children'><a href='W2.html'>W2</a><ul class='dropdown'><li><a href='程式語言.html'>程式語言</a></li></ul><li class='has-children'><a href='W3.html'>W3</a><ul class='dropdown'><li><a href='HW1.html'>HW1</a></li></ul><li class='has-children'><a href='W4-W9.html'>W4-W9</a><ul class='dropdown'><li><a href='HW2.html'>HW2</a></li></ul><li class='has-children'><a href='W10-W14.html'>W10-W14</a><ul class='dropdown'><li><a href='HW3.html'>HW3</a></li></ul><li class='has-children'><a href='W15-W18.html'>W15-W18</a><ul class='dropdown'><li><a href='HW4.html'>HW4</a></li></li></ul></ul><li class='has-children'><a href='Python.html'>Python</a><ul class='dropdown'><li><a href='工作流程.html'>工作流程</a><li><a href='亂數分組.html'>亂數分組</a><li><a href='Kaggle.html'>Kaggle</a><li class='has-children'><a href='Flask-Flutter.html'>Flask-Flutter</a><ul class='dropdown'><li><a href='cmsimde.html'>cmsimde</a><li><a href='pdf-project.html'>pdf-project</a><li><a href='nfu-project.html'>nfu-project</a></li></ul><li><a href='Heroku.html'>Heroku</a><li><a href='Machine Learning.html'>Machine Learning</a></li></ul><li><a href='Projects.html'>Projects</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
 
-# 全班比分函式取互評與分組評分比較, 若差距小於 5 分取其高者
-# 否則依互評得分 40%, 分組評分 60% 計算     
-def 全班比分(互評得分, 分組評分):
-    if diff(互評得分, 分組評分) &lt; 5:
-        學員成績 = getHigh(互評得分, 分組評分)
-    else:
-        學員成績 = int(互評得分*0.4 + 分組評分*0.6)
-    return 學員成績
-
-# 學員之學期成績依照上述分組評分與全班比分函式計算 
-def 學員成績(自評分數, 互評得分, 教師評分):
-    學員課程成績 = 全班比分(互評得分, 分組評分(自評分數, 教師評分))
-    return 學員課程成績
-
-# 利用迴圈從 50 起每次增量 5 分, 分別列出各評分組合下的成績計算結果    
-for i in range(10):
-    self_score = 50 + i*5
-    for j in range(10):
-        peer_score = 50 + j*5
-        for k in range(10):
-            teacher_score = 50 + k*5
-            print(self_score, peer_score, teacher_score, "=", 學員成績(self_score, peer_score, teacher_score))</pre><h2>討論區</h2>
-<p><a href="https://gitter.im/mdecourse/cp2020">https://gitter.im/mdecourse/cp2020</a> (計算機程式課程相關)</p>
-<p><a href="https://forum.eng.nfu.edu.tw">https://forum.eng.nfu.edu.tw</a>  (其他議題)</p>
-<h2>開發環境</h2>
-<p>利用隨身碟中的可攜程式環境</p>
-<p style="padding-left: 30px;">從 <a href="http://a.kmol.info:88">http://a.kmol.info:88</a> (只能從系上 IPv6 網段連接)下載</p>
-<p style="padding-left: 30px;">必須自行安裝所需模組與程式庫</p>
-<p style="padding-left: 30px;">必須自行配置加速硬體與操作系統程式庫</p>
-<p><a href="https://kaggle.com">https://kaggle.com</a></p>
-<p style="padding-left: 30px;">主要用於 Data Science 相關程式開發與競賽用</p>
-<p style="padding-left: 30px;">直接利用瀏覽器執行程式, 近端電腦無需安裝模組與套件</p>
-<p style="padding-left: 30px;">可以使用雲端硬體加速功能</p>
-<p style="padding-left: 30px;">可以多人協同編寫同一程式, 編寫的程式可以直接在網路上分享</p>
-<p><a href="https://colab.research.google.com">https://colab.research.google.com</a></p>
-<p style="padding-left: 30px;">直接利用瀏覽器執行程式, 近端電腦無需安裝模組與套件</p>
-<p style="padding-left: 30px;">可以使用 GPU 與 TPU 加速運算</p>
-<p style="padding-left: 30px;">可以多人協同編寫同一程式, 編寫的程式可以直接在網路上分享</p>
-<p style="padding-left: 30px;">colab <a href="https://colab.research.google.com/notebooks/basic_features_overview.ipynb">功能介紹</a></p>
-<p>透過網際 brython 環境</p>
-<p style="padding-left: 30px;"><a href="http://mde.tw/lab/content/Python.html">http://mde.tw/lab/content/Python.html</a></p>
-<p style="padding-left: 30px;">僅支援部分 Python 功能</p>
-<p style="padding-left: 30px;">執行速度較 CPython 慢許多</p>
-<p></p>
-<p></p><h2>MDE</h2>
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">開發環境 << <a href='開發環境.html'>Previous</a> <a href='Terminology.html'>Next</a> >> Terminology<br /><h1>MDE</h1>
 <p>The following text taken from <a href="https://www.glassdoor.com">https://www.glassdoor.com</a>.</p>
 <p>Mechanical Design Engineer</p>
 <p>We design and manufacture advanced electric vehicles, battery packs, drive systems, and energy products that are changing the future of transportation and sustainable energy. We are building technically strong, fast-moving teams that pride themselves on superior execution.</p>
@@ -1089,1366 +1112,54 @@ for i in range(10):
 <p>Requirements</p>
 <p>Aligned with Tesla’s mission to accelerate the transition to sustainability.<br/>Ideally, 4-5 years’ experience designing high volume electronics products or appliances. Equivalent experience in high volume automotive hardware or lower volume power products (inverters, transformers, etc) is also acceptable.<br/>Deep understanding of the material science of components used in mechanical design (metals, insulators, plastics, connectors, gaskets, conductors etc).<br/>4-5 years’ experience using 3D mechanical design and analysis tools (CATIA v6, hyperworks experience preferred).<br/>Excellent communication skills.<br/>Ability to work in a fast-paced and challenging environment.</p>
 <p>Preferred</p>
-<p>Experience using CATIA v6 preferred but not required.<br/>Experience with DFMEA, DVP&amp;Rs, failure analysis, statistical control methods<br/>Knowledge of GD&amp;T, finite element analysis and design for reliability concepts.<br/>Working knowledge of Matlab, Labview, and Python.<br/>Experience with designing products that receive international safety certifications.<br/>Basic understanding of electrical design fundamentals.</p><h3>Terminology</h3>
-<p><span>sustainable energy</span></p>
-<p><span>full life cycle development of automated test equipment</span></p>
-<p><span>manufacturing test automation</span></p>
-<p><span>ultra-reliable testers</span></p>
-<p><span>unit defect detection capabilities</span></p>
-<p><span>initial equipment conceptual development</span></p>
-<p><span>carefully balance product specifications, process requirements, layout complexity, cost, and lead-time limits</span></p>
-<p><span>promptly release testers</span></p>
-<p><span>Modeling and testing for stress, thermal, fluid, and mechanical aspects of machines/components, that perform effectively while exposed to daily abuse of a manufacturing environment.</span></p>
-<p><span>documentation packages</span></p>
-<p><span>material science of components used in mechanical design (metals, insulators, plastics, connectors, gaskets, etc).</span></p>
-<p><span>FEA simulation</span></p>
-<p>GD&amp;T (Geometric Dimensioning and Tolerancing) <a href="https://en.wikipedia.org/wiki/Geometric_dimensioning_and_tolerancing">https://en.wikipedia.org/wiki/Geometric_dimensioning_and_tolerancing</a> </p>
-<p><span>electromagnetic</span></p>
-<p><span>mechanical power transmission components</span></p>
-<p><span>prototypes in bench and vehicle configurations</span></p>
-<p>CATIA: <a href="https://www.3ds.com/products-services/catia/">https://www.3ds.com/products-services/catia/</a> </p>
-<p><span></span></p><h2>WCMS</h2>
-<p><a href="https://github.com/mdecourse/wcms2018/issues/9">https://github.com/mdecourse/wcms2018/issues/9</a> </p><h1>Computer</h1>
-<p>請利用 @gm 帳號至下列連結登記自學帳號, 從中學習與計算機程式課程相關內容.</p>
-<p><a href="https://oli.cmu.edu/product-category/computer-science-programming-indep/">https://oli.cmu.edu/product-category/computer-science-programming-indep/</a> </p>
-<p>以下畫面以 50703199 At mde dot nfu dot edu dot tw 註冊取得.</p>
-<p><img alt="" class="add_border" height="778" src="/images/oli_cmu_computer_courses.png" width="800"/></p>
-<p>個人電腦軟硬體簡介</p>
-<p>軟體</p>
-<p>電腦操作系統</p>
-<p style="padding-left: 30px;">Windows</p>
-<p style="padding-left: 30px;">Linux</p>
-<p style="padding-left: 30px;">Mac OS</p>
-<p>分散式版次管理系統</p>
-<p style="padding-left: 30px;">近端</p>
-<p style="padding-left: 30px;">遠端</p>
-<p>網際內容管理 (Github 與 Heroku)</p>
-<p style="padding-left: 30px;">CMSiMDE</p>
-<p style="padding-left: 60px;">Pelican</p>
-<p style="padding-left: 60px;">Reveal.js</p>
-<p style="padding-left: 30px;">將包含 html 與 Javascript 的靜態網頁資料以 Github Pages, Gitlab Pages 或 Heroku 伺服</p>
-<p style="padding-left: 30px;">Python 網際程式透過 Flask 則可以部署到 <a href="https://www.heroku.com/">Heroku</a> 雲端主機</p>
-<h4>Reference</h4>
-<p style="padding-left: 30px;"><a href="/downloads/computer_programming_as_an_art_Knuth.pdf">Computer Programming as an Art Knuth.pdf</a></p>
-<p style="padding-left: 30px;"><a href="/downloads/KnuthTuringTranscript_2007.pdf">Interview_transcript_2007_Knuth.pdf</a></p>
-<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/vUJ01nRE7r0" width="560"></iframe><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/6msRtLtfzeA" width="560"></iframe></p>
-<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/3t42E44d5aY" width="560"></iframe></p><h2>PC Hardware</h2>
-<p><span>請利用 @gm 帳號至下列連結登記自學帳號, 從中學習與計算機程式課程相關內容.</span></p>
-<p><a href="https://oli.cmu.edu/courses/pc-hardware-open-free/">https://oli.cmu.edu/courses/pc-hardware-open-free/</a> </p>
-<h2>PC Software</h2>
-<p><span>請利用 @gm 帳號至下列連結登記自學帳號, 從中學習與計算機程式課程相關內容.</span></p>
-<p><a href="https://oli.cmu.edu/courses/pc-software-open-free/">https://oli.cmu.edu/courses/pc-software-open-free/</a> </p>
-<h3>C++</h3>
-<p>計算機程式主要說明 Python 解譯程式的用法, 但若要編譯 <a href="https://github.com/solvespace/solvespace">Solvespace</a>, <a href="https://www.scintilla.org/SciTEDownload.html">SciTE</a>, <a href="https://github.com/Range-Software/range3">Range3</a>, <a href="https://bellard.org/tcc/">Tiny C</a> 或要編寫 CoppeliaSim <a href="https://github.com/mdecourse/vrep-example">C++ Remote API 應用程式</a>, 就必須使用 C++ 鯿譯器.</p>
-<p>學習 C++ 可以使用線上編譯器:</p>
-<p style="padding-left: 30px;"><a href="http://cpp.sh/">http://cpp.sh/</a></p>
-<p style="padding-left: 30px;"><a href="https://ideone.com/">https://ideone.com/</a></p>
-<p style="padding-left: 30px;"><a href="https://rextester.com/">https://rextester.com/</a></p>
-<p style="padding-left: 30px;"><a href="https://www.jdoodle.com/online-compiler-c++/">https://www.jdoodle.com/online-compiler-c++/</a></p>
-<p style="padding-left: 30px;"><a href="https://www.onlinegdb.com/online_c++_compiler">https://www.onlinegdb.com/online_c++_compiler</a></p>
-<p style="padding-left: 30px;"><a href="https://www.tutorialspoint.com/compile_cpp_online.php">https://www.tutorialspoint.com/compile_cpp_online.php</a></p>
-<p style="padding-left: 30px;"><a href="https://www.programiz.com/cpp-programming/online-compiler/">https://www.programiz.com/cpp-programming/online-compiler/</a></p>
-<p>Ebooks: <a href="https://link.springer.com/book/10.1007/978-1-4842-3366-5">Beginning C++17.pdf</a></p>
-<p>在 Windows 10 64 位元下的可攜 C++ 編譯器: <a href="https://www.msys2.org/">https://www.msys2.org/</a></p>
-<p>登入 @gm 下載可攜 <a href="https://drive.google.com/file/d/16qdwyO3E6XGuQajaoCyw89eiIPTk_rqB/view?usp=sharing">Msys2_project_portable.7z</a> (3.6GB)</p>
-<h3>API</h3>
-<p>API 為 Application Programming Interface, 意即應用程式介面, 用於延伸特定程式套件的功能, 以 Google 所提供的雲端應用程式為例, 常見的 API 有 Google GMail API, Google Blogger API, Google Drive API 等, 而 Github 則提供 Github API.</p>
-<p>當使用者登入 GMail 帳號後, 連接至 <a href="https://console.developers.google.com">https://console.developers.google.com</a> 即可進入 Google 所有程式庫 API 的設定.</p>
-<h4>Google GMail API</h4>
-<p>Gmail Json to Token data</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import pickle
-from google_auth_oauthlib.flow import InstalledAppFlow
-from httplib2 import Http
-from googleapiclient.discovery import build
-
-creds = None
-SCOPES = 'https://www.googleapis.com/auth/gmail.send' # Allows sending only, not reading
-
-flow = InstalledAppFlow.from_client_secrets_file(
-    './../scrum1_gmail.json', SCOPES)
-creds = flow.run_local_server(port=0)
-# Save the credentials for the naext run
-with open('./../scrum1_gmail.pickle', 'wb') as token:
-    pickle.dump(creds, token)
-
-service = build('gmail', 'v1', credentials=creds)
-print(service)</pre>
-<p>send mail</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from email.mime.text import MIMEText
-from base64 import urlsafe_b64encode
-from httplib2 import Http
-from googleapiclient.discovery import build
-import pickle
-
-SENDER = "your_sender@domain_name"
-RECIPIENT = "your_recipient@domain_name"
-SUBJECT = "gmail api 寄信測試"
-CONTENT = ''' 這是文章內容, http://the.web.site'''
-
-creds = None
-with open('./../scrum1_gmail.pickle', 'rb') as token:
-    creds = pickle.load(token)
-service = build('gmail', 'v1', credentials=creds)
-
-# https://developers.google.com/gmail/api/guides/sending
-def create_message(sender, to, subject, message_text):
-  """Create a message for an email.
-
-  Args:
-    sender: Email address of the sender.
-    to: Email address of the receiver.
-    subject: The subject of the email message.
-    message_text: The text of the email message.
-
-  Returns:
-    An object containing a base64url encoded email object.
-  """
-  message = MIMEText(message_text)
-  message['to'] = to
-  message['from'] = sender
-  message['subject'] = subject
-  encoded_message = urlsafe_b64encode(message.as_bytes())
-  return {'raw': encoded_message.decode()}
-
-
-# https://developers.google.com/gmail/api/guides/sending
-def send_message(service, user_id, message):
-  """Send an email message.
-
-  Args:
-    service: Authorized Gmail API service instance.
-    user_id: User's email address. The special value "me"
-    can be used to indicate the authenticated user.
-    message: Message to be sent.
-
-  Returns:
-    Sent Message.
-  """
-  try:
-    message = (service.users().messages().send(userId=user_id, body=message)
-               .execute())
-    print('Message Id: %s' % message['id'])
-    return message
-  #except errors.HttpError, error:
-  except:
-    print('An error occurred: %s' % error)
-
-
-raw_msg = create_message(SENDER, RECIPIENT, SUBJECT, CONTENT)
-send_message(service, "me", raw_msg)</pre>
-<h4>Google Blogger API</h4>
-<p>Blogger Json to Token data</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># https://developers.google.com/blogger/docs/3.0/using
-# pip install google_auth_oauthlib
-# under Mac command + b to execute
-'''
-No module named 'googleapiclient'
-    pip install google-api-python-client 
-No module named 'google_auth_oauthlib'
-    pip install google_auth_oauthlib
-Add to Blogger need oauth2client
-    pip install oauth2client
-'''
-import pickle
-import os
-from googleapiclient.discovery import build
-from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
-
-
-SCOPES = ['https://www.googleapis.com/auth/blogger', ]
-
-# we check if the file tBo store the credentials exists
-if not os.path.exists('mdecourse_blogger_token.dat'):
-
-    flow = InstalledAppFlow.from_client_secrets_file('mdecourse_blogger_desktop.json', SCOPES)
-    credentials = flow.run_local_server()
-
-    with open('mdecourse_blogger_token.dat', 'wb') as credentials_dat:
-        pickle.dump(credentials, credentials_dat)
-else:
-    with open('mdecourse_blogger_token.dat', 'rb') as credentials_dat:
-        credentials = pickle.load(credentials_dat)
-service = build('blogger', 'v3', credentials=credentials)
-g.es(service)</pre>
-<p>add to mblogger</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">@language python
-from markdown import markdown
-from oauth2client import client
-#from googleapiclient import sample_tools
-import os
-# 配合使用 credential token
-import pickle
-from googleapiclient.discovery import build
-#from google_auth_oauthlib.flow import InstalledAppFlow
-#from google.auth.transport.requests import Request
-
-os.environ['TZ'] = 'Asia/Taipei'
-with open('./../../yen_gm_blogger_token.dat', 'rb') as credentials_dat:
-    credentials = pickle.load(credentials_dat)
-service = build('blogger', 'v3', credentials=credentials)
-
-def get_cat_tag_content(data):
-    # 請注意, 因為 data 來自 .md 的檔案 內容, 第1行為 ---
-    # 用跳行符號分割
-    data_list = data.split("\n")
-    #第 2 行為 title
-    title= data_list[1]
-    #第 4 行為 category
-    category = data_list[3]
-    #第 5 行為 tags
-    tags = data_list[4]
-    # 有多項資料的 content 型別為數列
-    # 再將第 9 行之後的資料數列串回成以跳行隔開的資料
-    content = "\n".join(data_list[8:])
-    # 先將截斷摘要與內文的 pelican md 檔按符號, 換成 Blogger 的 &lt;!--more--&gt;
-    content = content.replace('&lt;!-- PELICAN_END_SUMMARY --&gt;', '&lt;!--more--&gt;')
-    # 接著若內容有 ~~~python 與 ~~~ 則換成 Wordpress 格式
-    #content = content.replace('~~~python', '[code lang="python"]')
-    #content = content.replace('~~~', '[/code]')
-    return title, category, tags, content
-
-# 從目前所在節點的 body pan 中取出類別, tags 以及文章內容
-# p.h 為 @clean filename.md
-# 因為要使用 @clean 節點掛上為後的 blogger post_id, 因此改為讀 .md 檔案
-md_filename = p.h.split(" ")[1]
-with open(md_filename, 'r', encoding="utf-8") as content_file:
-    md_content = content_file.read()
-# title_str, category_str, tags_str, content = get_cat_tag_content(p.b)
-title_str, category_str, tags_str, content = get_cat_tag_content(md_content)
-category = category_str.split(":")[1]
-tags = tags_str.split(":")[1].split(",")
-tags.append(category)
-# title 是一個單獨的字串
-title = title_str.split(":")[1]
-# 將 markdown 格式 content 轉為 html
-content = markdown(content)
-# 以下處理 content 的 &lt;h2&gt; 標題
-content = content.replace("&lt;h2&gt;", "&lt;h2&gt;&lt;font size='4'&gt;")
-content = content.replace("&lt;/h2&gt;", "&lt;/font&gt;&lt;/h2&gt;")
-# g.es(content)
-
-try:
-    '''
-    users = service.users()
-    # 取得使用者 profile 資料
-    user = users.get(userId='self').execute()
-    print('網誌名稱: %s' % user['displayName'])
-    '''
-    blogs = service.blogs()
-    # 取得使用者所建立網誌名稱
-    blogs = blogs.listByUser(userId='self').execute()
-    # post_id is now blogs["items"][0]["id"]
-    #blog_id = blogs["items"][0]["id"]
-    blog_id = "7949497010793271992"
-    #for blog in blogs['items']:
-        #print(blog['name'], blog['url'])
-    posts = service.posts()
-    # 新增網誌 post 時, 需要 post_id
-    body = {
-    "kind": "blogger#post",
-    "id": blog_id,
-    "title": title,
-    # 利用 markdown 函式, 將 .md 的內文轉為 html, 作為 Blogger 的文章內容
-    "content": content,
-    "labels": tags
-    }
-    insert = posts.insert(blogId=blog_id, body=body)
-    posts_doc = insert.execute()
-    post_id = posts_doc["id"]
-    #print(posts_doc)
-    # 改用 credential token 後不會產生 blogger.dat
-    #os.remove("blogger.dat")
-    # 利用最後的 child 節點來儲存 post_id
-    to_save_post_id = p.insertAsLastChild()   
-    # 改為內文為空的節點, id 直接標在 head 標題 
-    to_save_post_id.b = ""
-    to_save_post_id.h = post_id
-    # 因為新增節點, commander 必須 redraw
-    c.redraw()
-    g.es("post_id 為", post_id)
-    g.es("已經將資料送往 MBlogger!")
-except(client.AccessTokenRefreshError):
-    g.es("error")
-
-</pre>
-<p>edit to mblogger</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">@language python
-from markdown import markdown
-from oauth2client import client
-#from googleapiclient import sample_tools
-import os
-# 配合使用 credential token
-import pickle
-from googleapiclient.discovery import build
-#from google_auth_oauthlib.flow import InstalledAppFlow
-#from google.auth.transport.requests import Request
-
-os.environ['TZ'] = 'Asia/Taipei'
-with open('./../../yen_gm_blogger_token.dat', 'rb') as credentials_dat:
-    credentials = pickle.load(credentials_dat)
-service = build('blogger', 'v3', credentials=credentials)
-
-def get_cat_tag_content(data):
-    # 請注意, 因為 data 來自 .md 的檔案 內容, 第1行為 ---
-    # 用跳行符號分割
-    data_list = data.split("\n")
-    #第 2 行為 title
-    title= data_list[1]
-    #第 4 行為 category
-    category = data_list[3]
-    #第 5 行為 tags
-    tags = data_list[4]
-    # 有多項資料的 content 型別為數列
-    # 再將第 9 行之後的資料數列串回成以跳行隔開的資料
-    content = "\n".join(data_list[8:])
-    # 先將截斷摘要與內文的 pelican md 檔按符號, 換成 Blogger 的 &lt;!--more--&gt;
-    content = content.replace('&lt;!-- PELICAN_END_SUMMARY --&gt;', '&lt;!--more--&gt;')
-    # 接著若內容有 ~~~python 與 ~~~ 則換成 Wordpress 格式
-    #content = content.replace('~~~python', '[code lang="python"]')
-    #content = content.replace('~~~', '[/code]')
-    return title, category, tags, content
-
-# 從目前所在節點的 body pan 中取出類別, tags 以及文章內容
-# p.h 為 @clean filename.md
-# 因為要使用 @clean 節點掛上為後的 blogger post_id, 因此改為讀 .md 檔案
-md_filename = p.h.split(" ")[1]
-with open(md_filename, 'r', encoding="utf-8") as content_file:
-    md_content = content_file.read()
-# title_str, category_str, tags_str, content = get_cat_tag_content(p.b)
-title_str, category_str, tags_str, content = get_cat_tag_content(md_content)
-category = category_str.split(":")[1]
-tags = tags_str.split(":")[1].split(",")
-tags.append(category)
-# title 是一個單獨的字串
-title = title_str.split(":")[1]
-# 將 markdown 格式 content 轉為 html
-content = markdown(content)
-# 以下處理 content 的 &lt;h2&gt; 標題
-content = content.replace("&lt;h2&gt;", "&lt;h2&gt;&lt;font size='4'&gt;")
-content = content.replace("&lt;/h2&gt;", "&lt;/font&gt;&lt;/h2&gt;")
-# g.es(content)
-
-try:
-    blogs = service.blogs()
-    # 取得使用者所建立網誌名稱
-    blogs = blogs.listByUser(userId='self').execute()
-    #blog_id = blogs["items"][0]["id"]
-    blog_id = "7949497010793271992"
-    # 設法取得原 post 的 id
-    postid_outline = p.getLastChild()
-    # 直接從標題取得 post 的 id 號碼
-    post_id = postid_outline.h
-    posts = service.posts()
-    # 更新網誌文章時的 body
-    body = {
-    "kind": "blogger#post",
-    "title": title,
-    "content": content
-    }
-    # need to save postId to outline head
-    update = posts.update(blogId=blog_id, postId=post_id, body=body, publish=True)
-    update_doc = update.execute()
-    # 使用 credential token 後, 無需刪除 blogger.dat
-    #os.remove("blogger.dat")
-    g.es("post_id 為", post_id)
-    g.es("已經將更新資料送往 M Blogger!")
-except(client.AccessTokenRefreshError):
-    g.es("error")
-</pre>
-<h4>Google Drive API</h4>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># for uploadToGDrive3
-# pip install google-api-python-client
-# https://github.com/googleapis/google-api-python-client
-import pickle
-from googleapiclient.discovery import build
-from apiclient.http import MediaFileUpload
-
-# for filegdupload
-import pickle
-import codecs
-import json
-
-# for use under wcm.kmol.info flask server
-
-def uploadToGdrive3(fileName, mimeType):
-    # get upload folder id
-    # GDrive 上 uploaded 目錄的 fileID
-    with open("./../gdrive_uploaded_id.txt", 'r') as content_file:
-        folderID = content_file.read()
-
-    creds = None
-    with open('./../gdrive_write_token.pickle', 'rb') as token:
-        creds = pickle.load(token)
-    # 讀進既有的 token, 建立 service
-    driveService = build('drive', 'v3', credentials=creds)
-
-    metadata = {
-        'name': fileName,
-        'mimeType': mimeType,
-        # 注意: 必須提供數列格式資料
-        'parents': [folderID]
-        }
-
-    filePath = _curdir + "/downloads/" + fileName
-    media = MediaFileUpload(filePath,
-                                            mimetype=mimeType,
-                                            chunksize=1024*1024,
-                                            resumable=True
-                                            )
-
-    gdFile = driveService.files().create(
-        body=metadata,
-        media_body=media,
-        fields='id'
-    ).execute()
-    fileID = gdFile.get("id")
-
-    return fileID
-</pre>
-<p><br/><br/></p>
-<h2>Logics and Proofs</h2>
-<p><span>請利用 @gm 帳號至下列連結登記自學帳號, 從中學習與計算機程式課程相關內容.</span></p>
-<p><a href="https://oli.cmu.edu/courses/logic-proofs-copy/">https://oli.cmu.edu/courses/logic-proofs-copy/</a></p>
-<h2>Media Programming</h2>
-<p><span>請利用 @gm 帳號至下列連結登記自學帳號, 從中學習與計算機程式課程相關內容.</span></p>
-<p><a href="https://oli.cmu.edu/courses/media-programming-copy/">https://oli.cmu.edu/courses/media-programming-copy/</a> </p>
-<h1>Network</h1>
-<p>Facebook: <a href="/downloads/facebook_go_ipv6_slides.pdf">the road to IPv6.pdf</a></p>
-<p>電腦網路系統與設定簡介</p>
-<p><img alt="" class="add_border" height="558" src="/images/routing_network_diagram.png" width="800"/></p>
-<p>校內網路設定</p>
-<p style="padding-left: 30px;">系網路</p>
-<p style="padding-left: 30px;">IPv4 與 IPv6</p>
-<p style="padding-left: 30px;">代理主機</p>
-<p>校外網路設定</p>
-<p style="padding-left: 30px;">VPN</p>
-<p style="padding-left: 60px;">下載安裝校方提供軟體</p>
-<p style="padding-left: 90px;">每半年認證一次</p>
-<p style="padding-left: 60px;">下載校方購買的電子書與期刊</p><h2>SSH</h2>
-<h4>SSH 網路連線加密機制</h4>
-<p>SSH 指 Secure SHell, 是一種網路連線加密機制, 當我們在 Mac OS 或 Linux 操作系統中的 Terminal 或 XTerm 時, 可以利用 ssh 帳號@遠端主機 ip 或符號名稱, 就可以輸入認證密碼, 登入到遠端主機.</p>
-<p>一般針對公開的 Github 倉儲, 任何人都可以直接透過 https 協定 clone 倉儲, 無需認證, 但是倉儲協同者若要從近端將改版資料送到 Github, 就必須通過認證, 假如採 https 協定, 則倉儲協同者在推送改版資料時, 必須提供帳號與密碼.</p>
-<p>除了 https 協定, Github 也接受倉儲的協同者以 SSH 連線的方式, git clone private 倉儲, 或以 SSH 連線的方式將近端改版資料推送到遠端倉儲.</p>
-<p>SSH 的連線加密機制依賴 private key 與 public key 之間的配對, 當使用者建立 SSH key pair 時, private key 必須保護在近端, 而 public key 則必須送到進行認證的遠端伺服器中.</p>
-<h4>建立 OpenSSH key pair</h4>
-<p>Github 伺服器所支援的 SSH 為 OpenSSH 檔案格式的協定, 因此使用者要送到 Github 伺服器上的 OpenSSH 格式 public key, 可以透過 portablegit 中的 sh.exe 進入 SHell, 然後利用以下指令建立採 <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">rsa</a> 加密演算法的 key pair:</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">ssh-keygen -t rsa -b 4096 -C "使用者學號"</pre>
-<p>在 -C 後的使用者學號字串, 會直接附加在 OpenSSH public key 檔案的最後端, 讓使用者得以辨識 public key 的對應使用者, 而所建立的 OpenSSH private key 則可以透過 puttygen 轉換為 putty 特有檔案格式.</p>
-<h4>Putty 作為 SSH 連線客戶端工具</h4>
-<p>Putty 套件可用於 Windows 與 Linux 操作系統, 可以讓使用者以 SSH 加密機制遠端登入到其他伺服器主機, 由於電腦輔助設計室電腦的第三磁區上課時會轉為純 IPv6 協定上網, 當使用者要將近端改版資料推送到遠端時, 由於 Github 至今仍只支援 IPv4 網路協定, 因此無論是以 https 或 ssh 方式連線, 都必須透過能同時支援 IPv4 與 IPv6 的代理主機.</p>
-<p>以 https 協定對 Github 連線的代理主機設定位於 home/.gitconfig, 而在 Windows 10 操作系統中採 SSH 對 Github 連線, 就必須將代理主機與 private key 的設定, 透過 Putty 完成.</p>
-<h4>以 SSH 協定與 Github 連線</h4>
-<p>1. 建立一對 OpenSSH key pair, private key 保留在近端, 將 public key 登記在 Github 所屬帳號設定中.</p>
-<p>2. 近端可攜系統啟動時, 必須確認已經設定</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">set GIT_SSH=%Disk%:\putty\plink.exe</pre>
-<p>表示 git 將透過 putty 工具以 ssh 加密協定對 Github 連線</p>
-<p>3. 在 Putty 中設定對 github.com ssh 時必須提供的 Proxy 代理主機設定與 Auth 認證所需的近端 private key, 而且必須利用 puttygen 將 OpenSSH 格式轉為 putty 檔案格式</p>
-<p>4. 無論在 git clone 或 git push (URL 位於倉儲 .git/config 中), URL 必須使用 <a href="mailto:git@github.com:帳號/倉儲名稱.git">git@github.com:帳號/倉儲名稱.git</a> 連線</p>
-<h1>Topics</h1>
-<p></p>
-<p><a href="/downloads/open_design_movement.pdf">Open Design Movement.pdf</a></p>
-<p><a href="/downloads/designing_open_engineering_systems.pdf">Designing Open Engineering Systems.pdf</a></p>
-<p><a href="/downloads/industry_4_workforce_for_tomorrow.pdf">Inductry 4.0 and Workforce for Tomorrow.pdf</a></p>
-<p style="padding-left: 30px;">Digitization is the transformation from analog to digital or digital<br/>representation of a physical item with the goal to digitize and<br/>automate processes or workflows.</p>
-<p style="padding-left: 30px;">Digital Business is the creation of new business designs by blurring<br/>the digital and physical worlds. It promises to usher in an<br/>unprecedented convergence of people, business and things that<br/>disrupts existing business models - even those born of the Internet<br/>and e-business eras.</p>
-<p style="padding-left: 30px;">Digital Transformation is the novel use of digital technology to solve<br/>traditional problems. These digital solutions enable - other than<br/>efficiency via automation - new types of innovation and creativity,<br/>rather than simply enhance and support traditional methods.<br/>Success is anchored in both digital business and digitization.</p>
-<p style="padding-left: 30px;">Interoperability: The ability of machines, devices, sensors, and<br/>people to connect and communicate with each other via the<br/>Internet of Things (IoT) or the Internet of People (IoP).</p>
-<p style="padding-left: 30px;">Information transparency: The ability of information systems to<br/>create a virtual copy of the physical world by enriching digital<br/>plant models with sensor data. This requires the aggregation of<br/>raw sensor data to higher-value context information.</p>
-<p style="padding-left: 30px;">Technical assistance: First, the ability of assistance systems to<br/>support humans by aggregating and visualizing information<br/>comprehensibly for making informed decisions and solving urgent<br/>problems on short notice. Second, the ability of cyber physical<br/>systems to physically support humans by conducting a range of<br/>tasks that are unpleasant, too exhausting, or unsafe for their<br/>human co-workers.</p>
-<p style="padding-left: 30px;">Decentralized decisions: The ability of cyber physical systems to<br/>make decisions on their own and to perform their tasks as<br/>autonomously as possible. Only in the case of exceptions,<br/>interferences, or conflicting goals, are tasks delegated to a higher<br/>level.</p>
-<p style="padding-left: 30px;">In addition to being able to adapt to advances in technology, the<br/>person needs to be able to communicate and relate to people (from<br/>different disciplines, cultures, values) who may not be co-located.<br/>Talent in a digitally transforming enterprise ($Talent_{dt}$) can loosely be<br/>expressed as follows:</p>
-<p style="padding-left: 30px;">$Talent_{dt} = Talent + Generative Learning$</p>
-<p style="padding-left: 30px;">Generative learning is learning that enhances our capacity to innovate<br/>and create. Foundational to it is the active integration of new ideas<br/>with the learner’s existing schemata.</p>
-<p style="padding-left: 30px;">We cannot teach people how to learn what is needed, unlearn what is<br/>no longer relevant and re-learn that which is still needed.<br/>We can provide an opportunity for people to learn by reflecting on<br/>doing (Experiential Learning).</p>
-<p><a href="/downloads/machine_learning_applications_for_furnace_control_and_process_optimization_in_steelmaking.pdf">Machine Learning Applications for Furnamce Control and Process Optimization in Steelmaking.pdf</a></p>
-<p>課程助教:</p>
-<p>40723150 (lead), 40723110, 40723115, 40723138, 40723148</p>
-<p>40723145 (lead), 40723102, 40723103, 40723153, 40723245</p>
-<p>40723212 (lead), 40723216, 40723223, 40723246</p>
-<p>負責事項:</p>
-<p>電腦輔助設計室電腦第三磁區系統維護</p>
-<p>每週四 19:00 - 21:00 在電腦輔助設計室為操作實習與助教協助回答問題時間</p>
-<script>
-MathJax = {
-    tex: {inlineMath: [['$', '$']]}
+<p>Experience using CATIA v6 preferred but not required.<br/>Experience with DFMEA, DVP&amp;Rs, failure analysis, statistical control methods<br/>Knowledge of GD&amp;T, finite element analysis and design for reliability concepts.<br/>Working knowledge of Matlab, Labview, and Python.<br/>Experience with designing products that receive international safety certifications.<br/>Basic understanding of electrical design fundamentals.</p><br />開發環境 << <a href='開發環境.html'>Previous</a> <a href='Terminology.html'>Next</a> >> Terminology</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
   };
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<h2>Video</h2>
-<p>本課程所有學員都必須熟悉利用下列工具製作電腦操作過程錄影並協同進行線上直播與錄影:</p>
-<h4 style="padding-left: 30px;"><a href="https://github.com/ShareX/ShareX/releases">ShareX</a></h4>
-<p style="padding-left: 60px;">課程進行中的所有操作細節都會利用 <a href="https://github.com/ShareX/ShareX/releases">ShareX</a> 進行錄影, 並將 mp4 影片檔案放入 <a href="https://drive.google.com/drive/folders/1FQ0cTvXYrLGvdjKfVIotB8oXR8o7EYwo?usp=sharing">cp2020 課程線上教學影片區</a>, 各學員可以直接利用電腦或手機觀看.</p>
-<h4 style="padding-left: 30px;"><a href="https://meet.google.com/">Google Meet</a></h4>
-<p style="padding-left: 60px;"><a href="https://meet.google.com/">https://meet.google.com/</a> 允許 @gm 用戶進行線上串流對談, 分享電腦操作畫面, 文字留言以及串流影音錄影等功能, 各分組學員必須熟悉如何操作並且在分組後每單數週, 利用 <a href="https://meet.google.com/">Google Meet</a> 進行線上會議討論與錄影存證.</p>
-<h4 style="padding-left: 30px;"><a href="https://www.youtube.com/">Youtube</a> + <a href="https://obsproject.com/">OBS</a></h4>
-<p style="padding-left: 60px;"><a href="https://obsproject.com/">OBS</a> 支援多元的電腦影音來源組合功能, 配合 <a href="https://www.youtube.com/">Youtube</a> 的線上串流直播與錄影功能, 可以讓不參與會議者以文字留言板進行互動或在線上觀看直播. <span>各分組學員必須熟悉如何操作並且在分組後每雙數週, 利用 <a href="https://www.youtube.com/">Youtube</a> + <a href="https://obsproject.com/">OBS</a> 進行線上會議討論與錄影存證.</span></p>
-<h4 style="padding-left: 30px;"><a href="https://www.debugmode.com/wink/download.htm">Wink</a></h4>
-<p style="padding-left: 60px;"><a href="https://www.debugmode.com/wink/download.htm">Wink</a> 是一套用來製作電腦操作流程說明用的工具, 之前 2.0 版本的輸出檔案為 Flash swf 檔案格式, 但因各瀏覽器將在 <a href="https://www.blog.google/products/chrome/saying-goodbye-flash-chrome/">2020 年底停止支援 Flash 播放功能</a>, 因此目前作者正在測試能夠透過 <a href="https://ffmpeg.org/">FFMPEG</a> 輸出 mp4 檔案的版本, 待其正式推出後將可用於課程教學中.</p>
-<p>以下為參考用的線上影片:</p>
-<h4>Deep Learning</h4>
-<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/r0Ogt-q956I" width="560"></iframe></p>
-<p>2016</p>
-<p>By 2020, the workplace will look very different from the one we see today. Companies will function in a vastly more <span style="background-color: #ffff00;">digitized environment</span>, but 30 percent of them will fail because there aren't enough workers with the skills to drive the <span style="background-color: #ffff00;">digital transformation</span> that companies need.</p>
-<p>Analysts are forecasting a global shortage of 38 million to 40 million college-educated workers, a gap that will affect advanced nations as well as emerging countries. And the length of tenure in a job is shortening as well. The average time a worker spends in one job has declined from five to seven years to only two to three years, widening the gap between supply and demand. This session will explore the critical changes that must be made to give workers the skills required in the workforce of tomorrow.</p>
-<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/nCcU_9oH0wE" width="560"></iframe></p>
-<p>2017</p>
-<p>In the eyes of top executives, their job is to imagine the future and work towards making that imagined future a reality. Many of the largest companies in the world are intent on embracing change and building pathways that lead to a robust workforce, innovation and job creation. Corporate leaders must pursue and encourage growth while also promoting values that reach beyond the bottom line.</p>
-<p>How do business leaders build and drive the workforce of the future? <br/>Change can be an amorphous concept; how should corporations define and pursue it? <br/>What are the most effective ways for CEOs and other top executives to combine growth and purpose to reflect workforce and corporate values and culture?</p>
-<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/VuExrq0ZGRI" width="560"></iframe></p>
-<p>2018</p>
-<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/TeBpABAMkYA" width="560"></iframe></p>
-<p>2019</p>
-<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/k9DqpyXDpY8" width="560"></iframe></p>
-<p>2020</p>
-<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/r202X3Kmius" width="560"></iframe></p>
-<h3>W1Video</h3>
-<p><a href="https://drive.google.com/file/d/1kAqQ5gIEiBpAwBTLY7PWnHFZWPFcotY5/view?usp=sharing">1bw1cp_cadlab_networking.mp4</a></p>
-<p style="padding-left: 30px;">說明綜一館八樓電腦輔助設計室上 <a href="http://mde.tw/lab/">KMOLab</a> 課程時如何採 IPv6 設定</p>
-<p style="padding-left: 30px;">為何要採用 IPv6 網路設定</p>
-<p style="padding-left: 30px;">如何設定 IPv4 與 IPv6 雙支援的代理主機</p>
-<p style="padding-left: 30px;">如何利用 ipconfig /all 查驗 Windows 10 網路設定結果</p>
-<p><a href="https://drive.google.com/file/d/1008tISrNfJXm5u457YPYUFYcRVcZ0EHj/view?usp=sharing">2bw1cp_course_introduction.mp4</a></p>
-<p style="padding-left: 30px;">計算機程式課程簡介</p>
-<p style="padding-left: 30px;">課程評分流程簡介</p>
-<p style="padding-left: 30px;">說明將使用 <a href="https://gitter.im/mdecourse/cp2020">https://gitter.im/mdecourse/cp2020</a> 收集並回答課程相關問題</p>
-<p style="padding-left: 30px;">說明將使用 <a href="https://oli.cmu.edu/product-category/computer-science-programming-indep/">https://oli.cmu.edu/product-category/computer-science-programming-indep/</a><span><span> 教材熟悉電腦硬體與軟體</span></span></p>
-<p style="padding-left: 30px;">說明如何利用 <a href="https://github.com/ShareX/ShareX/releases">ShareX</a> 錄製電腦操作過程</p>
-<p><a href="https://drive.google.com/file/d/19hFSj-9BNlmtRgsjAOOEgHdnbNlapkfm/view?usp=sharing">3aw1cp_sharex_github_introduction.mp4</a></p>
-<p style="padding-left: 30px;"><a href="https://docs.microsoft.com/en-us/sysinternals/downloads/zoomit">Zoomit</a> 工具介紹</p>
-<p style="padding-left: 30px;"><a href="https://www.7-zip.org/download.html">7zip</a> 工具介紹</p>
-<p style="padding-left: 30px;"><span>說明如何利用 </span><a href="https://github.com/ShareX/ShareX/releases">ShareX</a><span><span> </span>錄製電腦操作過程</span></p>
-<p style="padding-left: 30px;"><a href="http://a.kmol.info:88/">fall2020.7z</a> 下載與使用 (第一版未安裝 <a href="https://github.com/mdecourse/cmsimde">CMSiMDE</a> 所需模組)</p>
-<p style="padding-left: 30px;">介紹將在隨身系統, <a href="https://www.kaggle.com/mdecourse/notebooks">Kaggle</a> 與 <a href="https://colab.research.google.com/">colab</a> 環境學習 <a href="https://docs.python.org/3/">Python</a></p>
-<p style="padding-left: 30px;"><span>說明將使用 </span><a href="https://oli.cmu.edu/product-category/computer-science-programming-indep/">https://oli.cmu.edu/product-category/computer-science-programming-indep/</a><span><span> 教材熟悉電腦硬體與軟體</span></span></p>
-<h3>W2Video</h3>
-<p><a href="https://drive.google.com/file/d/1YnrfYftnrG7B3wp_FmiOS-bHndmF7-49/view?usp=sharing">4bw2cp_random_grouping.mp4</a></p>
-<p style="padding-left: 30px;">利用線上程式進行亂數分組</p>
-<p style="padding-left: 30px;">說明亂數分組程式牽涉教務處主機, <a href="https://www.heroku.com/">Heroku</a> 雲端主機以及 <a href="https://dart.dev/">Dart</a> 轉 Javascript 等三個程式</p>
-<p style="padding-left: 30px;">上課的資料將同步到 <a href="https://github.com/">Github</a> 與 <a href="https://gitlab.com/">Gitlab</a>, 主要目的在建立資料保全的習慣</p>
-<p style="padding-left: 30px;">亂數分組程式假設各組員能夠採用學號作為 Github 帳號</p>
-<p style="padding-left: 30px;">說明針對規律型的超文件資料, 可以採用計算機重複迴圈建立所需的資料</p>
-<p style="padding-left: 30px;">說明在系上可以從 <a href="http://a.kmol.info:88">http://a.kmol.info:88</a> 主機下載所需的資料</p>
-<p style="padding-left: 30px;">說明在 Windows 命令列指令的基本用法</p>
-<p style="padding-left: 30px;">說明如何在近端啟動 <a href="https://github.com/mdecourse/cmsimde">CMSiMDE</a> 動態網頁系統, 目的是進行網站內容的編輯</p>
-<p><a href="https://drive.google.com/file/d/1eqBXHABLUNanNzUUSRPLXmfeLFfIpOUY/view?usp=sharing">5bw2cp_repo_cmsimde.mp4</a></p>
-<p style="padding-left: 30px;">利用 50703199 帳號 demo <a href="https://github.com/mdecourse/cmsimde">CMSiMDE</a> 建立 <a href="https://pages.github.com/">Github Pages</a> 網站的做法</p>
-<p style="padding-left: 30px;">Demo 如何對 Github 倉儲改名</p>
-<p style="padding-left: 30px;">說明與可攜系統 start.bat 有關的<a href="https://www.tutorialspoint.com/batch_script/batch_script_overview.htm">批次檔案指令</a></p>
-<p style="padding-left: 30px;">說明 Windows 資料夾與隱藏檔案的檢視設定</p>
-<p style="padding-left: 30px;">說明 <a href="https://git-scm.com/docs/git-clone">git clone</a> 以及 <a href="https://git-scm.com/docs/git-submodule">git submodule add</a> 的用法, 目的在利用 <a href="https://github.com/mdecourse/cmsimde">CMSiMDE</a> 建立個人網站</p>
-<p style="padding-left: 30px;">說明 <a href="https://git-scm.com/docs/git-config">git config</a> 用法</p>
-<p><a href="https://drive.google.com/file/d/1W7SJCi5IJ5XLxuPcqaPvqiU538fDUnSQ/view?usp=sharing">6bw2cp_github_pages.mp4</a></p>
-<p style="padding-left: 30px;">說明 <a href="https://git-scm.com/docs/git-branch">Git 分支</a>用法, 並將個人 cp2020 倉儲的 master 設為 Github Pages 網頁的根目錄</p>
-<p style="padding-left: 30px;">說明 <a href="https://pages.github.com/">Github Pages</a> 網址與帳號之間的關聯</p>
-<p style="padding-left: 30px;">說明近端 <a href="https://github.com/mdecourse/cmsimde">CMSiMDE</a> 子模組新增後必須將 <a href="https://github.com/mdecourse/cmsimde/tree/master/up_dir">up_dir</a> 資料複製到倉儲根目錄的用法</p>
-<p style="padding-left: 30px;">說明如何在近端利用 <a href="https://github.com/mdecourse/cmsimde">CMSiMDE</a><span><span> </span></span>動態網站管理網站內容</p>
-<p style="padding-left: 30px;">說明如何將動態網頁轉成靜態網頁並 git add, git commit , git push 到遠端 Github 主機</p>
-<p><a href="https://drive.google.com/file/d/1XQuA4TossgadnqybaqogrqQhUgXv47ep/view?usp=sharing">7aw2cp_kaggle_python.mp4</a></p>
-<p style="padding-left: 30px;">nslookup 用法說明</p>
-<p style="padding-left: 30px;">說明如何在 <a href="https://www.kaggle.com/mdecourse/notebooks">Kaggle</a><span><span> 以及近端可攜程式環境, 利用 Python 編寫累加程式</span></span></p>
-<p style="padding-left: 30px;"></p><h3>W3Video</h3>
-<p><a href="https://drive.google.com/file/d/1U3-rTZ9Dkp3uontS0vqo8sMecpKUJQ_A/view?usp=sharing">8bw3cp_how_to_deal_with_vacant_repository.mp4</a></p>
-<p style="padding-left: 30px;">說明如何處理 <a href="https://github.com/">Github</a> 空倉儲與近端倉儲間的資料連結設定</p>
-<p style="padding-left: 30px;">Windows path 命令與指令搜尋間的關係及用法</p>
-<p style="padding-left: 30px;">Windows 批次命令 echo 的用法</p>
-<p style="padding-left: 30px;">說明 <a href="https://git-scm.com/docs/git-init">git init</a>, <a href="https://git-scm.com/docs/git-remote">git remote add</a>, 以及 <a href="https://git-scm.com/docs/git-push">git push -u</a> 的用法</p>
-<p style="padding-left: 30px;">說明 Windows 中如何修改將隱藏檔案與目錄檢視設定</p>
-<p style="padding-left: 30px;">利用 Git 倉儲近端工作目錄與遠端倉儲之間同步進行資料保全</p>
-<p style="padding-left: 30px;">說明對 Github 採 https 與 SSH 協定的語法差異</p>
-<p style="padding-left: 30px;">git push --set-upstream 的簡寫為 git push -u</p>
-<p><a href="https://drive.google.com/file/d/1-WFEho0KiH5KE1EDFcNCnMuhnbDy-AaH/view?usp=sharing">9bw3cp_downlaod_v2_submodule_add_cmsimde.mp4</a></p>
-<p style="padding-left: 30px;">說明如何在系上從 <a href="http://a.kmol.info:88">http://a.kmol.info:88</a> 下載第二版的可攜程式環境</p>
-<p style="padding-left: 30px;">再次提醒 <a href="https://git-scm.com/docs/git-config">git config</a> 的用法, 包括 --global user.email, --global user.name 與 --global http.proxy</p>
-<p style="padding-left: 30px;">說明如何在近端利用執行 <a href="https://github.com/mdecourse/cmsimde/blob/master/up_dir/http-server.py">http-server.py</a> 檢視 <a href="https://github.com/mdecourse/cmsimde">CMSiMDE</a> 的靜態網頁</p>
-<p style="padding-left: 30px;">說明當倉儲已經具有子模組則要從遠端 git clone 資料到近端, 必須使用 git clone --recurse-submodules URL.git 進行資料下載</p><h2>W1</h2>
-<p>每班按照學號使用固定電腦, 若電腦故障則必須在一週內負責告知助教, 並將電腦第三磁區複製回原始狀態, 若電腦硬體故障則需回報給助教設法請廠商進行維護, 期間則至使用最後一列備用電腦.</p>
-<p>準備在個人的電腦, 筆電或電腦輔助設計室中的電腦, 製作合用的可攜程式系統.</p>
-<p>W1 學員登入學校配發的 @gm 郵件帳號後,<span> </span><a href="https://forms.gle/3hfnf6D2QCemdDQn9">填寫基本資料</a></p>
-<p>W1 告知將利用<span> </span><a href="https://gitter.im/">Gitter</a><span> </span>進行課程議題討論 (其餘各種問題可以至 <a href="https://forum.eng.nfu.edu.tw/">discourse</a> 討論)</p>
-<p style="padding-left: 30px;"><a href="https://gitter.im/mdecourse/cp2020">https://gitter.im/mdecourse/cp2020</a> </p>
-<p style="padding-left: 30px;"><a href="https://forum.eng.nfu.edu.tw">https://forum.eng.nfu.edu.tw</a> </p>
-<p>W1 就電腦軟硬體與網路環境的使用進行介紹</p>
-<p style="padding-left: 30px;">上課時將以 50703199 At mde dot nfu dot edu dot tw <a href="https://oli.cmu.edu/product-category/computer-science-programming-indep/">登入</a>介紹</p>
-<p>W1 登入 @gm 帳號後, 可以直接利用 <a href="https://kaggle.com">https://kaggle.com</a> 中的 Notebook 執行 Python 程式</p>
-<p style="padding-left: 30px;">在 Kaggle 中啟用 GPU 與網路連線需要利用手機門號驗證, 而且一個門號只能驗證一個帳號</p>
-<p style="padding-left: 30px;"><a href="https://www.kaggle.com/mdecourse/cp2020">https://www.kaggle.com/mdecourse/cp2020</a> </p>
-<p style="padding-left: 30px;"><a href="https://www.kaggle.com/mdecourse/ml2020">https://www.kaggle.com/mdecourse/ml2020</a> </p>
-<p>Notice: 一甲 9/24 (四) 下午要補 10/2 中秋節連假的課程時段</p><h3>W1_list</h3>
-<p>1. 基本資料填了沒? <a href="https://forms.gle/3hfnf6D2QCemdDQn9">填寫基本資料</a></p>
-<p>2. 會不會進入 <a href="https://kaggle.com">https://kaggle.com</a>  利用 Python Notebook 練習 Python 程式?</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">var1 = 1
-var2 = 1.01
-var3 = "integer"
-var4 = "float number"
-_var5 = "Hello"
-print(_var5 + "," + str(var1) + " is an " + var3 + ".")</pre>
-<p>3. 操作發生問題, 知不知道去哪裡問?</p>
-<p style="padding-left: 30px;"><a href="https://gitter.im/mdecourse/cp2020">https://gitter.im/mdecourse/cp2020</a> </p>
-<p style="padding-left: 30px;"><a href="https://forum.eng.nfu.edu.tw">https://forum.eng.nfu.edu.tw</a> </p>
-<p style="padding-left: 30px;">提問題之前要先看看 <a href="https://drive.google.com/drive/folders/1FQ0cTvXYrLGvdjKfVIotB8oXR8o7EYwo?usp=sharing">cp2020 課程線上教學影片區</a> 中的教學影片有沒有相關內容, 看完教學影片是否將重點整理在自己的紙本筆記中?  有沒有逐步養成與組員協同找答案的習慣?</p>
-<p>4. 各小組有沒有準備開始在線上利用 <a href="https://meet.google.com/">Meet</a> 或 <a href="https://www.youtube.com/">Youtube</a> + <a href="https://obsproject.com/">OBS</a> 開每週小組討論會議?</p>
-<p style="padding-left: 30px;"><a href="https://meet.google.com/">Google Meet</a></p>
-<p style="padding-left: 60px;"><a href="https://meet.google.com/">https://meet.google.com/</a> 允許 @gm 用戶進行線上串流對談, 分享電腦操作畫面, 文字留言以及串流影音錄影等功能, 各分組學員必須熟悉如何操作並且在分組後每單數週, 利用 <a href="https://meet.google.com/">Google Meet</a> 進行線上會議討論與錄影存證.</p>
-<p style="padding-left: 30px;"><a href="https://www.youtube.com/">Youtube</a> + <a href="https://obsproject.com/">OBS</a></p>
-<p style="padding-left: 60px;"><a href="https://obsproject.com/">OBS</a> 支援多元的電腦影音來源組合功能, 配合 <a href="https://www.youtube.com/">Youtube</a> 的線上串流直播與錄影功能, 可以讓不參與會議者以文字留言板進行互動或在線上觀看直播. <span>各分組學員必須熟悉如何操作並且在分組後每雙數週, 利用 <a href="https://www.youtube.com/">Youtube</a> + <a href="https://obsproject.com/">OBS</a> 進行線上會議討論與錄影存證.</span></p>
-<p>5. 知不知道什麼時候 HW1 due? Github Pages 建起來之後, 趕快進行.</p>
-<p style="padding-left: 30px;"><a href="http://mde.tw/cp2020/content/W3.html">http://mde.tw/cp2020/content/W3.html</a> </p>
-<p style="padding-left: 30px;">知不知道 HW2 也規劃好了?</p>
-<p></p><h2>W2</h2>
-<p>W2 學員建立<span> </span><a href="https://github.com/">Github</a>,<span> </span><a href="https://gitlab.com">Gitlab,</a><span> </span><a href="https://www.heroku.com/">Heroku</a><span> </span>與<span> </span><a href="https://www.authorea.com/">Authorea</a><span> </span>帳號</p>
-<p><span>W2</span><span> </span>學員利用 Github Pages 與 CMSiMDE 建立個人網頁</p>
-<p>W2 學員學習如何利用 Git 與 Github 維護個人網頁</p>
-<h4>下載可攜 Python 套件</h4>
-<p>在電腦輔助設計室可以利用 IPv6 協定至 <a href="http://a.kmol.info:88">http://a.kmol.info:88</a> 下載課程相關檔案.</p>
-<p>下載 <a href="https://drive.google.com/file/d/1fKXXLc2P7hQb3spsmD1HM9Uljy3gvcMc/view?usp=sharing">fall2020_cp.7z</a> 壓縮檔案之後, 直接利用 7zip 解開壓縮, 然後在 64 位元 Windows 10 啟動 start.bat, 就可以直接在 SciTE 編輯器中解譯 Python 程式, 而且可以利用 pip 工具安裝所需的 Python 模組之後, 接下來必須:</p>
-<ol>
-<li>了解如何自己建立與 fall2020_cp.7z 相同功能的可攜 Python 套件</li>
-<li>了解如何在可攜套件中加入 portablegit, sharex, putty 等工具, 並學習如何使用</li>
-<li>了解如何在 github 以 submodule (或不以 submodule) 建立 cmsimde 倉儲</li>
-<li>了解如何在近端維護 CMSiMDE 內容管理系統</li>
-</ol>
-<h4>for 重複迴圈的應用</h4>
-<p>接下來要在頁面中插入 11 張圖, 希望寬度為 600 且 img 屬性加入 add_border.</p>
-<p>第一張圖以手動方式插入後, 手動進入 html 編輯, 加入 class="add_border" 屬性後, 取得插入圖檔的 html 如下:</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;p&gt;&lt;img class="add_border" height="342" src="/images/1_cp_git_and_cmsimde.png" width="600"&gt;&lt;/p&gt;</pre>
-<p>隨後的 10 張圖希望利用 Python 迴圈產生後再從 html 編輯插入.</p>
-<p><img class="add_border" height="342" src="/images/1_cp_git_and_cmsimde.png" width="600"/></p>
-<p><img class="add_border" height="342" src="/images/2_cp_git_and_cmsimde.png" width="600"/></p>
-<p><img class="add_border" height="342" src="/images/3_cp_git_and_cmsimde.png" width="600"/></p>
-<p><img class="add_border" height="342" src="/images/4_cp_git_and_cmsimde.png" width="600"/></p>
-<p><img class="add_border" height="342" src="/images/5_cp_git_and_cmsimde.png" width="600"/></p>
-<p><img class="add_border" height="342" src="/images/6_cp_git_and_cmsimde.png" width="600"/></p>
-<p><img class="add_border" height="342" src="/images/7_cp_git_and_cmsimde.png" width="600"/></p>
-<p><img class="add_border" height="342" src="/images/8_cp_git_and_cmsimde.png" width="600"/></p>
-<p><img class="add_border" height="342" src="/images/9_cp_git_and_cmsimde.png" width="600"/></p>
-<p><img class="add_border" height="342" src="/images/10_cp_git_and_cmsimde.png" width="600"/></p>
-<p><img class="add_border" height="342" src="/images/11_cp_git_and_cmsimde.png" width="600"/></p>
-<p>上述利用迴圈插入具有規律的字串程式碼為:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''
-參考用的 html 字串為
-&lt;p&gt;&lt;img class="add_border" height="342" src="/images/1_cp_git_and_cmsimde.png" width="600"&gt;&lt;/p&gt;
-'''
-firstSegment = '''&lt;p&gt;&lt;img class="add_border" height="342" src="/images/'''
-
-secondSegment = '''_cp_git_and_cmsimde.png" width="600"&gt;&lt;/p&gt;'''
-
-for i in range(2, 12):
-    print(firstSegment + str(i) + secondSegment)</pre>
-<p>其於 SciTE 編輯器執行畫面:</p>
-<p><img alt="" class="add_border" height="398" src="/images/cp_w2_python_for_loop_application1.png" width="600"/></p>
-<p>請問, 當成功以 <a>https://localhost:9443</a> 對 CMSiMDE 動態網站連線時出現以下畫面, 代表甚麼意思?</p>
-<p><img alt="" class="add_border" height="297" src="/images/https_9443_panic.png" width="600"/></p>
-<p>當我們成功完成 CMSiMDE 動態網站內容, 且利用  generate_pages 按鈕轉為靜態網站資料後, 要利用 git 指令新增提交退送時, 碰到以下問題:</p>
-<p><img alt="" class="add_border" height="354" src="/images/cp_git_config_user_email_name.png" width="600"/></p>
-<p>接著配合畫面中的提示, 利用 git config 指令操作結束後, 接著嘗試以 git push 將改版資料推送到遠端, 結果又出現下列畫面:</p>
-<p><img alt="" class="add_border" height="354" src="/images/cp_push_rejected_need_git_pull.png" width="600"/></p>
-<p>根據提示, 以 git pull 拉下遠端與近端的差異資料後, 又出現下列畫面, 因為提示中拉下的資料與 Leo Editor 有關, 因此在命令列視窗中輸入 leo, 試著開啟 Leo Editor, 結果出現的小視窗無論如何操作都會落入重複迴圈, 於是在 y:\home\.leo 目錄中, 以 SciTE 編輯器建立一個 .leoID.txt 檔案, 內容為任何字串, 然後以 stop.bat 關閉可攜系統之後, 再以 start.bat 開啟系統, 終於能夠開啟 Leo Editor, 並利用 git push 將近端資料成功送到 github.</p>
-<p><img alt="" class="add_border" height="423" src="/images/cp_doing_git_pull.png" width="600"/></p>
-<ol>
-<li>請問, git config --global 指令執行成功後, 這些設定會存在哪裡?</li>
-<li>另外假如我們不是使用可攜程式套件而是使用電腦輔助設計室中電腦所安裝的 Python 以及 git, 但是卻想在其他用戶所存放的 git config identity 中, 提交屬於自己帳號下的 comment, 該如何操作?</li>
-<li>上述的流程設定, 必須每一次推送時都輸入 github 所登錄的帳號與密碼, 假如在協同者面前輸入帳號密碼時, 其他人都一直盯著我的鍵盤看, 該如何是好?</li>
-<li>上述在 git push 之前需要 git pull 的原因是甚麼?</li>
-<li>上述 Leo Editor 啟動時, 為何會進入重複迴圈?</li>
-<li>CMSiMDE 是用甚麼程式語言建立的?</li>
-<li>CMSiMDE 為什麼有動態網站與靜態網站的設計?</li>
-<li>假如每一班都配給一台 Ubuntu 20.04 的伺服器, 可以配置與 Windows 10 相同的程式環境嗎? 假如我使用 MacBook 筆電也可以嗎?</li>
-</ol><h3>程式語言</h3>
-<h4>Python</h4>
-<h4>Python Official Documentation:</h4>
-<p style="padding-left: 30px;"><a href="https://docs.python.org/3/">https://docs.python.org/3/</a></p>
-<h4>Kaggle Hello Python:</h4>
-<p><a href="https://www.kaggle.com/colinmorris/hello-python">https://www.kaggle.com/colinmorris/hello-python</a></p>
-<h4>Principles of Computation with Python:</h4>
-<p style="padding-left: 30px;"><a href="https://oli.cmu.edu/courses/principles-of-computation-with-python-open-free/">https://oli.cmu.edu/courses/principles-of-computation-with-python-open-free/</a></p>
-<p><img alt="" class="add_border" height="891" src="/images/intro_programming_with_python.png" width="600"/></p>
-<h4>Javascript</h4>
-<p style="padding-left: 30px;"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></p>
-<h4>Flutter</h4>
-<p style="padding-left: 30px;"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></p>
-<h4>Lua</h4>
-<p style="padding-left: 30px;"><a href="https://www.lua.org/start.html">https://www.lua.org/start.html</a> </p>
-<h4>C<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"></a></h4>
-<p style="padding-left: 30px;"><a href="https://bellard.org/tcc/">https://bellard.org/tcc/</a> </p>
-<h4>C++</h4>
-<p style="padding-left: 30px;"><a href="https://gcc.gnu.org/">https://gcc.gnu.org/</a> </p>
-<p style="padding-left: 30px;"></p>
-<p></p>
-<p></p>
-<p></p><h2>W3</h2>
-<p>Ｗ3 統整 W1 與 W2 教材內容至各學員個人網頁</p>
-<p>Ｗ3 完成<a href="http://mde.tw/cp2020/content/%E4%BA%82%E6%95%B8%E5%88%86%E7%B5%84.html">亂數分組</a>,  每班分成五組</p>
-<p>1a</p>
-<p><br/>group 1 <br/>Repository: <a href="https://github.com/40923102/cp2020">40923102</a> | Site: <a href="https://40923102.github.io/cp2020">40923102</a><br/>Repository: <a href="https://github.com/40923103/cp2020">40923103</a> | Site: <a href="https://40923103.github.io/cp2020">40923103</a><br/>Repository: <a href="https://github.com/40923117/cp2020">40923117</a> | Site: <a href="https://40923117.github.io/cp2020">40923117</a><br/>Repository: <a href="https://github.com/40923119/cp2020">40923119</a> | Site: <a href="https://40923119.github.io/cp2020">40923119</a><br/>Repository: <a href="https://github.com/40923123/cp2020">40923123</a> | Site: <a href="https://40923123.github.io/cp2020">40923123</a><br/>Repository: <a href="https://github.com/40923127/cp2020">40923127</a> | Site: <a href="https://40923127.github.io/cp2020">40923127</a><br/>Repository: <a href="https://github.com/40923131/cp2020">40923131</a> | Site: <a href="https://40923131.github.io/cp2020">40923131</a><br/>Repository: <a href="https://github.com/40923133/cp2020">40923133</a> | Site: <a href="https://40923133.github.io/cp2020">40923133</a><br/>Repository: <a href="https://github.com/40923141/cp2020">40923141</a> | Site: <a href="https://40923141.github.io/cp2020">40923141</a><br/>Repository: <a href="https://github.com/40923144/cp2020">40923144</a> | Site: <a href="https://40923144.github.io/cp2020">40923144</a><br/>Repository: <a href="https://github.com/40923148/cp2020">40923148</a> | Site: <a href="https://40923148.github.io/cp2020">40923148</a><br/>Repository: <a href="https://github.com/40923149/cp2020">40923149</a> | Site: <a href="https://40923149.github.io/cp2020">40923149</a><br/> ==============================<br/>group 2 <br/>Repository: <a href="https://github.com/40623219/cp2020">40623219</a> | Site: <a href="https://40623219.github.io/cp2020">40623219</a><br/>Repository: <a href="https://github.com/40923101/cp2020">40923101</a> | Site: <a href="https://40923101.github.io/cp2020">40923101</a><br/>Repository: <a href="https://github.com/40923104/cp2020">40923104</a> | Site: <a href="https://40923104.github.io/cp2020">40923104</a><br/>Repository: <a href="https://github.com/40923107/cp2020">40923107</a> | Site: <a href="https://40923107.github.io/cp2020">40923107</a><br/>Repository: <a href="https://github.com/40923115/cp2020">40923115</a> | Site: <a href="https://40923115.github.io/cp2020">40923115</a><br/>Repository: <a href="https://github.com/40923124/cp2020">40923124</a> | Site: <a href="https://40923124.github.io/cp2020">40923124</a><br/>Repository: <a href="https://github.com/40923125/cp2020">40923125</a> | Site: <a href="https://40923125.github.io/cp2020">40923125</a><br/>Repository: <a href="https://github.com/40923136/cp2020">40923136</a> | Site: <a href="https://40923136.github.io/cp2020">40923136</a><br/>Repository: <a href="https://github.com/40923142/cp2020">40923142</a> | Site: <a href="https://40923142.github.io/cp2020">40923142</a><br/>Repository: <a href="https://github.com/40923151/cp2020">40923151</a> | Site: <a href="https://40923151.github.io/cp2020">40923151</a><br/>Repository: <a href="https://github.com/40923152/cp2020">40923152</a> | Site: <a href="https://40923152.github.io/cp2020">40923152</a><br/> ==============================<br/>group 3 <br/>Repository: <a href="https://github.com/s40723154/cp2020">40723154</a> | Site: <a href="https://s40723154.github.io/cp2020">40723154</a><br/>Repository: <a href="https://github.com/40828127/cp2020">40828127</a> | Site: <a href="https://40828127.github.io/cp2020">40828127</a><br/>Repository: <a href="https://github.com/40923106/cp2020">40923106</a> | Site: <a href="https://40923106.github.io/cp2020">40923106</a><br/>Repository: <a href="https://github.com/40923108/cp2020">40923108</a> | Site: <a href="https://40923108.github.io/cp2020">40923108</a><br/>Repository: <a href="https://github.com/40923118/cp2020">40923118</a> | Site: <a href="https://40923118.github.io/cp2020">40923118</a><br/>Repository: <a href="https://github.com/40923120/cp2020">40923120</a> | Site: <a href="https://40923120.github.io/cp2020">40923120</a><br/>Repository: <a href="https://github.com/40923126/cp2020">40923126</a> | Site: <a href="https://40923126.github.io/cp2020">40923126</a><br/>Repository: <a href="https://github.com/40923128/cp2020">40923128</a> | Site: <a href="https://40923128.github.io/cp2020">40923128</a><br/>Repository: <a href="https://github.com/40923138/cp2020">40923138</a> | Site: <a href="https://40923138.github.io/cp2020">40923138</a><br/>Repository: <a href="https://github.com/40923145/cp2020">40923145</a> | Site: <a href="https://40923145.github.io/cp2020">40923145</a><br/>Repository: <a href="https://github.com/40923150/cp2020">40923150</a> | Site: <a href="https://40923150.github.io/cp2020">40923150</a><br/> ==============================<br/>group 4 <br/>Repository: <a href="https://github.com/s40727216/cp2020">40727216</a> | Site: <a href="https://s40727216.github.io/cp2020">40727216</a><br/>Repository: <a href="https://github.com/s40727219/cp2020">40727219</a> | Site: <a href="https://s40727219.github.io/cp2020">40727219</a><br/>Repository: <a href="https://github.com/40923113/cp2020">40923113</a> | Site: <a href="https://40923113.github.io/cp2020">40923113</a><br/>Repository: <a href="https://github.com/40923114/cp2020">40923114</a> | Site: <a href="https://40923114.github.io/cp2020">40923114</a><br/>Repository: <a href="https://github.com/40923116/cp2020">40923116</a> | Site: <a href="https://40923116.github.io/cp2020">40923116</a><br/>Repository: <a href="https://github.com/40923121/cp2020">40923121</a> | Site: <a href="https://40923121.github.io/cp2020">40923121</a><br/>Repository: <a href="https://github.com/40923129/cp2020">40923129</a> | Site: <a href="https://40923129.github.io/cp2020">40923129</a><br/>Repository: <a href="https://github.com/40923137/cp2020">40923137</a> | Site: <a href="https://40923137.github.io/cp2020">40923137</a><br/>Repository: <a href="https://github.com/40923140/cp2020">40923140</a> | Site: <a href="https://40923140.github.io/cp2020">40923140</a><br/>Repository: <a href="https://github.com/40923146/cp2020">40923146</a> | Site: <a href="https://40923146.github.io/cp2020">40923146</a><br/>Repository: <a href="https://github.com/40923147/cp2020">40923147</a> | Site: <a href="https://40923147.github.io/cp2020">40923147</a><br/> ==============================<br/>group 5 <br/>Repository: <a href="https://github.com/40923105/cp2020">40923105</a> | Site: <a href="https://40923105.github.io/cp2020">40923105</a><br/>Repository: <a href="https://github.com/40923109/cp2020">40923109</a> | Site: <a href="https://40923109.github.io/cp2020">40923109</a><br/>Repository: <a href="https://github.com/40923110/cp2020">40923110</a> | Site: <a href="https://40923110.github.io/cp2020">40923110</a><br/>Repository: <a href="https://github.com/40923111/cp2020">40923111</a> | Site: <a href="https://40923111.github.io/cp2020">40923111</a><br/>Repository: <a href="https://github.com/40923122/cp2020">40923122</a> | Site: <a href="https://40923122.github.io/cp2020">40923122</a><br/>Repository: <a href="https://github.com/40923130/cp2020">40923130</a> | Site: <a href="https://40923130.github.io/cp2020">40923130</a><br/>Repository: <a href="https://github.com/40923134/cp2020">40923134</a> | Site: <a href="https://40923134.github.io/cp2020">40923134</a><br/>Repository: <a href="https://github.com/40923135/cp2020">40923135</a> | Site: <a href="https://40923135.github.io/cp2020">40923135</a><br/>Repository: <a href="https://github.com/40923139/cp2020">40923139</a> | Site: <a href="https://40923139.github.io/cp2020">40923139</a><br/>Repository: <a href="https://github.com/40923143/cp2020">40923143</a> | Site: <a href="https://40923143.github.io/cp2020">40923143</a><br/>Repository: <a href="https://github.com/40923153/cp2020">40923153</a> | Site: <a href="https://40923153.github.io/cp2020">40923153</a></p>
-<p>1b</p>
-<p>group 1 <br/>Repository: <a href="https://github.com/40823148/cp2020">40823148</a> | Site: <a href="https://40823148.github.io/cp2020">40823148</a><br/>Repository: <a href="https://github.com/40923203/cp2020">40923203</a> | Site: <a href="https://40923203.github.io/cp2020">40923203</a><br/>Repository: <a href="https://github.com/40923208/cp2020">40923208</a> | Site: <a href="https://40923208.github.io/cp2020">40923208</a><br/>Repository: <a href="https://github.com/40923209/cp2020">40923209</a> | Site: <a href="https://40923209.github.io/cp2020">40923209</a><br/>Repository: <a href="https://github.com/40923210/cp2020">40923210</a> | Site: <a href="https://40923210.github.io/cp2020">40923210</a><br/>Repository: <a href="https://github.com/40923223/cp2020">40923223</a> | Site: <a href="https://40923223.github.io/cp2020">40923223</a><br/>Repository: <a href="https://github.com/40923225/cp2020">40923225</a> | Site: <a href="https://40923225.github.io/cp2020">40923225</a><br/>Repository: <a href="https://github.com/40923230/cp2020">40923230</a> | Site: <a href="https://40923230.github.io/cp2020">40923230</a><br/>Repository: <a href="https://github.com/40923238/cp2020">40923238</a> | Site: <a href="https://40923238.github.io/cp2020">40923238</a><br/>Repository: <a href="https://github.com/40923239/cp2020">40923239</a> | Site: <a href="https://40923239.github.io/cp2020">40923239</a><br/>Repository: <a href="https://github.com/40923244/cp2020">40923244</a> | Site: <a href="https://40923244.github.io/cp2020">40923244</a><br/>Repository: <a href="https://github.com/40923249/cp2020">40923249</a> | Site: <a href="https://40923249.github.io/cp2020">40923249</a><br/> ==============================<br/>group 2 <br/>Repository: <a href="https://github.com/s40523148/cp2020">40523148</a> | Site: <a href="https://s40523148.github.io/cp2020">40523148</a><br/>Repository: <a href="https://github.com/40923201/cp2020">40923201</a> | Site: <a href="https://40923201.github.io/cp2020">40923201</a><br/>Repository: <a href="https://github.com/40923202/cp2020">40923202</a> | Site: <a href="https://40923202.github.io/cp2020">40923202</a><br/>Repository: <a href="https://github.com/40923218/cp2020">40923218</a> | Site: <a href="https://40923218.github.io/cp2020">40923218</a><br/>Repository: <a href="https://github.com/40923219/cp2020">40923219</a> | Site: <a href="https://40923219.github.io/cp2020">40923219</a><br/>Repository: <a href="https://github.com/40923228/cp2020">40923228</a> | Site: <a href="https://40923228.github.io/cp2020">40923228</a><br/>Repository: <a href="https://github.com/40923231/cp2020">40923231</a> | Site: <a href="https://40923231.github.io/cp2020">40923231</a><br/>Repository: <a href="https://github.com/40923232/cp2020">40923232</a> | Site: <a href="https://40923232.github.io/cp2020">40923232</a><br/>Repository: <a href="https://github.com/40923240/cp2020">40923240</a> | Site: <a href="https://40923240.github.io/cp2020">40923240</a><br/>Repository: <a href="https://github.com/40923247/cp2020">40923247</a> | Site: <a href="https://40923247.github.io/cp2020">40923247</a><br/>Repository: <a href="https://github.com/40923248/cp2020">40923248</a> | Site: <a href="https://40923248.github.io/cp2020">40923248</a><br/>Repository: <a href="https://github.com/40923250/cp2020">40923250</a> | Site: <a href="https://40923250.github.io/cp2020">40923250</a><br/> ==============================<br/>group 3 <br/>Repository: <a href="https://github.com/40823152/cp2020">40823152</a> | Site: <a href="https://40823152.github.io/cp2020">40823152</a><br/>Repository: <a href="https://github.com/40923205/cp2020">40923205</a> | Site: <a href="https://40923205.github.io/cp2020">40923205</a><br/>Repository: <a href="https://github.com/40923212/cp2020">40923212</a> | Site: <a href="https://40923212.github.io/cp2020">40923212</a><br/>Repository: <a href="https://github.com/40923214/cp2020">40923214</a> | Site: <a href="https://40923214.github.io/cp2020">40923214</a><br/>Repository: <a href="https://github.com/40923217/cp2020">40923217</a> | Site: <a href="https://40923217.github.io/cp2020">40923217</a><br/>Repository: <a href="https://github.com/40923226/cp2020">40923226</a> | Site: <a href="https://40923226.github.io/cp2020">40923226</a><br/>Repository: <a href="https://github.com/40923236/cp2020">40923236</a> | Site: <a href="https://40923236.github.io/cp2020">40923236</a><br/>Repository: <a href="https://github.com/40923241/cp2020">40923241</a> | Site: <a href="https://40923241.github.io/cp2020">40923241</a><br/>Repository: <a href="https://github.com/40923242/cp2020">40923242</a> | Site: <a href="https://40923242.github.io/cp2020">40923242</a><br/>Repository: <a href="https://github.com/40923246/cp2020">40923246</a> | Site: <a href="https://40923246.github.io/cp2020">40923246</a><br/>Repository: <a href="https://github.com/40923251/cp2020">40923251</a> | Site: <a href="https://40923251.github.io/cp2020">40923251</a><br/> ==============================<br/>group 4 <br/>Repository: <a href="https://github.com/s40723217/cp2020">40723217</a> | Site: <a href="https://s40723217.github.io/cp2020">40723217</a><br/>Repository: <a href="https://github.com/s40728238/cp2020">40728238</a> | Site: <a href="https://s40728238.github.io/cp2020">40728238</a><br/>Repository: <a href="https://github.com/40923206/cp2020">40923206</a> | Site: <a href="https://40923206.github.io/cp2020">40923206</a><br/>Repository: <a href="https://github.com/40923216/cp2020">40923216</a> | Site: <a href="https://40923216.github.io/cp2020">40923216</a><br/>Repository: <a href="https://github.com/40923220/cp2020">40923220</a> | Site: <a href="https://40923220.github.io/cp2020">40923220</a><br/>Repository: <a href="https://github.com/40923227/cp2020">40923227</a> | Site: <a href="https://40923227.github.io/cp2020">40923227</a><br/>Repository: <a href="https://github.com/40923233/cp2020">40923233</a> | Site: <a href="https://40923233.github.io/cp2020">40923233</a><br/>Repository: <a href="https://github.com/40923237/cp2020">40923237</a> | Site: <a href="https://40923237.github.io/cp2020">40923237</a><br/>Repository: <a href="https://github.com/40923243/cp2020">40923243</a> | Site: <a href="https://40923243.github.io/cp2020">40923243</a><br/>Repository: <a href="https://github.com/40923252/cp2020">40923252</a> | Site: <a href="https://40923252.github.io/cp2020">40923252</a><br/>Repository: <a href="https://github.com/40923253/cp2020">40923253</a> | Site: <a href="https://40923253.github.io/cp2020">40923253</a><br/> ==============================<br/>group 5 <br/>Repository: <a href="https://github.com/s40523138/cp2020">40523138</a> | Site: <a href="https://s40523138.github.io/cp2020">40523138</a><br/>Repository: <a href="https://github.com/40923204/cp2020">40923204</a> | Site: <a href="https://40923204.github.io/cp2020">40923204</a><br/>Repository: <a href="https://github.com/40923207/cp2020">40923207</a> | Site: <a href="https://40923207.github.io/cp2020">40923207</a><br/>Repository: <a href="https://github.com/40923211/cp2020">40923211</a> | Site: <a href="https://40923211.github.io/cp2020">40923211</a><br/>Repository: <a href="https://github.com/40923213/cp2020">40923213</a> | Site: <a href="https://40923213.github.io/cp2020">40923213</a><br/>Repository: <a href="https://github.com/40923221/cp2020">40923221</a> | Site: <a href="https://40923221.github.io/cp2020">40923221</a><br/>Repository: <a href="https://github.com/40923224/cp2020">40923224</a> | Site: <a href="https://40923224.github.io/cp2020">40923224</a><br/>Repository: <a href="https://github.com/40923229/cp2020">40923229</a> | Site: <a href="https://40923229.github.io/cp2020">40923229</a><br/>Repository: <a href="https://github.com/40923234/cp2020">40923234</a> | Site: <a href="https://40923234.github.io/cp2020">40923234</a><br/>Repository: <a href="https://github.com/40923235/cp2020">40923235</a> | Site: <a href="https://40923235.github.io/cp2020">40923235</a><br/>Repository: <a href="https://github.com/40923245/cp2020">40923245</a> | Site: <a href="https://40923245.github.io/cp2020">40923245</a></p>
-<p>unordered list:</p>
-<p>[[40823148, 40923203, 40923208, 40923209, 40923210, 40923223, 40923225, 40923230, 40923238, 40923239, 40923244, 40923249], [40523148, 40923201, 40923202, 40923218, 40923219, 40923228, 40923231, 40923232, 40923240, 40923247, 40923248, 40923250], [40823152, 40923205, 40923212, 40923214, 40923217, 40923226, 40923236, 40923241, 40923242, 40923246, 40923251], [40723217, 40728238, 40923206, 40923216, 40923220, 40923227, 40923233, 40923237, 40923243, 40923252, 40923253], [40523138, 40923204, 40923207, 40923211, 40923213, 40923221, 40923224, 40923229, 40923234, 40923235, 40923245]]</p>
-<h3>HW1</h3>
-<h4>有關作業一:</h4>
-<p style="padding-left: 30px;">電腦能做什麼? 在充分了解與電腦硬體及軟體相關英文術語的涵義與功能之後, 就能體會現代人的知識學習已經離不開電腦與網路, 因為它們已經無所不在.</p>
-<p style="padding-left: 30px;">電腦與網路結合下的科技社會, 工程師扮演著透過創新設計建立新產品與服務的重要角色, 學會如何編寫程式與電腦溝通, 並透過網路通訊進行協同設計應該是工程師必備的專業技能.</p>
-<p style="padding-left: 30px;">各組員進行作業一之前, 必須先檢查是否已經有一個 USB 3.0 規格以上 64 GB 的隨身碟, 是否已經學會如何利用 <a href="https://github.com/mdecourse/cmsimde">CMSiMDE</a> 管理自己的網站內容, 各組是否已經學會使用 meet 與 Youtube + OBS 進行每週的分組線上會議?</p>
-<p>作業一 (Due. 各班第八週上課之前)：</p>
-<p style="padding-left: 30px;">請各組員至 <a href="https://oli.cmu.edu/product-category/computer-science-programming-indep/">https://oli.cmu.edu/product-category/computer-science-programming-indep/</a> 以 @gm 電子郵箱登記帳號後, 分別閱讀 PC Hardware Unit 1-5 與<a href="https://oli.cmu.edu/product-category/computer-science-programming-indep/">https://oli.cmu.edu/product-category/computer-science-programming-indep/</a> 教材內容, 各組員將所分配到的章節內容以英文及中文對照的方式, 配合電腦輔助設計室中的電腦與網路配置或操作心得, 將圖文與參考資料放入個人 cp2020 網頁, 之後再設法整合至各組分組網頁中 (由組長負責建立 cp2020ag1, a 為甲班, b 為乙班, g1 代表第一組).</p>
-<p>PC Hardware</p>
-<p style="padding-left: 30px;">UNIT 1: Succeeding in PC Hardware <br/>UNIT 2: Hardware Basics <br/> PCH 1: The Basics<br/> PCH 2: Procedures and Safety<br/> PCH 3: Customer Relations<br/>UNIT 3: Hardware Components <br/> PCH 4: Cases, Form Factors, and Power Supplies<br/> PCH 5: Motherboards, Expansion Buses, and Processors<br/> PCH 6: Memory and BIOS<br/> PCH 7: Expansion Cards, Audio, Video, and Storage<br/> PCH 8: Cooling<br/>UNIT 4: Networking and Internet <br/> PCH 9: Networking Overview<br/> PCH 10: Networking Hardware<br/> PCH 11: Networking Media<br/> PCH 12: Ethernet Standards<br/> PCH 13: IPv4 and IPv6 Addresses<br/> PCH 14: TCP and UDP Protocols<br/> PCH 15: Introduction to Wireless Networking<br/> PCH 16: Internet Connectivity<br/>UNIT 5: Notebooks and Laptops <br/> PCH 17: Notebook Features and Components<br/> PCH 18: Laptop and Notebook Component Replacement<br/> PCH 19: Notebook Power and Physical Security</p>
-<p>PC Software</p>
-<p style="padding-left: 30px;">UNIT 1: Succeeding in PC Software <br/>UNIT 2: Windows Operating Systems <br/> PCS 1: Windows Operating System<br/> PCS 2: Installing Windows<br/> PCS 3: Operating System Comparison<br/> PCS 4: Other Operating Systems<br/>UNIT 3: Software Utilities <br/> PCS 5: The Command Line<br/> PCS 6: Task Manager<br/> PCS 7: Disk Management<br/> PCS 8: Introduction to Control Panel Utilities<br/> PCS 9: Windows 10 Control Panel Utilities<br/>UNIT 4: Networking, Maintenance, and Security <br/> PCS 10: Networking Setup<br/> PCS 11: Preventative Maintenance<br/> PCS 12: Security Settings<br/> PCS 13: Virtualization<br/> PCS 14: Prevention Methods<br/> PCS 15: Threats and Practices<br/> PCS 16: Data Destruction and Disposal<br/> PCS 17: Wireless Networks<br/> PCS 18: Wired Network Security<br/> PCS 19: Malware<br/>UNIT 5: Mobile Systems <br/> PCS 20: Mobile Operating Systems<br/> PCS 21: Mobile Connectivity and Security<br/> PCS 22: Mobile Hardware and Synchronization<br/>UNIT 6: Troubleshooting <br/> PCS 23: Application of Troubleshooting Theory<br/> PCS 24: Troubleshooting Wired Networks<br/> PCS 25: Troubleshooting Wireless Networks<br/> PCS 26: Troubleshooting Operating Systems<br/> PCS 27: Troubleshooting Security Issues<br/>UNIT 7: Capstone <br/> PCS 28: PC Software Capstone</p>
-<p></p>
-<p style="padding-left: 30px;"></p><h2>W4-W9</h2>
-<p>Python 基本語法與功能</p>
-<p>參考電子書: <a href="https://drive.google.com/file/d/1tYFRytEEkPuuUTE4O9Q6AURaHcU598BV/view?usp=sharing">Python for everyone.py</a></p>
-<p style="padding-left: 30px;"><a href="https://books.trinket.io/pfe/">https://books.trinket.io/pfe/</a> </p>
-<p>線上 Python 教材: <a href="https://github.com/mdecourse/course-reader">https://github.com/mdecourse/course-reader</a> </p>
-<p>利用 <a href="https://www.debugmode.com/wink/">Wink3</a> 建立電腦操作流程導引影片. 下載 <a href="https://drive.google.com/file/d/1JI4i_gtMiMbALBZhiGVqqe9VM4cHt8U7/view?usp=sharing">Wink3.7z</a></p>
-<p>Python for everyone 章節:</p>
-<p style="padding-left: 30px;">1 Why should you learn to write programs? 1<br/>1.1 Creativity and motivation . . . . . . . . . . . . . . . . . . . . . . . 2<br/>1.2 Computer hardware architecture . . . . . . . . . . . . . . . . . . . 3<br/>1.3 Understanding programming . . . . . . . . . . . . . . . . . . . . . 4<br/>1.4 Words and sentences . . . . . . . . . . . . . . . . . . . . . . . . . . 5<br/>1.5 Conversing with Python . . . . . . . . . . . . . . . . . . . . . . . . 6<br/>1.6 Terminology: Interpreter and compiler . . . . . . . . . . . . . . . . 8<br/>1.7 Writing a program . . . . . . . . . . . . . . . . . . . . . . . . . . . 10<br/>1.8 What is a program? . . . . . . . . . . . . . . . . . . . . . . . . . . 10<br/>1.9 The building blocks of programs . . . . . . . . . . . . . . . . . . . . 11<br/>1.10 What could possibly go wrong? . . . . . . . . . . . . . . . . . . . . 12<br/>1.11 Debugging . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14<br/>1.12 The learning journey . . . . . . . . . . . . . . . . . . . . . . . . . . 15<br/>1.13 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15<br/>1.14 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16<br/>2 Variables, expressions, and statements 19<br/>2.1 Values and types . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19<br/>2.2 Variables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20<br/>2.3 Variable names and keywords . . . . . . . . . . . . . . . . . . . . . . 21<br/>2.4 Statements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21<br/>2.5 Operators and operands . . . . . . . . . . . . . . . . . . . . . . . . 22<br/>2.6 Expressions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23<br/>2.7 Order of operations . . . . . . . . . . . . . . . . . . . . . . . . . . 23<br/>2.8 Modulus operator . . . . . . . . . . . . . . . . . . . . . . . . . . . 24<br/>2.9 String operations . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24<br/>v<br/>vi CONTENTS<br/>2.10 Asking the user for input . . . . . . . . . . . . . . . . . . . . . . . 25<br/>2.11 Comments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26<br/>2.12 Choosing mnemonic variable names . . . . . . . . . . . . . . . . . 27<br/>2.13 Debugging . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28<br/>2.14 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29<br/>2.15 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30<br/>3 Conditional execution 31<br/>3.1 Boolean expressions . . . . . . . . . . . . . . . . . . . . . . . . . . . 31<br/>3.2 Logical operators . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32<br/>3.3 Conditional execution . . . . . . . . . . . . . . . . . . . . . . . . . 32<br/>3.4 Alternative execution . . . . . . . . . . . . . . . . . . . . . . . . . 33<br/>3.5 Chained conditionals . . . . . . . . . . . . . . . . . . . . . . . . . . 34<br/>3.6 Nested conditionals . . . . . . . . . . . . . . . . . . . . . . . . . . 35<br/>3.7 Catching exceptions using try and except . . . . . . . . . . . . . . 36<br/>3.8 Short-circuit evaluation of logical expressions . . . . . . . . . . . . 38<br/>3.9 Debugging . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39<br/>3.10 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39<br/>3.11 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40<br/>4 Functions 43<br/>4.1 Function calls . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43<br/>4.2 Built-in functions . . . . . . . . . . . . . . . . . . . . . . . . . . . 43<br/>4.3 Type conversion functions . . . . . . . . . . . . . . . . . . . . . . . 44<br/>4.4 Math functions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45<br/>4.5 Random numbers . . . . . . . . . . . . . . . . . . . . . . . . . . . 46<br/>4.6 Adding new functions . . . . . . . . . . . . . . . . . . . . . . . . . 47<br/>4.7 Deﬁnitions and uses . . . . . . . . . . . . . . . . . . . . . . . . . . 48<br/>4.8 Flow of execution . . . . . . . . . . . . . . . . . . . . . . . . . . . 49<br/>4.9 Parameters and arguments . . . . . . . . . . . . . . . . . . . . . . 49<br/>4.10 Fruitful functions and void functions . . . . . . . . . . . . . . . . . . 51<br/>4.11 Why functions? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52<br/>4.12 Debugging . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52<br/>4.13 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53<br/>4.14 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 54<br/>CONTENTS vii<br/>5 Iteration 57<br/>5.1 Updating variables . . . . . . . . . . . . . . . . . . . . . . . . . . . 57<br/>5.2 The while statement . . . . . . . . . . . . . . . . . . . . . . . . . 57<br/>5.3 Inﬁnite loops . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 58<br/>5.4 Finishing iterations with continue . . . . . . . . . . . . . . . . . . 59<br/>5.5 Deﬁnite loops using for . . . . . . . . . . . . . . . . . . . . . . . . 60<br/>5.6 Loop patterns . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 61<br/>5.6.1 Counting and summing loops . . . . . . . . . . . . . . . . . . 61<br/>5.6.2 Maximum and minimum loops . . . . . . . . . . . . . . . . 62<br/>5.7 Debugging . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64<br/>5.8 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64<br/>5.9 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64<br/>6 Strings 67<br/>6.1 A string is a sequence . . . . . . . . . . . . . . . . . . . . . . . . . 67<br/>6.2 Getting the length of a string using len . . . . . . . . . . . . . . . 68<br/>6.3 Traversal through a string with a loop . . . . . . . . . . . . . . . . 68<br/>6.4 String slices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 69<br/>6.5 Strings are immutable . . . . . . . . . . . . . . . . . . . . . . . . . 70<br/>6.6 Looping and counting . . . . . . . . . . . . . . . . . . . . . . . . . 70<br/>6.7 The in operator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 71<br/>6.8 String comparison . . . . . . . . . . . . . . . . . . . . . . . . . . . . 71<br/>6.9 String methods . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 71<br/>6.10 Parsing strings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 74<br/>6.11 Format operator . . . . . . . . . . . . . . . . . . . . . . . . . . . . 74<br/>6.12 Debugging . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 75<br/>6.13 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 76<br/>6.14 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 77<br/>7 Files 79<br/>7.1 Persistence . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 79<br/>7.2 Opening ﬁles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 80<br/>7.3 Text ﬁles and lines . . . . . . . . . . . . . . . . . . . . . . . . . . . . 81<br/>7.4 Reading ﬁles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 82<br/>7.5 Searching through a ﬁle . . . . . . . . . . . . . . . . . . . . . . . . 83<br/>viii CONTENTS<br/>7.6 Letting the user choose the ﬁle name . . . . . . . . . . . . . . . . . 85<br/>7.7 Using try, except, and open . . . . . . . . . . . . . . . . . . . . 86<br/>7.8 Writing ﬁles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 87<br/>7.9 Debugging . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 88<br/>7.10 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 89<br/>7.11 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 89<br/>8 Lists 91<br/>8.1 A list is a sequence . . . . . . . . . . . . . . . . . . . . . . . . . . . . 91<br/>8.2 Lists are mutable . . . . . . . . . . . . . . . . . . . . . . . . . . . . 92<br/>8.3 Traversing a list . . . . . . . . . . . . . . . . . . . . . . . . . . . . 92<br/>8.4 List operations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 93<br/>8.5 List slices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 94<br/>8.6 List methods . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 94<br/>8.7 Deleting elements . . . . . . . . . . . . . . . . . . . . . . . . . . . 95<br/>8.8 Lists and functions . . . . . . . . . . . . . . . . . . . . . . . . . . . 96<br/>8.9 Lists and strings . . . . . . . . . . . . . . . . . . . . . . . . . . . . 97<br/>8.10 Parsing lines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 98<br/>8.11 Objects and values . . . . . . . . . . . . . . . . . . . . . . . . . . . 99<br/>8.12 Aliasing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 100<br/>8.13 List arguments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 100<br/>8.14 Debugging . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 102<br/>8.15 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 105<br/>8.16 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 105<br/>9 Dictionaries 107<br/>9.1 Dictionary as a set of counters . . . . . . . . . . . . . . . . . . . . 109<br/>9.2 Dictionaries and ﬁles . . . . . . . . . . . . . . . . . . . . . . . . . . 110<br/>9.3 Looping and dictionaries . . . . . . . . . . . . . . . . . . . . . . . . 111<br/>9.4 Advanced text parsing . . . . . . . . . . . . . . . . . . . . . . . . . 113<br/>9.5 Debugging . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 114<br/>9.6 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 115<br/>9.7 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 115<br/>CONTENTS ix<br/>10 Tuples 117<br/>10.1 Tuples are immutable . . . . . . . . . . . . . . . . . . . . . . . . . 117<br/>10.2 Comparing tuples . . . . . . . . . . . . . . . . . . . . . . . . . . . 118<br/>10.3 Tuple assignment . . . . . . . . . . . . . . . . . . . . . . . . . . . . 120<br/>10.4 Dictionaries and tuples . . . . . . . . . . . . . . . . . . . . . . . . . 121<br/>10.5 Multiple assignment with dictionaries . . . . . . . . . . . . . . . . 122<br/>10.6 The most common words . . . . . . . . . . . . . . . . . . . . . . . 123<br/>10.7 Using tuples as keys in dictionaries . . . . . . . . . . . . . . . . . . 124<br/>10.8 Sequences: strings, lists, and tuples - Oh My! . . . . . . . . . . . . 124<br/>10.9 Debugging . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 125<br/>10.10 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 125<br/>10.11 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 126<br/>11 Regular expressions 127<br/>11.1 Character matching in regular expressions . . . . . . . . . . . . . . 128<br/>11.2 Extracting data using regular expressions . . . . . . . . . . . . . . 129<br/>11.3 Combining searching and extracting . . . . . . . . . . . . . . . . . 132<br/>11.4 Escape character . . . . . . . . . . . . . . . . . . . . . . . . . . . . 136<br/>11.5 Summary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 136<br/>11.6 Bonus section for Unix / Linux users . . . . . . . . . . . . . . . . . 137<br/>11.7 Debugging . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 138<br/>11.8 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 138<br/>11.9 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 139<br/>12 Networked programs 141<br/>12.1 Hypertext Transfer Protocol - HTTP . . . . . . . . . . . . . . . . . 141<br/>12.2 The world’s simplest web browser . . . . . . . . . . . . . . . . . . 142<br/>12.3 Retrieving an image over HTTP . . . . . . . . . . . . . . . . . . . 144<br/>12.4 Retrieving web pages with urllib . . . . . . . . . . . . . . . . . . 146<br/>12.5 Reading binary ﬁles using urllib . . . . . . . . . . . . . . . . . . 147<br/>12.6 Parsing HTML and scraping the web . . . . . . . . . . . . . . . . 148<br/>12.7 Parsing HTML using regular expressions . . . . . . . . . . . . . . 148<br/>12.8 Parsing HTML using BeautifulSoup . . . . . . . . . . . . . . . . . 150<br/>12.9 Bonus section for Unix / Linux users . . . . . . . . . . . . . . . . . 153<br/>12.10 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 153<br/>12.11 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 154<br/>x CONTENTS<br/>13 Using Web Services 155<br/>13.1 eXtensible Markup Language - XML . . . . . . . . . . . . . . . . . 155<br/>13.2 Parsing XML . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 156<br/>13.3 Looping through nodes . . . . . . . . . . . . . . . . . . . . . . . . 157<br/>13.4 JavaScript Object Notation - JSON . . . . . . . . . . . . . . . . . 158<br/>13.5 Parsing JSON . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 159<br/>13.6 Application Programming Interfaces . . . . . . . . . . . . . . . . . 160<br/>13.7 Security and API usage . . . . . . . . . . . . . . . . . . . . . . . . . 161<br/>13.8 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 162<br/>13.9 Application 1: Google geocoding web service . . . . . . . . . . . . 162<br/>13.10 Application 2: Twitter . . . . . . . . . . . . . . . . . . . . . . . . . 166<br/>14 Object-oriented programming 171<br/>14.1 Managing larger programs . . . . . . . . . . . . . . . . . . . . . . . . 171<br/>14.2 Getting started . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 172<br/>14.3 Using objects . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 172<br/>14.4 Starting with programs . . . . . . . . . . . . . . . . . . . . . . . . 173<br/>14.5 Subdividing a problem . . . . . . . . . . . . . . . . . . . . . . . . . 175<br/>14.6 Our ﬁrst Python object . . . . . . . . . . . . . . . . . . . . . . . . 175<br/>14.7 Classes as types . . . . . . . . . . . . . . . . . . . . . . . . . . . . 178<br/>14.8 Object lifecycle . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 179<br/>14.9 Multiple instances . . . . . . . . . . . . . . . . . . . . . . . . . . . 180<br/>14.10 Inheritance . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 181<br/>14.11 Summary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 182<br/>14.12 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 183<br/>15 Using Databases and SQL 185<br/>15.1 What is a database? . . . . . . . . . . . . . . . . . . . . . . . . . . 185<br/>15.2 Database concepts . . . . . . . . . . . . . . . . . . . . . . . . . . . 185<br/>15.3 Database Browser for SQLite . . . . . . . . . . . . . . . . . . . . . 186<br/>15.4 Creating a database table . . . . . . . . . . . . . . . . . . . . . . . 186<br/>15.5 Structured Query Language summary . . . . . . . . . . . . . . . . 189<br/>15.6 Spidering Twitter using a database . . . . . . . . . . . . . . . . . . . 191<br/>15.7 Basic data modeling . . . . . . . . . . . . . . . . . . . . . . . . . . 196<br/>15.8 Programming with multiple tables . . . . . . . . . . . . . . . . . . 197<br/>CONTENTS xi<br/>15.8.1 Constraints in database tables . . . . . . . . . . . . . . . . 200<br/>15.8.2 Retrieve and/or insert a record . . . . . . . . . . . . . . . . . 201<br/>15.8.3 Storing the friend relationship . . . . . . . . . . . . . . . . . 202<br/>15.9 Three kinds of keys . . . . . . . . . . . . . . . . . . . . . . . . . . 203<br/>15.10 Using JOIN to retrieve data . . . . . . . . . . . . . . . . . . . . . . 204<br/>15.11 Summary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 206<br/>15.12 Debugging . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 207<br/>15.13 Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 207<br/>16 Visualizing data 209<br/>16.1 Building a Google map from geocoded data . . . . . . . . . . . . . 209<br/>16.2 Visualizing networks and interconnections . . . . . . . . . . . . . . . 211<br/>16.3 Visualizing mail data . . . . . . . . . . . . . . . . . . . . . . . . . 214<br/>A Contributions 221<br/>A.1 Contributor List for Python for Everybody . . . . . . . . . . . . . . 221<br/>A.2 Contributor List for Python for Informatics . . . . . . . . . . . . . . 221<br/>A.3 Preface for “Think Python” . . . . . . . . . . . . . . . . . . . . . . . 221<br/>A.3.1 The strange history of “Think Python” . . . . . . . . . . . . 221<br/>A.3.2 Acknowledgements for “Think Python” . . . . . . . . . . . 223<br/>A.4 Contributor List for “Think Python” . . . . . . . . . . . . . . . . . 223</p>
-<p>CS 41: Hap.py Code</p>
-<p style="padding-left: 30px;">Table of Contents</p>
-<ol>
-<li>Python Basics</li>
-<li>Data Structures</li>
-<li>Object-Oriented Python</li>
-<li>Functions</li>
-<li>Functional Programming</li>
-<li>Python and the Web</li>
-<li>Reading Python Documentation</li>
-</ol><h3>HW2</h3>
-<p>有關作業二 (Due W12 各班上課之前):</p>
-<p style="padding-left: 30px;">由於部分學員在建立 Github 帳號時, 無法使用學號登記帳號, 因此造成 <a href="http://mde.tw/cp2020/content/W3.html">W3</a> 部分分組組員的倉儲與網站連結產生錯誤, 今已知乙班的原始分組數列如下:</p>
-<p style="padding-left: 30px;"><span>一乙:</span></p>
-<p style="padding-left: 30px;"><span>[[40823148, 40923203, 40923208, 40923209, 40923210, 40923223, 40923225, 40923230, 40923238, 40923239, 40923244, 40923249], [40523148, 40923201, 40923202, 40923218, 40923219, 40923228, 40923231, 40923232, 40923240, 40923247, 40923248, 40923250], [40823152, 40923205, 40923212, 40923214, 40923217, 40923226, 40923236, 40923241, 40923242, 40923246, 40923251], [40723217, 40728238, 40923206, 40923216, 40923220, 40923227, 40923233, 40923237, 40923243, 40923252, 40923253], [40523138, 40923204, 40923207, 40923211, 40923213, 40923221, 40923224, 40923229, 40923234, 40923235, 40923245]]</span></p>
-<p style="padding-left: 30px;">但是一甲的分組數列當時並未能儲存.</p>
-<p style="padding-left: 30px;">另外, 從亂數分組頁面可以從<a href="https://github.com/mdecourse/nfulist">教務處伺服器與 Heroku</a> 上的網站結合下取得兩班最終修課學員名單:</p>
-<p>四技設一甲計算機程式學員名單:</p>
-<p style="padding-left: 30px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762</a></p>
-<p>四技設一乙計算機程式學員名單:</p>
-<p style="padding-left: 30px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776</a></p>
-<p style="padding-left: 30px;">請各組以協同討論但各自將以下題目的解題流程說明與程式放入個人網頁的方式完成作業二.</p>
-<p style="padding-left: 30px;">作業二之一:</p>
-<p style="padding-left: 60px;"><span style="background-color: #ffff00;">請問該如何取得與上述一乙相同格式的一甲分組數列? 請詳細說明解題步驟後列出一甲的分組數列.</span></p>
-<p style="padding-left: 30px;">作業二之二:</p>
-<p style="padding-left: 60px;"><span style="background-color: #ffff00;">請問根據上述原始分組資料與最終教務處的選課學員名單, 兩班課程中是否有人加選或者退選? 請說明解題方法與結果.</span></p>
-<p style="padding-left: 30px;">作業二之三:</p>
-<p style="padding-left: 60px;"><span style="background-color: #ffff00;">從倉儲 <a href="https://github.com/mdecourse/cp2020/tree/master/downloads/hw2" style="background-color: #ffff00;">downloads/hw2</a> 目錄中可以找到兩班各學員實際登記 Github 的帳號資料, 例如: <a href="https://github.com/mdecourse/cp2020/blob/master/downloads/hw2/cpb_github_account.txt" style="background-color: #ffff00;">一乙學號與 Github 帳號對照表</a>, 請問該如何利用程式方法產生正確的 <a href="http://mde.tw/cp2020/content/W3.html" style="background-color: #ffff00;">W3</a> 網頁 html 資料?</span></p>
-<p></p>
-<h4>參考資料:</h4>
-<p style="padding-left: 30px;">變數: <a href="https://books.trinket.io/pfe/02-variables.html">https://books.trinket.io/pfe/02-variables.html</a> </p>
-<p style="padding-left: 30px;">條件式: <a href="https://books.trinket.io/pfe/03-conditional.html">https://books.trinket.io/pfe/03-conditional.html</a> </p>
-<p style="padding-left: 30px;">重複迴圈: <a href="https://books.trinket.io/pfe/05-iterations.html">https://books.trinket.io/pfe/05-iterations.html</a> </p>
-<p style="padding-left: 30px;">數列: <a href="https://books.trinket.io/pfe/08-lists.html">https://books.trinket.io/pfe/08-lists.html</a> </p>
-<p style="padding-left: 30px;">開啟檔案: <a href="https://books.trinket.io/pfe/07-files.html">https://books.trinket.io/pfe/07-files.html </a></p>
-<p style="padding-left: 30px;">超文件: <a href="https://www.w3schools.com/html/">https://www.w3schools.com/html/</a> </p>
-<p style="padding-left: 30px;">bs4: <a href="https://readthedocs.org/projects/beautiful-soup-4/downloads/pdf/latest/">https://readthedocs.org/projects/beautiful-soup-4/downloads/pdf/latest/</a> </p>
-<p style="padding-left: 30px;">解題參考: <a href="https://www.kaggle.com/mdecourse/cp2020-hw2">https://www.kaggle.com/mdecourse/cp2020-hw2</a> </p><h2>W10-W14</h2>
-<p><span>分組 Python 專案</span></p>
-<h3>HW3</h3>
-<p>作業三 (Due. 各班 第十四週上課之前):</p>
-<p>請各組採分工方式, 以英文及中文對照方式完成 <a href="https://www.practicepython.org/">https://www.practicepython.org/</a> 中各題目的練習與資料整理, 請將圖文資料放入各分組組長的分組網頁中 (cp2020ag1 為甲班第一組倉儲名稱, 其餘類推), 並將分組網站連結回報至 <a href="https://gitter.im/mdecourse/cp2020">https://gitter.im/mdecourse/cp2020</a></p>
-<ul>
-<li>1:<span> </span><a href="https://www.practicepython.org/exercise/2014/01/29/01-character-input.html">Character Input</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>2:<span> </span><a href="https://www.practicepython.org/exercise/2014/02/05/02-odd-or-even.html">Odd Or Even</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>3:<span> </span><a href="https://www.practicepython.org/exercise/2014/02/15/03-list-less-than-ten.html">List Less Than Ten</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>4:<span> </span><a href="https://www.practicepython.org/exercise/2014/02/26/04-divisors.html">Divisors</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>5:<span> </span><a href="https://www.practicepython.org/exercise/2014/03/05/05-list-overlap.html">List Overlap</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>6:<span> </span><a href="https://www.practicepython.org/exercise/2014/03/12/06-string-lists.html">String Lists</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>7:<span> </span><a href="https://www.practicepython.org/exercise/2014/03/19/07-list-comprehensions.html">List Comprehensions</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>8:<span> </span><a href="https://www.practicepython.org/exercise/2014/03/26/08-rock-paper-scissors.html">Rock Paper Scissors</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>9:<span> </span><a href="https://www.practicepython.org/exercise/2014/04/02/09-guessing-game-one.html">Guessing Game One</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>10:<span> </span><a href="https://www.practicepython.org/exercise/2014/04/10/10-list-overlap-comprehensions.html">List Overlap Comprehensions</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>11:<span> </span><a href="https://www.practicepython.org/exercise/2014/04/16/11-check-primality-functions.html">Check Primality Functions</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>12:<span> </span><a href="https://www.practicepython.org/exercise/2014/04/25/12-list-ends.html">List Ends</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>13:<span> </span><a href="https://www.practicepython.org/exercise/2014/04/30/13-fibonacci.html">Fibonacci</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>14:<span> </span><a href="https://www.practicepython.org/exercise/2014/05/15/14-list-remove-duplicates.html">List Remove Duplicates</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>15:<span> </span><a href="https://www.practicepython.org/exercise/2014/05/21/15-reverse-word-order.html">Reverse Word Order</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>16:<span> </span><a href="https://www.practicepython.org/exercise/2014/05/28/16-password-generator.html">Password Generator</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>17:<span> </span><a href="https://www.practicepython.org/exercise/2014/06/06/17-decode-a-web-page.html">Decode A Web Page</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>18:<span> </span><a href="https://www.practicepython.org/exercise/2014/07/05/18-cows-and-bulls.html">Cows And Bulls</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>19:<span> </span><a href="https://www.practicepython.org/exercise/2014/07/14/19-decode-a-web-page-two.html">Decode A Web Page Two</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>20:<span> </span><a href="https://www.practicepython.org/exercise/2014/11/11/20-element-search.html">Element Search</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>21:<span> </span><a href="https://www.practicepython.org/exercise/2014/11/30/21-write-to-a-file.html">Write To A File</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>22:<span> </span><a href="https://www.practicepython.org/exercise/2014/12/06/22-read-from-file.html">Read From File</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>23:<span> </span><a href="https://www.practicepython.org/exercise/2014/12/14/23-file-overlap.html">File Overlap</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>24:<span> </span><a href="https://www.practicepython.org/exercise/2014/12/27/24-draw-a-game-board.html">Draw A Game Board</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>25:<span> </span><a href="https://www.practicepython.org/exercise/2015/11/01/25-guessing-game-two.html">Guessing Game Two</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>26:<span> </span><a href="https://www.practicepython.org/exercise/2015/11/16/26-check-tic-tac-toe.html">Check Tic Tac Toe</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>27:<span> </span><a href="https://www.practicepython.org/exercise/2015/11/26/27-tic-tac-toe-draw.html">Tic Tac Toe Draw</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>28:<span> </span><a href="https://www.practicepython.org/exercise/2016/03/27/28-max-of-three.html">Max Of Three</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>29:<span> </span><a href="https://www.practicepython.org/exercise/2016/08/03/29-tic-tac-toe-game.html">Tic Tac Toe Game</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>30:<span> </span><a href="https://www.practicepython.org/exercise/2016/09/24/30-pick-word.html">Pick Word</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>31:<span> </span><a href="https://www.practicepython.org/exercise/2017/01/02/31-guess-letters.html">Guess Letters</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>32:<span> </span><a href="https://www.practicepython.org/exercise/2017/01/10/32-hangman.html">Hangman</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>33:<span> </span><a href="https://www.practicepython.org/exercise/2017/01/24/33-birthday-dictionaries.html">Birthday Dictionaries</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>34:<span> </span><a href="https://www.practicepython.org/exercise/2017/02/06/34-birthday-json.html">Birthday Json</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>35:<span> </span><a href="https://www.practicepython.org/exercise/2017/02/28/35-birthday-months.html">Birthday Months</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-<li>36:<span> </span><a href="https://www.practicepython.org/exercise/2017/04/02/36-birthday-plots.html">Birthday Plots</a><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span> </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></li>
-</ul>
-<h4>圖書館電子書選讀:</h4>
-<p>Artificial Intelligence Basics:</p>
-<p><a href="https://link.springer.com/book/10.1007/978-1-4842-5028-0">https://link.springer.com/book/10.1007/978-1-4842-5028-0</a> (2019)</p>
-<p>Neural Network and Deep Learning:</p>
-<p><a href="https://link.springer.com/book/10.1007/978-3-319-94463-0">https://link.springer.com/book/10.1007/978-3-319-94463-0</a> (2018)</p>
-<p>Computer Vision Metrics:</p>
-<p><a href="https://link.springer.com/book/10.1007/978-3-319-33762-3">https://link.springer.com/book/10.1007/978-3-319-33762-3</a> (2016)</p>
-<p>Genetic Algorithms:</p>
-<p><a href="https://link.springer.com/book/10.1007/978-1-4471-0577-0">https://link.springer.com/book/10.1007/978-1-4471-0577-0</a> (1999)</p><h2>W15-W18</h2>
-<p><span>分組總結報告</span></p>
-<h3>HW4</h3>
-<p>我們是否能夠透過 <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>, 將 <a href="http://mde.tw/cp2020/content/HW3.html">HW3</a> 所寫的程式轉為網際架構, 並且部署在 <a href="https://ubuntu.com/">Ubuntu</a> 20.04 與 <a href="https://www.heroku.com/">Heroku</a>?</p>
-<h4>參考:</h4>
-<p style="padding-left: 30px;"><a href="https://github.com/mdecourse/nfulist">https://github.com/mdecourse/nfulist</a></p>
-<p style="padding-left: 30px;">四技設一甲計算機程式學員名單:</p>
-<p style="padding-left: 60px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762</a></p>
-<p style="padding-left: 30px;">四技設一乙計算機程式學員名單:</p>
-<p style="padding-left: 60px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776</a></p>
-<p style="padding-left: 30px;"><a href="https://mde.tw/lab/blog/use-github-and-gitlab-pages.html">同步資料到 gitlab</a></p>
-<p style="padding-left: 30px;">用 <a href="https://www.authorea.com/">Authorea</a> 寫分組報告</p>
-<p><a href="https://raw.githubusercontent.com/mdecourse/nfulist/master/wsgi.py">https://raw.githubusercontent.com/mdecourse/nfulist/master/wsgi.py</a> </p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from flask import Flask, request 
-from flask_cors import CORS
-  
-import requests
-import bs4
-#import ssl
-  
-'''
-https://nfulist.herokuapp.com/?semester=1082&amp;courseno=0767
-cd
-2a 1082/0767
-2b 1082/0780
-  
-2a 1072/0777
-2b 1072/0790
-2a 1062/0788
-2a 1062/0802
-  
-wcm
-1082/0744
-  
-1072/0754
-1062/0765
-  
-wcmj
-1082/2418
-'''
-  
-app = Flask(__name__)
-CORS(app)
-  
-@app.route('/studlist')
-@app.route('/')
-def studlist():
-    semester = request.args.get('semester')
-    courseno = request.args.get('courseno')
-    if semester == None:
-        semester = '1082'
-    if courseno == None:
-        courseno = '0744'
-    
-    headers = {'X-Requested-With': 'XMLHttpRequest'}
-
-    url = 'https://qry.nfu.edu.tw/studlist_ajax.php'
-    post_var = {'pselyr': semester, 'pseqno': courseno}
-  
-    result = requests.post(url, data = post_var, headers = headers)
-    soup = bs4.BeautifulSoup(result.content, 'lxml')
-    table = soup.find('table', {'class': 'tbcls'})
-    data = []
-    rows = table.find_all('tr')
-    for row in rows:
-        cols = row.find_all('td')
-        cols = [ele.text.strip() for ele in cols]
-        data.append([ele for ele in cols if ele]) # Get rid of empty values
-    output = ""
-    for i in data[2:]:
-        #print(i[0])
-        output +=i[0] + "\n"
-    return output
-    #return  str(pselyr) + " + " +str(pseqno)
-  
-# 即使在近端仍希望以 https 模式下執行
-#context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-#context.load_cert_chain('localhost.crt', 'localhost.key')
-  
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8080, debug=True)</pre>
-<p></p><h1>Python</h1>
-<p>Principles of Computation with Python:</p>
-<p style="padding-left: 30px;"><a href="https://oli.cmu.edu/courses/principles-of-computation-with-python-open-free/">https://oli.cmu.edu/courses/principles-of-computation-with-python-open-free/</a></p>
-<p><img alt="" class="add_border" height="891" src="/images/intro_programming_with_python.png" width="600"/></p>
-<p>請利用學校所配發的 @gm 電子郵件帳號登入 <a href="https://kaggle.com">https://kaggle.com</a>, 並且連結至 <a href="https://www.kaggle.com/learn/python">https://www.kaggle.com/learn/python</a> 就可以開始 在 <a href="https://www.kaggle.com/notebooks">https://www.kaggle.com/notebooks</a> 網際環境中學習 Python 程式語言.</p>
-<p>例如:</p>
-<p style="padding-left: 30px;"><a href="https://www.kaggle.com/kevinelong/introduction-to-computer-programming-review/execution">https://www.kaggle.com/kevinelong/introduction-to-computer-programming-review/execution</a></p>
-<p style="padding-left: 30px;"><a href="https://www.kaggle.com/mdecourse/cp2020">https://www.kaggle.com/mdecourse/cp2020</a></p>
-<p style="padding-left: 30px;"><a href="https://www.kaggle.com/abinesh100/easy-download-images-in-25-lines-py3">https://www.kaggle.com/abinesh100/easy-download-images-in-25-lines-py3</a></p>
-<p>除了 <a href="https://kaggle.com">https://kaggle.com</a> 與 <a href="https://colab.research.google.com">https://colab.research.google.com</a> 執行並學習 Python 外, 本課程將要求學員在 <a href="https://pages.github.com/">Github Pages</a> 與 <a href="https://docs.gitlab.com/ee/user/project/pages/">Gitlab Pages</a> 中建立個人靜態網頁, 並將網際動態 Python 系統部署在 <a href="https://www.heroku.com/">Heroku,</a> 分組協同報告則利用 <a href="https://www.authorea.com/">Authorea</a> 編輯發布.</p>
-<p>其他學習 Python 的方式:</p>
-<ol>
-<li>直接在操作系統中安裝 Python 解譯器與編輯器</li>
-<li>利用可攜程式系統中的 Python 解譯器與編輯器</li>
-<li>直接在網際環境中搭建 Brython 程式環境</li>
-<li>直接在網際環境中搭建 Jupyter Notebook 程式環境</li>
-</ol>
-<p>不同程式環境中的組態設定與功能差異</p>
-<p>其他參考教材:</p>
-<p style="padding-left: 30px;"><a href="https://www.py4e.com/">https://www.py4e.com/</a></p>
-<p style="padding-left: 30px;"><a href="https://automatetheboringstuff.com/">https://automatetheboringstuff.com/</a></p><h2>工作流程</h2>
-<p>建立 CP 2020 課程網頁</p>
-<ol>
-<li style="padding-left: 30px;">以 mdecourse 帳號登入 github.com</li>
-<li style="padding-left: 30px;">建立 cp2020 空倉儲, 選擇由系統建立 README.md (延伸題目: 假如不新 README.md, 則又該如何操作?）</li>
-<li style="padding-left: 30px;">在近端啟動隨身程式系統 (或者自行在操作系統安裝所需套件)</li>
-<li style="padding-left: 30px;">將遠端的 cp2020 倉儲 git clone 到近端 (延伸題目: git clone 是甚麼?)</li>
-<li style="padding-left: 30px;">利用 git submodule add 導入 cmsimde 當作目錄</li>
-<li style="padding-left: 30px;">從近端 cmsimde 目錄中取出 up_dir 中的內容至 cp2020 倉儲根目錄</li>
-<li style="padding-left: 30px;">在近端可以進入 cmsimde 目錄, 以 python wsgi.py 啟動動態網頁 (延伸題目: 何謂動態網頁? 有何功能?)</li>
-<li style="padding-left: 30px;">在近端編輯動態網頁內容後, 轉為靜態網頁 (如何轉?)</li>
-<li style="padding-left: 30px;">完成靜態網頁轉換之後, 利用近端 git 指令將新版本新增, 提交並推送到遠端</li>
-</ol>
-<p>在近端編寫第一個 Python 程式, 每修改一次都利用 git 進行提交, 修改並提交 4 次後, 可以在任何版本下回復到先前的任一版本內容.</p>
-<p style="padding-left: 30px;"><a href="/downloads/cphw1.7z">cphw1.7z</a></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">i = 1
-
-print(i)</pre>
-<p>進入 y:\tmp\cphw1 從 git init 開始</p>
-<p>每一次改版, i  增量 1</p>
-<p>git add .</p>
-<p>git commit -m "i=1"</p>
-<p>git push</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Y:\tmp\cphw1&gt;git log
-commit cb568bc032bb4e4364c347b5b6225c7849450c5f (HEAD -&gt; master)
-Author: mdecourse &lt;mdecourse@gmail.com&gt;
-Date:   Wed Aug 26 15:18:39 2020 +0800
-
-    i=4
-
-commit d9ef5402c330aac9791a9cd20403ad583854ceb6
-Author: mdecourse &lt;mdecourse@gmail.com&gt;
-Date:   Wed Aug 26 15:18:19 2020 +0800
-
-    i=3
-
-commit 4b40d3a60e7e37b7847d9fb70c3a0380ab20f9fe
-Author: mdecourse &lt;mdecourse@gmail.com&gt;
-Date:   Wed Aug 26 15:17:56 2020 +0800
-
-    i=2
-
-commit 1852efb2003bd52c4baa27cc7f0c38b8faf55d14
-Author: mdecourse &lt;mdecourse@gmail.com&gt;
-Date:   Wed Aug 26 15:17:27 2020 +0800
-
-    i=1</pre>
-<p style="padding-left: 30px;">在近端使用電腦儲存檔案, 最理想的情況是要利用 git 或 Fossil SCM 等分散式版次管理套件, 將各版本的內容進行提交並註記改版緣由之後, 再從近端推送到遠端.</p>
-<p style="padding-left: 30px;">使用分散式版次管理的目的</p>
-<p style="padding-left: 60px;">可以註記每次改版的提交者, 並能利用 git checkout 到先前的各版本</p>
-<p style="padding-left: 60px;">資料存一份在遠端, 避免因為近端電腦損毀而丟失資料.</p>
-<p style="padding-left: 30px;"></p>
-<h2>亂數分組</h2>
-<p>亂數分組:</p>
-<p>semester=1091</p>
-<p>courseno=0762</p>
-<p>cp</p>
-<p>1a 1091/0762</p>
-<p>1b 1091/0776</p>
-<p>cad</p>
-<p>2a 1091/0788</p>
-<p>2b 1091/0801</p>
-<p>學員名單 URL: <input id="studListUrl" size="60" type="text" value="https://nfulist.herokuapp.com?semester=1091&amp;courseno=0788"/><br/> 課程代號: <input id="courseName" size="15" type="text" value="cp2020"/><br/> <input id="submit" type="submit" value="開始分組"/><br/> <textarea cols="80" id="output" rows="10"></textarea></p>
-<script src="/downloads/dart/random_grouping/random_grouping.js"></script>
-<p>四技設一甲計算機程式學員名單:</p>
-<p style="padding-left: 30px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762</a></p>
-<p>四技設一乙計算機程式學員名單:</p>
-<p style="padding-left: 30px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776</a></p>
-<p>部署至 <a href="https://www.heroku.com/">Heroku</a> 的原始碼: <a href="https://github.com/mdecourse/nfulist">https://github.com/mdecourse/nfulist</a></p>
-<p><a href="http://mde.tw/lab/content/%E4%BA%82%E6%95%B8%E5%88%86%E7%B5%84.html">參考資料</a></p>
-<p>get_student_list.py</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import 'dart:html';
-  
-  InputElement studListUrl = querySelector("#studListUrl");
-  String studUrl;
-  InputElement courseName = querySelector("#courseName");
-  String cName;
-  // 將 Label 改為 Textarea, 避免產生過程結果嵌入所在頁面
-  TextAreaElement output = querySelector("#output");
-  
-main() {
-  querySelector("#submit").onClick.listen((e) =&gt; grouping());
-}
-  
-grouping() {
-  output.innerHtml = "";
-  
-  if (studListUrl.value != "") {
-    studUrl = studListUrl.value;
-  } else {
-    studUrl = 'https://nfulist.herokuapp.com';
-  }
-  
-  if (courseName.value != "") {
-	cName = courseName.value;
-  } else {
-	cName = "cp2020";
-  }
-  
-  // 組序由 1 開始
-  int gth = 1;
-  // 迴圈序號變數
-  int i;
-  int j;
-  int total;
-  int inc;
-  // 每組學員暫存數列
-  var gpList = [];
-  // 全班分組數列
-  var group = [];
-  // 各組人數數列
-  var numList = [];
-  
-  HttpRequest.getString(studUrl).then((String resp) {
-    // 利用 trim() 去除字串最後的跳行符號, 之後再利用 split() 根據 \n 轉為數列
-    var studList = resp.trim().split("\n");
-    // 數列利用 shuffle() 方法以隨機方法弄亂順序
-    studList.shuffle();
-    total = studList.length;
-    output.text += "全班總計" + total.toString() + " 人\n";
-    numList = getNumList(studList.length);
-    inc = 0;
-    for (i in numList){
-      // 列印區隔符號
-      output.text += '=' * 20 + "\n";
-      output.text += "group $gth 有 " + i.toString() + " 人: \n";
-      gpList = [];
-      for (j = 0; j &lt; i; j++){
-        output.text += studList[j+inc] + "\n";
-        // 在各分組數列中加入將對應的學員學號
-        gpList.add(studList[j+inc]);
-      }
-      gth = gth + 1;
-      inc = inc + j;
-        //output.text += studList[j] + "\n";
-        // 逐步將各組暫存的分組數列加入全班分組數列中
-      gpList.sort();
-      group.add(gpList);
-    }
-    // 列出全班分組數列
-    output.text += group.toString() + "\n";
-    // 列出已經排序後的分組名單
-    output.text += '=' * 25 + "\n";
-    output.text += '以下為排序後的各組成員名單: \n';
-    gth = 1;
-    /*
-    404231
-    s4052
-    4062
-    s4072
-    4082
-    5072
-    5083
-    */
-    // 先列出純文字以 \n 跳行組員資料
-    for (i=0; i &lt; group.length; i++){
-      // 列印區隔符號
-      output.text += '=' * 20 + "\n";
-      output.text += "group $gth \n";
-      gpList = [];
-      for (j=0; j &lt; group[i].length; j++){
-        output.text += group[i][j] + "\n";
-      }
-      gth = gth + 1;
-    }
-     
-    gth = 1;
-    // 最後列出超文件以 &lt;br\&gt; 跳行組員資料, 包含倉儲與網站
-    for (i=0; i &lt; group.length; i++){
-      // 列印區隔符號
-      output.text += '\n' + '=' * 30 + "&lt;br \&gt;";
-      output.text += "group $gth &lt;br \&gt;";
-      gpList = [];
-      for (j=0; j &lt; group[i].length; j++){
-          if (group[i][j].startsWith('4052') || group[i][j].startsWith('4072')) {
-              output.text += "Repository: &lt;a href='https://github.com/s" + 
-                                      group[i][j] + "/" + cName + "'&gt;" + group[i][j] + 
-                                      "&lt;/a&gt;" + " | Site: &lt;a href='https://s" + group[i][j] + 
-                                      ".github.io/" + cName + "'&gt;" + group[i][j] + 
-                                      "&lt;/a&gt;&lt;br \&gt;";
-          }
-          else {
-              output.text += "Repository: &lt;a href='https://github.com/" + 
-                                      group[i][j] + "/" + cName +"'&gt;" + group[i][j] + 
-                                      "&lt;/a&gt;" + " | Site: &lt;a href='https://" + group[i][j] + 
-                                      ".github.io/" + cName + "'&gt;" + group[i][j] + 
-                                      "&lt;/a&gt;&lt;br \&gt;";
-          }
-      }
-      gth = gth + 1;
-    }
-  });
-}
-  
-List getNumList(int total){
-  // total student number
-  // int total = 65;
-  // initial each group expect to be "eachGrp" number of people
-  int eachGrp = 10;
-  // may divide into "grpNum" number of group
-  int grpNum = total ~/ eachGrp;
-  // vacant list
-  var splits = [];
-  // find remainder when total number divid into "grpNum" number of group
-  int remainder = total % grpNum;
-  // number of people in one group by calculation
-  int calGrp = total ~/ grpNum;
-  
-  for (int i = 0; i &lt; grpNum; i++) {
-    splits.add(calGrp);
-  }
-  //print(splits);
-  
-  for (int i = 0; i &lt; remainder; i++) {
-    splits[i] += 1;
-  }
-  //print(splits);
-  return splits;
- }</pre>
-<p>index.html</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;h4&gt;亂數分組:&lt;/h4&gt;
-學員名單 URL: &lt;input type="text" id="studListUrl" size="60" value="https://nfulist.herokuapp.com"&gt;&lt;br /&gt;
-課程代號: &lt;input type="text" id="courseName" size="15" value="cp2020"&gt;&lt;br /&gt;
-&lt;input type="submit" value="開始分組" id="submit"&gt;&lt;br /&gt;
-&lt;textarea id="output" cols="80" rows="10"&gt;&lt;/textarea&gt;</pre>
-<p>style.css</p>
-<pre class="brush:css;auto-links:false;toolbar:false" contenteditable="false">body {
-  color: white;
-  font-size: 20px;
-}
- 
-input, select, textarea {
-font-size: 100%;
-}</pre>
-<p>even_grouping.py</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
-import requests
-  
-# getNumList 主要在每組最低人數下, 將不足 10 人的分組
-# 平均分配至各組
-def getNumList(total, eachGrp=10):
-    # total is the number of students
-    # each group at least 10 students
-    #eachGrp = 10;
-    # may divide into "grpNum" number of group
-    grpNum = total // eachGrp;
-    # check grpNum
-    #print(grpNum)
-    # vacan list
-    splits = []
-    # find remainder when total number divid into "grpNum" number of group
-    remainder = total % grpNum
-    # number of people in one group by calculation
-    calGrp = total // grpNum
-      
-    for i in range(grpNum):
-        splits.append(calGrp)
-          
-    # check first splits
-    #print(splits)
-    
-    for i in range(remainder):
-        splits[i] += 1
-      
-    # check final splits
-    #print(splits);
-    return splits;
-  
-# 儲存學生名單資料的 url
-target_url = "http://mde.tw/cp2020/downloads/get_student_list/2020spring_cd_2a_list.txt"
-# 利用 requests 讀取 url 中的資料
-f = requests.get(target_url)
-# get student list from target_url
-# 利用 splitlines() 將資料放入數列 studList
-studList = f.text.splitlines()
-# 每組預計分組的最低人數
-num_in_one_group = 10
-# 每組學員暫存數列
-gpList = []
-# 全班分組數列
-group = []
-# 各組人數數列
-numList = []
-# get numList
-numList = getNumList(len(studList), num_in_one_group)
-# check numList
-# 列出已經補齊的各組人數數列
-print("預計各組人數數列:" + str(numList))
-  
-output = ""
-gth = 1
-inc = 0
-  
-# 弄亂 studList
-random.shuffle(studList)
-output += "以下為尚未排序前的各組學員學號: \n"
-for i in numList:
-    # 列印區隔符號
-    output += '=' * 20 + "\n";
-    output += "group " + str(gth) + " 有 " + str(i) + " 人: \n"
-    # 每組學員暫存數列, 在此 reset
-    gpList = []
-    for j in range(i):
-        output += studList[j+inc] + "\n"
-        # 在各分組數列中加入將對應的學員學號
-        gpList.append(studList[j+inc])
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
         
-    gth = gth + 1
-    inc = inc + j
-    # 將各組學員數列依照學號排序
-    gpList.sort()
-    group.append(gpList)
-  
-# 列出尚未排序前的分組結果
-print(output)
-# 列出已經完成排序的分組數列
-print("已經排序後的分組數列:" + str(group))
-  
-output = ""
-# 列出已經排序後的分組名單
-output += '=' * 25 + "\n"
-output += '以下為排序後的各組成員名單:\n'
-gth = 1
-  
-# 先列出純文字以 \n 跳行組員資料
-for i in range(len(group)):
-    # 列印區隔符號
-    output += '=' * 20 + "\n"
-    output += "group" + str(gth) + "\n"
-    gpList = []
-      
-    for j in range(len(group[i])):
-        output += str(group[i][j]) + "\n"
-        
-    gth = gth + 1
-      
-print(output)</pre>
-<h4>使用 Brython</h4>
-<p><a href="http://mde.tw/lab/content/Python.html">http://mde.tw/lab/content/Python.html</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 利用 Brython 內建的 open 開啟 url 後, 以 read() 將資料取出
-output = open('http://mde.tw/cp2020/downloads/get_student_list/2020spring_cd_2a_list.txt').read()
-# 利用 print  將 output 資料列出
-print(output)</pre>
-<p></p><h2>Kaggle</h2>
-<p>請注意, 登入 Kaggle 時請使用學校配發的 @gm 帳號, 當程式在 Kaggle 執行時, 若需使用 GPU 或 Internet 資源時, 必須使用手機號碼進行驗證, 而每一個手機號碼只能驗證一個 Kaggle 帳號.</p>
-<p><a href="https://www.kaggle.com/mdecourse/cp2020">https://www.kaggle.com/mdecourse/cp2020 </a></p>
-<p><a href="https://www.kaggle.com/mdecourse/ml2020">https://www.kaggle.com/mdecourse/ml2020</a> </p>
-<p><a href="https://di2.io/2019/03/is-kaggle-suitable-to-teach-programming-with-python/">https://di2.io/2019/03/is-kaggle-suitable-to-teach-programming-with-python/</a></p>
-<p><a href="https://fayz.in/stories/s/1417/0/?ckt_id=ZGL1ZGVk&amp;title=Importance_of_github_kaggle">https://fayz.in/stories/s/1417/0/?ckt_id=ZGL1ZGVk&amp;title=Importance_of_github_kaggle</a></p>
-<p><a href="https://www.programmersought.com/article/92261138300/">https://www.programmersought.com/article/92261138300/</a></p>
-<p><a href="https://towardsdatascience.com/kaggle-for-beginners-getting-started-75decb43c0c0">https://towardsdatascience.com/kaggle-for-beginners-getting-started-75decb43c0c0</a></p>
-<h4>Reference</h4>
-<p style="padding-left: 30px;"><a href="https://awesomeopensource.com/project/apachecn/Interview">https://awesomeopensource.com/project/apachecn/Interview</a></p>
-<p style="padding-left: 30px;"><a href="https://awesomeopensource.com/project/girls-in-ai/Girls-In-AI">https://awesomeopensource.com/project/girls-in-ai/Girls-In-AI</a></p>
-<p style="padding-left: 30px;"><a href="https://awesomeopensource.com/project/Mikoto10032/DeepLearning">https://awesomeopensource.com/project/Mikoto10032/DeepLearning</a></p>
-<p style="padding-left: 30px;"><a href="https://awesomeopensource.com/project/ypwhs/dogs_vs_cats">https://awesomeopensource.com/project/ypwhs/dogs_vs_cats</a></p>
-<h2>Flask-Flutter</h2>
-<p><a href="https://medium.com/@pyzimos/flutter-chatbot-with-python-flask-backend-heroku-deployment-706baafbb8f1">https://medium.com/@pyzimos/flutter-chatbot-with-python-flask-backend-heroku-deployment-706baafbb8f1</a></p>
-<p><a href="https://heartbeat.fritz.ai/digit-recognizer-with-flutter-and-tensorflow-lite-33f5145b5f32">https://heartbeat.fritz.ai/digit-recognizer-with-flutter-and-tensorflow-lite-33f5145b5f32</a></p>
-<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/9HaIGMyAyug" width="560"></iframe></p>
-<h3>cmsimde</h3>
-<p>在 <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 專案中, Flask 網際程式被用來建立動態內容管理系統, 並結合 bs4 與 lxml 模組功能, 將動態網頁轉為靜態網頁, 使用者可以將靜態網頁部署在 Github Pages 或 Heroku. 而靜態網頁可以再結合 Leo Editor 大綱管理程式, 用於整合 pelian 網誌與 reveal.js 網際簡報系統.</p>
-<h3>pdf-project</h3>
-<p><a href="https://github.com/mdecourse/cd2020pj1">https://github.com/mdecourse/cd2020pj1</a> </p>
-<p>功能包括:</p>
-<p>透過 authomatic 模組讓使用者以 oauth2 模式登入</p>
-<ol>
-<li>接受 pdf 檔案上傳至 Google Drive</li>
-<li>可讓使用者直接在線上合併 pdfs 檔案或分割鎖上傳的 pdf 檔案</li>
-</ol>
-<h3>nfu-project</h3>
-<p><a href="https://github.com/mdecourse/nfulist">https://github.com/mdecourse/nfulist</a></p>
-<p>與 <a href="https://nfulist.herokuapp.com">https://nfulist.herokuapp.com</a> 網站資料同步</p>
-<p><a href="https://nfulist.herokuapp.com/?semester=1082&amp;courseno=0767">https://nfulist.herokuapp.com/?semester=1082&amp;courseno=0767</a></p>
-<p>heroku login</p>
-<p>add _netrc to home</p>
-<p>git add .</p>
-<p>git commit -m "message"</p>
-<p>git push heroku master</p>
-<p>git remote add github <a href="https://github.com/mdecourse/nfulist.git">https://github.com/mdecourse/nfulist.git</a></p>
-<p>git push github master</p>
-<p>cp</p>
-<p>1a 1091/0762</p>
-<p>1b 1091/0776</p>
-<p>cad</p>
-<p>2a 1091/0788</p>
-<p>2b 1091/0801</p>
-<p>cd<br/>2a 1082/0767<br/>2b 1082/0780<br/> <br/>2a 1072/0777<br/>2b 1072/0790<br/>2a 1062/0788<br/>2a 1062/0802<br/> <br/>wcm<br/>1082/0744<br/> <br/>1072/0754<br/>1062/0765<br/> <br/>wcmj<br/>1082/2418</p>
-<p></p>
-<h4>Brython</h4>
-<p><a href="https://github.com/BrythonServer/brython-server">https://github.com/BrythonServer/brython-server</a></p>
-<p><a href="https://mdecp2018.github.io/finalproject-bgx">https://mdecp2018.github.io/finalproject-bgx</a></p>
-<h2>Heroku</h2>
-<h4>Heroku 與計算機程式</h4>
-<p><a href="https://www.heroku.com/">https://www.heroku.com/</a> 是提供雲端應用程式服務的網站, 在計算機程式課程中, 可以透過 Heroku 內建伺服 PHP 的功能, 將 CMSiMDE 系統的靜態網站送到 Heroku 進行伺服, 也可以設法利用 Heroku 執行 CMSiMDE 的動態網站, 只是根據 Heroku 系統的規定, 每 24 小時雲端主機重啟之後, 非以 Git 提交推送的資料將會被 reset.</p>
-<p>因此在未設定 persistent 資料儲存方案的 Heroku 應用, 只適合配置用於直接查詢會轉介其他系統資料的網際 Python 應用.</p>
-<h4>Heroku 應用</h4>
-<p>以下將列出在計算機程式課程中的三種 Heroku 應用:</p>
-<ol>
-<li>將 CMSiMDE 的靜態網頁送到 Heroku 伺服</li>
-<li>利用 Heroku 配置 Webster 與 Wordnet 字典查詢服務 (透過 SQLite 資料庫)</li>
-<li>利用 Heroku 上的 Flask 網際 ajax 程式, 從學校教務伺服器中取出課程相關資料</li>
-</ol>
-<h4>Heroku 示範倉儲與主機</h4>
-<p><a href="https://github.com/mdecourse/scrum1-cmsimde">https://github.com/mdecourse/scrum1-cmsimde</a></p>
-<p style="padding-left: 30px;"><a href="https://scrum1-cmsimde.herokuapp.com">https://scrum1-cmsimde.herokuapp.com</a> </p>
-<p><a href="https://github.com/mdecourse/lookupdict">https://github.com/mdecourse/lookupdict</a></p>
-<p style="padding-left: 30px;"><a href="https://lookupdict.herokuapp.com">https://lookupdict.herokuapp.com</a> </p>
-<p><a href="https://github.com/mdecourse/nfulist">https://github.com/mdecourse/nfulist</a></p>
-<p style="padding-left: 30px;"><a href="https://nfulist.herokuapp.com">https://nfulist.herokuapp.com</a> </p>
-<p><a href="https://github.com/mdecourse/scrum1-2020cp1">https://github.com/mdecourse/scrum1-2020cp1</a></p>
-<p style="padding-left: 30px;"><a href="http://scrum1-2020cp1.herokuapp.com/">http://scrum1-2020cp1.herokuapp.com/</a></p>
-<h4>Heroku 操作</h4>
-<p>登入 @gm <a href="https://drive.google.com/file/d/1itKaIPSdIRZQ-qiLkUpxEPOLzSpP3eNY/view?usp=sharing">下載 Heroku cli 可攜.7z</a>, 解開壓縮檔案後, 在 start.bat 中將 Heroku bin 設定指令搜尋路徑, 重新啟動後, 以 heroku version 確定指令可以正常執行後, heroku login 成功後, 登入帳號密碼會存入 home/_netrc 中. 之後便可直接透過 heroku cli 指令直接對遠端主機下命令.</p>
-<h2>Machine Learning</h2>
-<p><a href="https://www.kaggle.com/learn/deep-learning">https://www.kaggle.com/learn/deep-learning</a></p>
-<p><a href="https://github.com/IKMLab/course_material">https://github.com/IKMLab/course_material</a> </p>
-<p><a href="https://mropengate.blogspot.com/2019/03/ai-ai.html">https://mropengate.blogspot.com/2019/03/ai-ai.html</a> </p>
-<h1>Projects</h1>
-<h4>MCAD</h4>
-<h4>雲端電腦輔助機械設計工具的比較</h4>
-<p><a href="https://total3dprinting.org/onshape-vs-fusion-360/">https://total3dprinting.org/onshape-vs-fusion-360/</a> 是電腦輔助設計實習與協同產品設計實習課程中的議題之一, 比較 onshape 與 fusion 360 的功能與特性.</p>
-<h4>利用 Python 建立雲端程式工具</h4>
-<p>結合 Brython, Javascript Gist 與近端程式系統, 利用 Flask 為主體, 建立一個能夠部署在 Heroku 的 Python 網際程式編寫與執行系統.</p>
-<p style="padding-left: 30px;">參考: <a href="http://mde.tw/lab/content/Python.html">http://mde.tw/lab/content/Python.html</a></p>
-<p style="padding-left: 60px;">原先的系統是直接將導引給 Brython 執行的 Python 程式, 直接寫在網頁中, 然後透過 Javascript 與 html 按鈕逐一帶出已經編寫存入網頁的程式, 然後修改執行.</p>
-<p style="padding-left: 60px;">假如, 能夠使用 <a href="http://mde.tw/lab/content/Javascript.html">http://mde.tw/lab/content/Javascript.html</a> 與 <a href="http://mde.tw/lab/content/Dart.html">http://mde.tw/lab/content/Dart.html</a> 中的方法, 將 Python 程式存於 Gist 或 Github Pages 網站, 然後透過 ajax 的方式帶至網際瀏覽器中執行, 並能利用 Javascript 按鈕將在網頁編寫執行的 Python 程式存至近端, 放入特定倉儲中進行版次管理.</p>
-<h4>網際 Markdown 網誌系統</h4>
-<p style="padding-left: 30px;">利用 Flask 與 GMail oauth2 登入後, 使用者在瀏覽器中編輯 Markdown 格式之 Pelican 網誌文章, 存為唯一檔案名.md 後上傳至 GDrive 特定目錄, 可再透過 Google Blogger API 將 Markdown 轉為 html 後登錄至 Google Blogger.</p>
-<p style="padding-left: 30px;">最終將 Flask 程式部署在 Heroku, 僅提供特定使用者利用 Gmail 帳號登入後編寫文章, 並分別對 Blogger 發表文章, 以及將 Markdown 文章上傳至 GDrive 備用.</p>
-<p style="padding-left: 30px;">使用工具: Flask, Google GMail oauth2, GDrive API, Google Blogger API</p>
-<p><a href="https://github.com/tomzaragoza/Flask-LiteCMS">https://github.com/tomzaragoza/Flask-LiteCMS</a></p>
-<h4>OpenStreetMap 應用</h4>
-<p style="padding-left: 30px;"><a href="https://en.wikipedia.org/wiki/OpenStreetMap">https://en.wikipedia.org/wiki/OpenStreetMap</a> </p>
-<p style="padding-left: 30px;"><a href="https://www.openstreetmap.org/">https://www.openstreetmap.org/</a> </p>
-<p style="padding-left: 30px;"><span style="background-color: #ffff00;"><a href="https://osmbuildings.org/" style="background-color: #ffff00;">https://osmbuildings.org/</a> </span></p>
-<p style="padding-left: 30px;"><span style="background-color: #ffff00;"><a href="https://github.com/osmlab/labuildings">https://github.com/osmlab/labuildings</a></span></p>
-<p style="padding-left: 30px;"><a href="https://osmbuildings.org/?lat=23.70168&amp;lon=120.43146&amp;zoom=17.8&amp;tilt=45&amp;rotation=338">綜一館</a> (<a href="https://osmbuildings.org/?lat=25.01737&amp;lon=121.53695&amp;zoom=17.0&amp;tilt=45&amp;rotation=25">ntu</a>, <a href="https://osmbuildings.org/?lat=42.36009&amp;lon=-71.09179&amp;zoom=17.8&amp;tilt=42&amp;rotation=6">mit</a>, <a href="https://osmbuildings.org/?lat=52.52180&amp;lon=13.40887&amp;zoom=16.8&amp;tilt=45&amp;rotation=-13">berlin</a>)</p>
-<p style="padding-left: 30px;"><a href="https://github.com/dabreegster/abstreet">https://github.com/dabreegster/abstreet</a> </p>
-<p style="padding-left: 30px;"><a href="https://ardupilot.org/dev/docs/sitl-with-webots.html">https://ardupilot.org/dev/docs/sitl-with-webots.html</a> </p>
-<p style="padding-left: 30px;"><a href="https://github.com/mdecourse/osm-python-tools">https://github.com/mdecourse/osm-python-tools</a> </p>
-<p style="padding-left: 30px;"><a href="https://github.com/iandees/planet-notes-dump">https://github.com/iandees/planet-notes-dump</a> </p>
-<p style="padding-left: 30px;"><a href="https://planet.openstreetmap.org/">https://planet.openstreetmap.org/</a> </p>
-<p style="padding-left: 30px;"><a href="https://github.com/openstreetmap/iD">https://github.com/openstreetmap/iD</a> </p>
-<p style="padding-left: 30px;"><a href="https://github.com/osmlab/awesome-openstreetmap">https://github.com/osmlab/awesome-openstreetmap</a> </p>
-<p style="padding-left: 30px;"><a href="https://github.com/Project-OSRM/osrm-backend">https://github.com/Project-OSRM/osrm-backend</a> </p>
-<p style="padding-left: 30px;"><a href="https://github.com/hotosm/osm-export-tool-python">https://github.com/hotosm/osm-export-tool-python</a> </p>
-<p style="padding-left: 30px;"><a href="https://wiki.openstreetmap.org/wiki/San_Francisco_Building_Height_Import">https://wiki.openstreetmap.org/wiki/San_Francisco_Building_Height_Import</a> </p>
-<p style="padding-left: 30px;"><a href="https://github.com/osmlab/labuildings">https://github.com/osmlab/labuildings</a> </p>
-<p style="padding-left: 30px;"><a href="https://extract.bbbike.org/">https://extract.bbbike.org/</a> </p>
-<p style="padding-left: 30px;"><a href="https://wiki.openstreetmap.org/wiki/San_Francisco_Building_Height_Import">https://wiki.openstreetmap.org/wiki/San_Francisco_Building_Height_Import</a> </p>
-<p style="padding-left: 30px;"><a href="https://en.wikipedia.org/wiki/Lidar">https://en.wikipedia.org/wiki/Lidar</a> </p>
-<p style="padding-left: 30px;"><a href="https://techcrunch.com/2019/08/02/digitizing-construction-sites-with-scaled-robotics/">https://techcrunch.com/2019/08/02/digitizing-construction-sites-with-scaled-robotics/</a> </p>
-<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/FAMJpijwQnQ" width="560"></iframe></p>
-<h4>圖形介面程式開發</h4>
-<p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-1-4842-5857-6">Beginning PyQt</a> 終於出書, 之前 <a href="https://riverbankcomputing.com/software/pyqt/download5">PyQt5</a> 曾被用來開發平面機構分析與合成套件 - <a href="https://github.com/KmolYuan/Pyslvs-UI">Pyslvs-UI</a>, 接下來 <a href="https://riverbankcomputing.com/software/pyqt/download5">PyQt5</a> 或 <a href="https://www.qt.io/qt-for-python">Qt for Python</a> 還能用來開發甚麼機械設計相關工具套件?</p>
-<h4>Discourse 論壇與 <a href="https://pypi.org/project/pydiscourse/">Pydiscourse</a></h4>
-<p style="padding-left: 30px;"><a href="https://forum.eng.nfu.edu.tw/">https://forum.eng.nfu.edu.tw/</a> 以 Ruby 編寫, 若能透過 <a href="https://github.com/tindie/pydiscourse">Pydiscourse</a> 與 <a href="https://docs.discourse.org/">https://docs.discourse.org/</a> 中的 Discourse API 結合, 將可延伸 <a href="http://lab.mde.tw/blog/sync-pelican-and-blogger-content.html">http://lab.mde.tw/blog/sync-pelican-and-blogger-content.html</a> 中的 Markdown 文章, 在<a href="https://github.com/leo-editor/leo-editor">Leo Editor</a> 的編輯下, 將內容同步至 <a href="https://github.com/getpelican/pelican">Pelican</a> 與 <a href="https://www.blogger.com/">Blogger</a> 網誌.</p>
