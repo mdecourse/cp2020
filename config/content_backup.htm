@@ -1679,7 +1679,22 @@ MathJax = {
 <h3>W7Video</h3>
 <p><a href="https://drive.google.com/file/d/1AAfYEPbJ3053wT0I4qhQ38F9SlMr0iTG/view?usp=sharing">12bw7_gitlab_remote_add_kaggle_intro.mp4</a></p>
 <p style="padding-left: 30px;">說明如何在 <a href="https://gitlab.com">https://gitlab.com</a> 建立一個與 <a href="https://github.com">https://github.com</a> 同名的空倉儲, 然後利用 git remote add 設定一個名稱為 gitlab 的遠端倉儲連線, 然後在 git push 時就可以將近端版本同步一份到 gitlab.com</p>
-<p style="padding-left: 30px;">假如希望啟用 gitlab 倉儲上的 <a href="https://docs.gitlab.com/ee/user/project/pages/">gitlab pages</a>, 請參考: <a href="https://mde.tw/lab/blog/use-github-and-gitlab-pages.html">https://mde.tw/lab/blog/use-github-and-gitlab-pages.html</a></p><h2>W1</h2>
+<p style="padding-left: 30px;">假如希望啟用 gitlab 倉儲上的 <a href="https://docs.gitlab.com/ee/user/project/pages/">gitlab pages</a>, 請參考: <a href="https://mde.tw/lab/blog/use-github-and-gitlab-pages.html">https://mde.tw/lab/blog/use-github-and-gitlab-pages.html</a></p>
+<p style="padding-left: 30px;">必須在倉儲根目錄中放入 gitlab-ci.yml 設定檔案:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pages:
+  stage: deploy
+  script:
+  - mkdir .public
+  - cp -r * .public
+  - mv .public public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive</pre>
+<p style="padding-left: 30px;"></p><h2>W1</h2>
 <p>每班按照學號使用固定電腦, 若電腦故障則必須在一週內負責告知助教, 並將電腦第三磁區複製回原始狀態, 若電腦硬體故障則需回報給助教設法請廠商進行維護, 期間則至使用最後一列備用電腦.</p>
 <p>準備在個人的電腦, 筆電或電腦輔助設計室中的電腦, 製作合用的可攜程式系統.</p>
 <p>W1 學員登入學校配發的 @gm 郵件帳號後,<span> </span><a href="https://forms.gle/3hfnf6D2QCemdDQn9">填寫基本資料</a></p>
