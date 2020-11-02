@@ -1708,7 +1708,8 @@ variables:
   GIT_SUBMODULE_STRATEGY: recursive</pre>
 <p>在原 github 倉儲中加入 .gitlab-ci.yml 並將資料推送至 gitlab 倉儲後, 就可以見到 <a href="https://mdecourse.gitlab.io/cp2020/">https://mdecourse.gitlab.io/cp2020/</a> </p>
 <p><a href="https://drive.google.com/file/d/1_lnRQCjMOWIyxtHiMyX5leSJE6kMjoZI/view?usp=sharing">13bw7_print_function_demo.mp4</a></p>
-<p style="padding-left: 30px;">說明如何使用 print() 函式</p><h2>W1</h2>
+<p style="padding-left: 30px;">說明如何使用 print() 函式</p><h3>W8Video</h3>
+<p>14bw8_diagrams_kaggle_datasets_read_data.mp4</p><h2>W1</h2>
 <p>每班按照學號使用固定電腦, 若電腦故障則必須在一週內負責告知助教, 並將電腦第三磁區複製回原始狀態, 若電腦硬體故障則需回報給助教設法請廠商進行維護, 期間則至使用最後一列備用電腦.</p>
 <p>準備在個人的電腦, 筆電或電腦輔助設計室中的電腦, 製作合用的可攜程式系統.</p>
 <p>W1 學員登入學校配發的 @gm 郵件帳號後,<span> </span><a href="https://forms.gle/3hfnf6D2QCemdDQn9">填寫基本資料</a></p>
@@ -1969,11 +1970,10 @@ for i in range(len(dropStud)):
 
 </pre>
 <p></p><h3>W8</h3>
-<p><a href="https://app.diagrams.net/">https://app.diagrams.net/</a></p>
-<p></p>
+<p>以下與課程相關的網路架構圖是採用 <a href="https://app.diagrams.net/">https://app.diagrams.net/ </a>建立. 主要呈現課程倉儲可以分別同步到 Github, Gitlab 與 Heroku 雲端主機, 其中利用 Github Pages 與 Gitlab Pages 伺服靜態網頁, 之後則可以利用 Heroku 伺服靜態網頁或執行動態網頁內容.</p>
 <p><img alt="" height="681" src="/images/kmol_env.png" width="600"/></p>
 <p>cp2020w8</p>
-<p><a href="https://www.kaggle.com/mdecourse/cp2020w8/">https://www.kaggle.com/mdecourse/cp2020w8/</a> </p>
+<p><a href="https://www.kaggle.com/mdecourse/cp2020w8/">https://www.kaggle.com/mdecourse/cp2020w8/</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">"""
 semester=1091
 
@@ -2034,6 +2034,21 @@ for i in range(len(cReadSplit)):
 
 
 </pre>
+<p>.gitlab-ci.yml</p>
+<p><a href="https://mdecourse.gitlab.io/cp2020">https://mdecourse.gitlab.io/cp2020</a></p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pages:
+  stage: deploy
+  script:
+  - mkdir .public
+  - cp -r * .public
+  - mv .public public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive</pre>
 <p></p><h3>HW2</h3>
 <p>有關作業二 (Due W12 各班上課之前):</p>
 <p style="padding-left: 30px;">由於部分學員在建立 Github 帳號時, 無法使用學號登記帳號, 因此造成 <a href="http://mde.tw/cp2020/content/W3.html">W3</a> 部分分組組員的倉儲與網站連結產生錯誤, 今已知乙班的原始分組數列如下:</p>

@@ -133,87 +133,11 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W6 << <a href='W6.html'>Previous</a> <a href='HW2.html'>Next</a> >> HW2<br /><h1>W8</h1>
-<p>以下與課程相關的網路架構圖是採用 <a href="https://app.diagrams.net/">https://app.diagrams.net/ </a>建立. 主要呈現課程倉儲可以分別同步到 Github, Gitlab 與 Heroku 雲端主機, 其中利用 Github Pages 與 Gitlab Pages 伺服靜態網頁, 之後則可以利用 Heroku 伺服靜態網頁或執行動態網頁內容.</p>
-<p><img alt="" height="681" src="./../images/kmol_env.png" width="600"/></p>
-<p>cp2020w8</p>
-<p><a href="https://www.kaggle.com/mdecourse/cp2020w8/">https://www.kaggle.com/mdecourse/cp2020w8/</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">"""
-semester=1091
-
-courseno=0762
-
-cp
-
-1a 1091/0762
-
-1b 1091/0776
-
-cad
-
-2a 1091/0788
-
-2b 1091/0801
-"""
-# 導入 urllib.request: https://docs.python.org/3/library/urllib.request.html
-# 透過 urllib.request 模組中的 urlopen() 開啟網路 url 連結資料
-import urllib.request  # the lib that handles the url stuff
-# 定義一個輸入學期與課號,就能夠輸出各課程修課人員數列的函式
-
-def getRegList(semester, courseno):
-    # 因為課號可能以 0 開頭, 因此採字串型別輸入, 為了一致, 輸入變數一律採字串輸入
-    target_url = "https://nfulist.herokuapp.com/?semester=" + semester + "&amp;courseno=" + courseno
-    regList = []
-    for line in urllib.request.urlopen(target_url):
-        # 由於 urlopen() 取下的網際資料為 binary 格式, 可以透過 decode() 解碼為 ASCII 資料
-        regList.append(line.decode('utf-8').rstrip())
-    # 此一函式利用 return 將資料傳回
-    return regList
-    
-print(getRegList("1091", "0776"))
-
-
-# 1b_from_nfu.txt is one line file
-with open("1b_from_nfu.txt") as f:
-    # read() will read the whole content of file
-    cRead = f.read()
-#print(cRead)
-
-with open("1b_from_nfu.txt") as f:
-    # readline() only read one line
-    cReadline = f.readline()
-#print(cReadline)
-
-with open("1b_from_nfu.txt") as f:
-    # readlines() will read line by line and put into list
-    cReadlines = f.readlines()
-#print(cReadlines)
-
-# user split() to cut cRead string into list with " "
-cReadSplit = cRead.split(" ")
-#print(cReadSplit)
-
-for i in range(len(cReadSplit)):
-    print(cReadSplit[i])
-
-
-</pre>
-<p>.gitlab-ci.yml</p>
-<p><a href="https://mdecourse.gitlab.io/cp2020">https://mdecourse.gitlab.io/cp2020</a></p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pages:
-  stage: deploy
-  script:
-  - mkdir .public
-  - cp -r * .public
-  - mv .public public
-  artifacts:
-    paths:
-    - public
-  only:
-  - master
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive</pre>
-<p></p><br />W6 << <a href='W6.html'>Previous</a> <a href='HW2.html'>Next</a> >> HW2</div>
+    <div id="tipue_search_content">W7Video << <a href='W7Video.html'>Previous</a> <a href='W1.html'>Next</a> >> W1<br /><h1>W8Video</h1>
+<p><a href="https://drive.google.com/file/d/1TrRCGcoSyNLSwp2fvj2cznoKuVCcPxQY/view?usp=sharing">14bw8_diagrams_kaggle_datasets_read_data.mp4</a></p>
+<p style="padding-left: 30px;">說明使用者可以直接利用 <a href="https://app.diagrams.net/">https://app.diagrams.net/</a> 建立流程圖說明網路架構或者計算機程式規劃圖.</p>
+<p style="padding-left: 30px;">說明如何利用 With open as 與 read, readline 與 readlines 讀取近端檔案或者利用 urllib.request  讀取網際資料, 取得資料後再設法進行處理重用.</p>
+<p style="padding-left: 30px;">本週同時加入 <a href="https://www.kaggle.com/mdecourse/w8data">https://www.kaggle.com/mdecourse/w8data</a> 以及 <a href="https://www.kaggle.com/mdecourse/cp2020w8">https://www.kaggle.com/mdecourse/cp2020w8</a>, 使用者可以直接在 kaggle 上編輯並分享 Python 程式與資料集.</p><br />W7Video << <a href='W7Video.html'>Previous</a> <a href='W1.html'>Next</a> >> W1</div>
         
     <!-- footer -->
       <div class="container">
