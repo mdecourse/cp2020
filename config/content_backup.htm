@@ -1545,7 +1545,13 @@ def uploadToGdrive3(fileName, mimeType):
 <p>表示 git 將透過 putty 工具以 ssh 加密協定對 Github 連線</p>
 <p>3. 在 Putty 中設定對 github.com ssh 時必須提供的 Proxy 代理主機設定與 Auth 認證所需的近端 private key, 而且必須利用 puttygen 將 OpenSSH 格式轉為 putty 檔案格式</p>
 <p>4. 無論在 git clone 或 git push (URL 位於倉儲 .git/config 中), URL 必須使用 <a href="mailto:git@github.com:帳號/倉儲名稱.git">git@github.com:帳號/倉儲名稱.git</a> 連線</p>
-<h3>OpenSSH</h3>
+<h4>利用 SSH 對 Gitlab 連線</h4>
+<ol>
+<li>首先必須要將 OpenSSH 格式的 public key 登錄到 Gitlab 帳號下</li>
+<li>確定已經利用 putty.exe 建立 session 名稱為 gitlab.com 的設定, 其中設定 AUTH 與 Proxy 資料</li>
+<li>修改各倉儲中 .git/config 的 gitlab remote add 設定, 以 url = git@gitlab.com:user_name/url 對 gitlab 連接.</li>
+</ol>
+<p></p><h3>OpenSSH</h3>
 <p><a href="/downloads/OpenSSH vs OpenSSL Key Formats.pdf">OpenSSH vs OpenSSL Key Formats.pdf</a></p>
 <p>利用 OpenSSH 建立 key pair 的方法:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">ssh-keygen -t rsa -b 4096 -C "使用者學號"</pre>
@@ -1960,6 +1966,72 @@ for gpNum in range(len(cp1bGroup)):
 # 列出已經退選名單
 for i in range(len(dropStud)):
     print(str(dropStud[i]) + "已經退選")
+
+</pre>
+<p></p><h3>W8</h3>
+<p><a href="https://app.diagrams.net/">https://app.diagrams.net/</a></p>
+<p></p>
+<p><img alt="" height="681" src="/images/kmol_env.png" width="600"/></p>
+<p>cp2020w8</p>
+<p><a href="https://www.kaggle.com/mdecourse/cp2020w8/">https://www.kaggle.com/mdecourse/cp2020w8/</a> </p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">"""
+semester=1091
+
+courseno=0762
+
+cp
+
+1a 1091/0762
+
+1b 1091/0776
+
+cad
+
+2a 1091/0788
+
+2b 1091/0801
+"""
+# 導入 urllib.request: https://docs.python.org/3/library/urllib.request.html
+# 透過 urllib.request 模組中的 urlopen() 開啟網路 url 連結資料
+import urllib.request  # the lib that handles the url stuff
+# 定義一個輸入學期與課號,就能夠輸出各課程修課人員數列的函式
+
+def getRegList(semester, courseno):
+    # 因為課號可能以 0 開頭, 因此採字串型別輸入, 為了一致, 輸入變數一律採字串輸入
+    target_url = "https://nfulist.herokuapp.com/?semester=" + semester + "&amp;courseno=" + courseno
+    regList = []
+    for line in urllib.request.urlopen(target_url):
+        # 由於 urlopen() 取下的網際資料為 binary 格式, 可以透過 decode() 解碼為 ASCII 資料
+        regList.append(line.decode('utf-8').rstrip())
+    # 此一函式利用 return 將資料傳回
+    return regList
+    
+print(getRegList("1091", "0776"))
+
+
+# 1b_from_nfu.txt is one line file
+with open("1b_from_nfu.txt") as f:
+    # read() will read the whole content of file
+    cRead = f.read()
+#print(cRead)
+
+with open("1b_from_nfu.txt") as f:
+    # readline() only read one line
+    cReadline = f.readline()
+#print(cReadline)
+
+with open("1b_from_nfu.txt") as f:
+    # readlines() will read line by line and put into list
+    cReadlines = f.readlines()
+#print(cReadlines)
+
+# user split() to cut cRead string into list with " "
+cReadSplit = cRead.split(" ")
+#print(cReadSplit)
+
+for i in range(len(cReadSplit)):
+    print(cReadSplit[i])
+
 
 </pre>
 <p></p><h3>HW2</h3>
