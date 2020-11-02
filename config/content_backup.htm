@@ -2696,12 +2696,21 @@ start /MIN %Disk%:\wScite\SciTE.exe
 
 Exit</pre>
 <p>以下指令, 以 Heroku Cli 進行操作:</p>
+<p>表示要利用 heroku.exe 在 cp2020 倉儲中建立名稱為 heroku 的 remote site.</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Y:\tmp\cp2020&gt;heroku login
 heroku: Press any key to open up the browser to login or q to exit:
 Opening browser to https:
 
 Y:\tmp\cp2020&gt;heroku git:remote -a  cp2020
 set git remote heroku to https://git.heroku.com/cp2020.git</pre>
+<p>在 Heroku 伺服 CMSiMDE 靜態網頁:</p>
+<p>需要在倉儲根目錄加入 index.php 與 composer.json</p>
+<p>index.php</p>
+<pre class="brush:php;auto-links:false;toolbar:false" contenteditable="false">&lt;?php
+header( 'Location: index.html' ) ;
+?&gt;</pre>
+<p>composer.json</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{}</pre>
 <p></p><h2>Machine Learning</h2>
 <p><a href="https://www.kaggle.com/learn/deep-learning">https://www.kaggle.com/learn/deep-learning</a></p>
 <p><a href="https://github.com/IKMLab/course_material">https://github.com/IKMLab/course_material</a> </p>

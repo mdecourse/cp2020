@@ -2706,10 +2706,16 @@ set git remote heroku to https://git.heroku.com/cp2020.git</pre>
 <p>在 Heroku 伺服 CMSiMDE 靜態網頁:</p>
 <p>需要在倉儲根目錄加入 index.php 與 composer.json</p>
 <p>index.php</p>
-<pre class="brush:php;auto-links:false;toolbar:false" contenteditable="false">&lt;?php include_once(“index.html”); ?&gt;</pre>
+<pre class="brush:php;auto-links:false;toolbar:false" contenteditable="false">&lt;?php
+header( 'Location: index.html' ) ;
+?&gt;</pre>
 <p>composer.json</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{}</pre>
-<p></p><h2>Machine Learning</h2>
+<p>在 cp2020 倉儲設定 Github, Gitlab 與 Heroku 資料同步之後,</p>
+<p><a href="http://mde.tw/cp2020">http://mde.tw/cp2020</a> (Github Pages)</p>
+<p><a href="http://mdecourse.gitlab.io/cp2020">http://mdecourse.gitlab.io/cp2020</a> (Gitlab Pages)</p>
+<p><a href="http://cp2020.herokuapp.com">http://cp2020.herokuapp.com</a> (Heroku Apache 與 PHP 伺服)</p>
+<p>將可利用雲端主機同步備份並分享三個 CMSiMDE 靜態網站的內容.</p><h2>Machine Learning</h2>
 <p><a href="https://www.kaggle.com/learn/deep-learning">https://www.kaggle.com/learn/deep-learning</a></p>
 <p><a href="https://github.com/IKMLab/course_material">https://github.com/IKMLab/course_material</a> </p>
 <p><a href="https://mropengate.blogspot.com/2019/03/ai-ai.html">https://mropengate.blogspot.com/2019/03/ai-ai.html</a> </p>
