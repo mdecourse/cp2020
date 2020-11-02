@@ -155,7 +155,71 @@ img.add_border {
 <p style="padding-left: 30px;"><a href="http://scrum1-2020cp1.herokuapp.com/">http://scrum1-2020cp1.herokuapp.com/</a></p>
 <h4>Heroku 操作</h4>
 <p>登入 @gm <a href="https://drive.google.com/file/d/1itKaIPSdIRZQ-qiLkUpxEPOLzSpP3eNY/view?usp=sharing">下載 Heroku cli 可攜.7z</a>, 解開壓縮檔案後, 在 start.bat 中將 Heroku bin 設定指令搜尋路徑, 重新啟動後, 以 heroku version 確定指令可以正常執行後, heroku login 成功後, 登入帳號密碼會存入 home/_netrc 中. 之後便可直接透過 heroku cli 指令直接對遠端主機下命令.</p>
-<br />nfu-project << <a href='nfu-project.html'>Previous</a> <a href='Machine Learning.html'>Next</a> >> Machine Learning</div>
+<p>在 IPv6 環境下工作:</p>
+<p>start.bat 內容:</p>
+<p>為了讓 Heorku Cli 可以直接執行, 需要設定 Heroku 命令搜尋路徑.</p>
+<p>為了讓 Heroku Cli 指令可以使用 IPv4/IPv6 雙支援代理主機對外連線, 必須設定 HTTPS_PROXY 變數.</p>
+<p>為了讓命令列中的 heroku login 可以順利帶出系統所設定的內定瀏覽器, 命令搜尋路徑在 Windows 10 中必須加入系統的 %path%.</p>
+<p>目前一個 Heroku 帳號只能免費建立 5 個應用程式.</p>
+<p>目前 Heroku 帳號綁定如下:</p>
+<p>cp2020 -- mdecourse At Gmail</p>
+<p>cad2020 -- heroku1 At Mde dot TW (含 cad2021 ~ cad2024)</p>
+<p>cp2021 ~ cp2025 -- heroku2 At Mde dot TW</p>
+<p>cad2025, mdecp, mdecad, mdewcm, mdecd -- heroku3 At Mde dot TW</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">@echo off
+set Disk=y
+subst %Disk%: "data"
+
+%Disk%:
+
+set HomePath=%Disk%:\home
+set HomeDrive=%Disk%:\home
+set Home=%Disk%:\home
+set USERPROFILE=%Disk%:\home
+
+REM 將系統 Python 程式的 io 設為 utf-8
+set PYTHONIOENCODING="utf-8"
+
+set PYTHONPATH=%Disk%:\Python38\DLLs;%Disk%:\Python38\Lib;%Disk%:\Python38\Lib\site-packages;
+set PYTHONHOME=%Disk%:\Python38
+
+REM for ssh
+set GIT_SSH=%Disk%:\putty\plink.exe
+
+REM 設定跟 Python 有關的命令搜尋路徑
+set path_python=%Disk%:\Python38;%Disk%:\Python38\Scripts;
+REM for Heroku 
+set HTTPS_PROXY=https://[2001:288:6004:17::69]:3128
+set path_heroku=%Disk%:\Heroku\bin;
+
+REM for portable git
+set path_git=%Disk%:\Portablegit\bin;
+
+path=%Disk%:;%path_python%;%path_git%;%path_heroku%;%path%;
+start /MIN cmd.exe
+start /MIN cmd.exe
+start /MIN cmd.exe
+start /MIN cmd.exe
+
+start /MIN %Disk%:\wScite\SciTE.exe
+start /MIN %Disk%:\wScite\SciTE.exe
+
+Exit</pre>
+<p>以下指令, 以 Heroku Cli 進行操作:</p>
+<p>表示要利用 heroku.exe 在 cp2020 倉儲中建立名稱為 heroku 的 remote site.</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Y:\tmp\cp2020&gt;heroku login
+heroku: Press any key to open up the browser to login or q to exit:
+Opening browser to https:
+
+Y:\tmp\cp2020&gt;heroku git:remote -a  cp2020
+set git remote heroku to https://git.heroku.com/cp2020.git</pre>
+<p>在 Heroku 伺服 CMSiMDE 靜態網頁:</p>
+<p>需要在倉儲根目錄加入 index.php 與 composer.json</p>
+<p>index.php</p>
+<pre class="brush:php;auto-links:false;toolbar:false" contenteditable="false">&lt;?php include_once(“index.html”); ?&gt;</pre>
+<p>composer.json</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{}</pre>
+<p></p><br />nfu-project << <a href='nfu-project.html'>Previous</a> <a href='Machine Learning.html'>Next</a> >> Machine Learning</div>
         
     <!-- footer -->
       <div class="container">

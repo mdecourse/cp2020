@@ -1709,7 +1709,10 @@ variables:
 <p>在原 github 倉儲中加入 .gitlab-ci.yml 並將資料推送至 gitlab 倉儲後, 就可以見到 <a href="https://mdecourse.gitlab.io/cp2020/">https://mdecourse.gitlab.io/cp2020/</a> </p>
 <p><a href="https://drive.google.com/file/d/1_lnRQCjMOWIyxtHiMyX5leSJE6kMjoZI/view?usp=sharing">13bw7_print_function_demo.mp4</a></p>
 <p style="padding-left: 30px;">說明如何使用 print() 函式</p><h3>W8Video</h3>
-<p>14bw8_diagrams_kaggle_datasets_read_data.mp4</p><h2>W1</h2>
+<p><a href="https://drive.google.com/file/d/1TrRCGcoSyNLSwp2fvj2cznoKuVCcPxQY/view?usp=sharing">14bw8_diagrams_kaggle_datasets_read_data.mp4</a></p>
+<p style="padding-left: 30px;">說明使用者可以直接利用 <a href="https://app.diagrams.net/">https://app.diagrams.net/</a> 建立流程圖說明網路架構或者計算機程式規劃圖.</p>
+<p style="padding-left: 30px;">說明如何利用 With open as 與 read, readline 與 readlines 讀取近端檔案或者利用 urllib.request  讀取網際資料, 取得資料後再設法進行處理重用.</p>
+<p style="padding-left: 30px;">本週同時加入 <a href="https://www.kaggle.com/mdecourse/w8data">https://www.kaggle.com/mdecourse/w8data</a> 以及 <a href="https://www.kaggle.com/mdecourse/cp2020w8">https://www.kaggle.com/mdecourse/cp2020w8</a>, 使用者可以直接在 kaggle 上編輯並分享 Python 程式與資料集.</p><h2>W1</h2>
 <p>每班按照學號使用固定電腦, 若電腦故障則必須在一週內負責告知助教, 並將電腦第三磁區複製回原始狀態, 若電腦硬體故障則需回報給助教設法請廠商進行維護, 期間則至使用最後一列備用電腦.</p>
 <p>準備在個人的電腦, 筆電或電腦輔助設計室中的電腦, 製作合用的可攜程式系統.</p>
 <p>W1 學員登入學校配發的 @gm 郵件帳號後,<span> </span><a href="https://forms.gle/3hfnf6D2QCemdDQn9">填寫基本資料</a></p>
@@ -2642,7 +2645,64 @@ print(output)</pre>
 <p style="padding-left: 30px;"><a href="http://scrum1-2020cp1.herokuapp.com/">http://scrum1-2020cp1.herokuapp.com/</a></p>
 <h4>Heroku 操作</h4>
 <p>登入 @gm <a href="https://drive.google.com/file/d/1itKaIPSdIRZQ-qiLkUpxEPOLzSpP3eNY/view?usp=sharing">下載 Heroku cli 可攜.7z</a>, 解開壓縮檔案後, 在 start.bat 中將 Heroku bin 設定指令搜尋路徑, 重新啟動後, 以 heroku version 確定指令可以正常執行後, heroku login 成功後, 登入帳號密碼會存入 home/_netrc 中. 之後便可直接透過 heroku cli 指令直接對遠端主機下命令.</p>
-<h2>Machine Learning</h2>
+<p>在 IPv6 環境下工作:</p>
+<p>start.bat 內容:</p>
+<p>為了讓 Heorku Cli 可以直接執行, 需要設定 Heroku 命令搜尋路徑.</p>
+<p>為了讓 Heroku Cli 指令可以使用 IPv4/IPv6 雙支援代理主機對外連線, 必須設定 HTTPS_PROXY 變數.</p>
+<p>為了讓命令列中的 heroku login 可以順利帶出系統所設定的內定瀏覽器, 命令搜尋路徑在 Windows 10 中必須加入系統的 %path%.</p>
+<p>目前一個 Heroku 帳號只能免費建立 5 個應用程式.</p>
+<p>目前 Heroku 帳號綁定如下:</p>
+<p>cp2020 -- mdecourse At Gmail</p>
+<p>cad2020 -- heroku1 At Mde dot TW (含 cad2021 ~ cad2024)</p>
+<p>cp2021 ~ cp2025 -- heroku2 At Mde dot TW</p>
+<p>cad2025, mdecp, mdecad, mdewcm, mdecd -- heroku3 At Mde dot TW</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">@echo off
+set Disk=y
+subst %Disk%: "data"
+
+%Disk%:
+
+set HomePath=%Disk%:\home
+set HomeDrive=%Disk%:\home
+set Home=%Disk%:\home
+set USERPROFILE=%Disk%:\home
+
+REM 將系統 Python 程式的 io 設為 utf-8
+set PYTHONIOENCODING="utf-8"
+
+set PYTHONPATH=%Disk%:\Python38\DLLs;%Disk%:\Python38\Lib;%Disk%:\Python38\Lib\site-packages;
+set PYTHONHOME=%Disk%:\Python38
+
+REM for ssh
+set GIT_SSH=%Disk%:\putty\plink.exe
+
+REM 設定跟 Python 有關的命令搜尋路徑
+set path_python=%Disk%:\Python38;%Disk%:\Python38\Scripts;
+REM for Heroku 
+set HTTPS_PROXY=https://[2001:288:6004:17::69]:3128
+set path_heroku=%Disk%:\Heroku\bin;
+
+REM for portable git
+set path_git=%Disk%:\Portablegit\bin;
+
+path=%Disk%:;%path_python%;%path_git%;%path_heroku%;%path%;
+start /MIN cmd.exe
+start /MIN cmd.exe
+start /MIN cmd.exe
+start /MIN cmd.exe
+
+start /MIN %Disk%:\wScite\SciTE.exe
+start /MIN %Disk%:\wScite\SciTE.exe
+
+Exit</pre>
+<p>以下指令, 以 Heroku Cli 進行操作:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Y:\tmp\cp2020&gt;heroku login
+heroku: Press any key to open up the browser to login or q to exit:
+Opening browser to https:
+
+Y:\tmp\cp2020&gt;heroku git:remote -a  cp2020
+set git remote heroku to https://git.heroku.com/cp2020.git</pre>
+<p></p><h2>Machine Learning</h2>
 <p><a href="https://www.kaggle.com/learn/deep-learning">https://www.kaggle.com/learn/deep-learning</a></p>
 <p><a href="https://github.com/IKMLab/course_material">https://github.com/IKMLab/course_material</a> </p>
 <p><a href="https://mropengate.blogspot.com/2019/03/ai-ai.html">https://mropengate.blogspot.com/2019/03/ai-ai.html</a> </p>
