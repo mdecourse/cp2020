@@ -2592,8 +2592,46 @@ print(output)</pre>
 <p><a href="https://heartbeat.fritz.ai/digit-recognizer-with-flutter-and-tensorflow-lite-33f5145b5f32">https://heartbeat.fritz.ai/digit-recognizer-with-flutter-and-tensorflow-lite-33f5145b5f32</a></p>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/9HaIGMyAyug" width="560"></iframe></p>
 <h3>cmsimde</h3>
-<p>在 <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 專案中, Flask 網際程式被用來建立動態內容管理系統, 並結合 bs4 與 lxml 模組功能, 將動態網頁轉為靜態網頁, 使用者可以將靜態網頁部署在 Github Pages 或 Heroku. 而靜態網頁可以再結合 Leo Editor 大綱管理程式, 用於整合 pelian 網誌與 reveal.js 網際簡報系統.</p>
-<h3>pdf-project</h3>
+<p>在 <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 專案中, Flask 網際程式被用來建立動態內容管理系統, 並結合 bs4 與 lxml 模組功能, 將動態網頁轉為靜態網頁, 使用者可以將靜態網頁部署在 Github Pages, Gitlab Pages 或 Heroku. 而靜態網頁可以再結合 Leo Editor 大綱管理程式, 用於整合 pelian 網誌與 reveal.js 網際簡報系統.</p>
+<p>CMSiMDE 是一套網際內容管理, 這裡所謂的網際指的是 Web-based, 也就是可以透過瀏覽器進行內容的管理.</p>
+<p>CMSiMDE 的內容管理是透過 Python 程式結合 Flask 網際框架編寫而成, 從 <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 可以見到其目錄結構:</p>
+<p><span style="background-color: #ffff00;">static</span> 目錄主要放置網頁呈現內容所需的 Javascirpt</p>
+<p><span style="background-color: #ffff00;">up_dir</span> 所放置的資料是使用者可以更動的內容</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">blog</span> 存放由 Pelican 網誌系統轉出的網誌檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">config</span> </p>
+<p style="padding-left: 60px;"><span style="background-color: #ffff00;">config</span></p>
+<p style="padding-left: 60px;">content.htm</p>
+<p style="padding-left: 60px;">content_backup.htm</p>
+<p style="padding-left: 60px;">pelican.leo</p>
+<p style="padding-left: 60px;">reveal.leo</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">content</span> 存放由 generate_pages 按鈕所轉出的靜態網頁內容</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">downloads</span> 存放上傳檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">images</span> 存放上傳影像檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">markdown</span> 存放原始網誌 Markdown 檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">plugin</span> 存放 Pelican plugin 檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">reveal</span> 存放 reveal.js 網際簡報檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">templates</span> 存放 Flask templates 檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">theme</span> 存放 Pelican theme 檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">.gitignore</span> 宣告倉儲 ignore 檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">LICENSE</span> 倉儲使用授權</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">http-server.py</span> 用於靜態網頁檢視用的伺服程式</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">index.html</span> 靜態網頁的根目錄超文件檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">init.py</span> 用於設定 Flask 一般執行或 uwsgi 執行, 可用於修改靜態網頁 title</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">local_publishconf.py</span> 區網 Pelican 設定檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">pelicanconf.py</span> Pelican 設定檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">publishconf.py</span> 廣域網路的 Pelican 設定檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">user.leo</span> 使用者開發 Leo Editor 所使用的專案檔</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">user.py</span> 預計採用 Blueprint 架構開發的測試檔案</p>
+<p>.gitignore</p>
+<p>LICENSE</p>
+<p>README.md</p>
+<p>cmsimde.leo</p>
+<p><span style="background-color: #ffff00;">flaskapp.py</span> 為 CMSiMDE 主程式</p>
+<p>localhost.crt</p>
+<p>localhost.key</p>
+<p>nocache.py</p>
+<p>wsgi.py</p>
+<p></p><h3>pdf-project</h3>
 <p><a href="https://github.com/mdecourse/cd2020pj1">https://github.com/mdecourse/cd2020pj1</a> </p>
 <p>功能包括:</p>
 <p>透過 authomatic 模組讓使用者以 oauth2 模式登入</p>
