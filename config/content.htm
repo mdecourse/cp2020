@@ -2282,8 +2282,15 @@ Date:   Wed Aug 26 15:17:27 2020 +0800
 <p style="padding-left: 30px;">使用分散式版次管理的目的</p>
 <p style="padding-left: 60px;">可以註記每次改版的提交者, 並能利用 git checkout 到先前的各版本</p>
 <p style="padding-left: 60px;">資料存一份在遠端, 避免因為近端電腦損毀而丟失資料.</p>
-<p style="padding-left: 30px;"></p>
-<h2>亂數分組</h2>
+<h3>cmsimde 問題</h3>
+<p>以下的問題發生在子模組版次無法擷取, 導致倉儲無法通過 Github Pages 轉檔. 以 git clone --recurse-submodules 取下倉儲檔案時無子模組 cmsimde.</p>
+<p><img alt="" height="320" src="/images/40923203_cmsimde_error.png" width="800"/></p>
+<p>這時必須要利用 git cat-file 查出 tree object 的板次號, 以確認目前倉儲希望擷取的 cmsimde 版次序號.</p>
+<p><img alt="" height="402" src="/images/40923203_git_cat-file.png" width="800"/></p>
+<p>從下列畫面可以查出 cmsimde 欲擷取的版次並非 cmsimde 子模組的任一版次</p>
+<p><img alt="" height="402" src="/images/40923203_find_cmsimde_version.png" width="800"/></p>
+<p>一旦利用 git checkout 取下最新的 cmsimde 版次後, 就可以新增提交並推送到 Github 測試.</p>
+<p><img alt="" height="470" src="/images/40923203_checkout_new_cmsimde_version.png" width="800"/></p><h2>亂數分組</h2>
 <p>在 <a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776&amp;column=True">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776&amp;column=True</a> 新增一個 column 變數, 若 column=True, 則將 \n 換為 &lt;/br&gt;, 則以 column 格式列出資料.</p>
 <p>nfulist: <a href="https://github.com/mdecourse/nfulist">https://github.com/mdecourse/nfulist</a></p>
 <p>在 Heroku 以 scrum2 At mde 登記.</p>
