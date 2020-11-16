@@ -133,96 +133,15 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W6 << <a href='W6.html'>Previous</a> <a href='HW2.html'>Next</a> >> HW2<br /><h1>W8</h1>
-<p>本週有三項重點:</p>
-<ol>
-<li>如何在 kaggle 寫 Python 程式?</li>
-<li>如何將近端 data upload  到 kaggle 取用?</li>
-<li>如何在 kaggle 讀取網際伺服器上的資料?</li>
-</ol>
-<p><a href="https://kaggle.com">https://kaggle.com</a> 採用 Jupyter notebook 建立, 而 Jupyter 源自三種用於 data science 或 data computation 的計算機程式語言, 也就是 <a href="https://julialang.org/">Julia</a>, <a href="https://www.python.org/">Python</a> 與 <a href="https://www.r-project.org/">R.</a></p>
-<p style="text-align: left; padding-left: 30px;"><a href="https://jupyter.org/">Jupyter</a> = <a href="https://julialang.org/">Julia</a> + <a href="https://www.python.org/">Python</a> +  <a href="https://www.r-project.org/">R</a></p>
-<p style="text-align: left;">請利用 @gm 帳號登入 <a href="https://kaggle.com">https://kaggle.com</a> 後選定 s + 學號作為帳號後, 開始建立自己的 Notebook, 利用 <a href="https://www.kaggle.com/mdecourse/cp2020w8">https://www.kaggle.com/mdecourse/cp2020w8</a> 作為範本, 練習如何將近端數據上傳, 並學習如何從 <a href="http://nfulist.herokuapp.com/">http://nfulist.herokuapp.com/</a> (使用說明在<a href="http://mde.tw/cp2020/content/%E4%BA%82%E6%95%B8%E5%88%86%E7%B5%84.html">亂數分組</a>頁面)取用資料.</p>
-<p>以下與課程相關的網路架構圖是採用 <a href="https://app.diagrams.net/">https://app.diagrams.net/ </a>建立. 主要呈現課程倉儲可以分別同步到 Github, Gitlab 與 Heroku 雲端主機, 其中利用 Github Pages 與 Gitlab Pages 伺服靜態網頁, 之後則可以利用 Heroku 伺服靜態網頁或執行動態網頁內容.</p>
-<p><img alt="" height="681" src="./../images/kmol_env.png" width="600"/></p>
-<p>cp2020w8</p>
-<p><a href="https://www.kaggle.com/mdecourse/cp2020w8/">https://www.kaggle.com/mdecourse/cp2020w8/</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">"""
-semester=1091
-
-courseno=0762
-
-cp
-
-1a 1091/0762
-
-1b 1091/0776
-
-cad
-
-2a 1091/0788
-
-2b 1091/0801
-"""
-# 導入 urllib.request: https://docs.python.org/3/library/urllib.request.html
-# 透過 urllib.request 模組中的 urlopen() 開啟網路 url 連結資料
-import urllib.request  # the lib that handles the url stuff
-# 定義一個輸入學期與課號,就能夠輸出各課程修課人員數列的函式
-
-def getRegList(semester, courseno):
-    # 因為課號可能以 0 開頭, 因此採字串型別輸入, 為了一致, 輸入變數一律採字串輸入
-    target_url = "https://nfulist.herokuapp.com/?semester=" + semester + "&amp;courseno=" + courseno
-    regList = []
-    for line in urllib.request.urlopen(target_url):
-        # 由於 urlopen() 取下的網際資料為 binary 格式, 可以透過 decode() 解碼為 ASCII 資料
-        regList.append(line.decode('utf-8').rstrip())
-    # 此一函式利用 return 將資料傳回
-    return regList
-    
-print(getRegList("1091", "0776"))
-
-
-# 1b_from_nfu.txt is one line file
-with open("1b_from_nfu.txt") as f:
-    # read() will read the whole content of file
-    cRead = f.read()
-#print(cRead)
-
-with open("1b_from_nfu.txt") as f:
-    # readline() only read one line
-    cReadline = f.readline()
-#print(cReadline)
-
-with open("1b_from_nfu.txt") as f:
-    # readlines() will read line by line and put into list
-    cReadlines = f.readlines()
-#print(cReadlines)
-
-# user split() to cut cRead string into list with " "
-cReadSplit = cRead.split(" ")
-#print(cReadSplit)
-
-for i in range(len(cReadSplit)):
-    print(cReadSplit[i])
-
-
-</pre>
-<p>.gitlab-ci.yml</p>
-<p><a href="https://mdecourse.gitlab.io/cp2020">https://mdecourse.gitlab.io/cp2020</a></p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pages:
-  stage: deploy
-  script:
-  - mkdir .public
-  - cp -r * .public
-  - mv .public public
-  artifacts:
-    paths:
-    - public
-  only:
-  - master
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive</pre>
-<p></p><br />W6 << <a href='W6.html'>Previous</a> <a href='HW2.html'>Next</a> >> HW2</div>
+    <div id="tipue_search_content">工作流程 << <a href='工作流程.html'>Previous</a> <a href='亂數分組.html'>Next</a> >> 亂數分組<br /><h1>cmsimde 問題</h1>
+<p>以下的問題發生在子模組版次無法擷取, 導致倉儲無法通過 Github Pages 轉檔. 以 git clone --recurse-submodules 取下倉儲檔案時無子模組 cmsimde.</p>
+<p><img alt="" height="320" src="./../images/40923203_cmsimde_error.png" width="800"/></p>
+<p>這時必須要利用 git cat-file 查出 tree object 的板次號, 以確認目前倉儲希望擷取的 cmsimde 版次序號.</p>
+<p><img alt="" height="402" src="./../images/40923203_git_cat-file.png" width="800"/></p>
+<p>從下列畫面可以查出 cmsimde 欲擷取的版次並非 cmsimde 子模組的任一版次</p>
+<p><img alt="" height="402" src="./../images/40923203_find_cmsimde_version.png" width="800"/></p>
+<p>一旦利用 git checkout 取下最新的 cmsimde 版次後, 就可以新增提交並推送到 Github 測試.</p>
+<p><img alt="" height="470" src="./../images/40923203_checkout_new_cmsimde_version.png" width="800"/></p><br />工作流程 << <a href='工作流程.html'>Previous</a> <a href='亂數分組.html'>Next</a> >> 亂數分組</div>
         
     <!-- footer -->
       <div class="container">

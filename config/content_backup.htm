@@ -2089,7 +2089,15 @@ variables:
 <p style="padding-left: 30px;">bs4: <a href="https://readthedocs.org/projects/beautiful-soup-4/downloads/pdf/latest/">https://readthedocs.org/projects/beautiful-soup-4/downloads/pdf/latest/</a> </p>
 <p style="padding-left: 30px;">解題參考: <a href="https://www.kaggle.com/mdecourse/cp2020-hw2">https://www.kaggle.com/mdecourse/cp2020-hw2</a> </p><h2>W10-W14</h2>
 <p><span>分組 Python 專案</span></p>
-<h3>HW3</h3>
+<p><span>各學員必須自行設定利用 <a href="http://mde.tw/cp2020/content/SSH.html">SSH</a> 對 Github 倉儲連線</span></p>
+<ol>
+<li><span>必須從啟動隨身系統 (Fall2020_v2 中內建 Putty) 開始就宣告 Git 指令可透過 Putty session 連線</span></li>
+<li><span>必須會利用 Git 套件中的 shell 指令建立 OpenSSH 格式的 key pair</span></li>
+<li><span>必須將 OpenSSH 格式的 public key 送到自己的 Github 帳號下</span></li>
+<li><span>必須會將 OpenSSH 的 private key 轉為 Putty key 格式</span></li>
+<li><span>必須會將倉儲的連線協定從 https 改為 ssh</span></li>
+<li><span>必須會設定 Putty 中的 github.com session, 透過 http 設定使用雙協定代理主機與 Putty 格式的 private key 位置</span></li>
+</ol><h3>HW3</h3>
 <p>作業三 (Due. 各班 第十四週上課之前):</p>
 <p>請各組採分工方式, 以英文及中文對照方式完成 <a href="https://www.practicepython.org/">https://www.practicepython.org/</a> 中各題目的練習與資料整理, 請將圖文資料放入各分組組長的分組網頁中 (cp2020ag1 為甲班第一組倉儲名稱, 其餘類推), 並將分組網站連結回報至 <a href="https://gitter.im/mdecourse/cp2020">https://gitter.im/mdecourse/cp2020</a></p>
 <ul>
@@ -2290,8 +2298,18 @@ Date:   Wed Aug 26 15:17:27 2020 +0800
 <p style="padding-left: 30px;">使用分散式版次管理的目的</p>
 <p style="padding-left: 60px;">可以註記每次改版的提交者, 並能利用 git checkout 到先前的各版本</p>
 <p style="padding-left: 60px;">資料存一份在遠端, 避免因為近端電腦損毀而丟失資料.</p>
-<p style="padding-left: 30px;"></p>
-<h2>亂數分組</h2>
+<h3>cmsimde 問題</h3>
+<p>以下的問題發生在子模組版次無法擷取, 導致倉儲無法通過 Github Pages 轉檔. 以 git clone --recurse-submodules 取下倉儲檔案時無子模組 cmsimde.</p>
+<p><img alt="" height="320" src="/images/40923203_cmsimde_error.png" width="800"/></p>
+<p>這時必須要利用 git cat-file 查出 tree object 的板次號, 以確認目前倉儲希望擷取的 cmsimde 版次序號.</p>
+<p><img alt="" height="402" src="/images/40923203_git_cat-file.png" width="800"/></p>
+<p>從下列畫面可以查出 cmsimde 欲擷取的版次並非 cmsimde 子模組的任一版次</p>
+<p><img alt="" height="402" src="/images/40923203_find_cmsimde_version.png" width="800"/></p>
+<p>一旦利用 git checkout 取下最新的 cmsimde 版次後, 就可以新增提交並推送到 Github 測試.</p>
+<p><img alt="" height="470" src="/images/40923203_checkout_new_cmsimde_version.png" width="800"/></p><h2>亂數分組</h2>
+<p>在 <a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776&amp;column=True">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776&amp;column=True</a> 新增一個 column 變數, 若 column=True, 則將 \n 換為 &lt;/br&gt;, 則以 column 格式列出資料.</p>
+<p>nfulist: <a href="https://github.com/mdecourse/nfulist">https://github.com/mdecourse/nfulist</a></p>
+<p>在 Heroku 以 scrum2 At mde 登記.</p>
 <p>亂數分組:</p>
 <p>semester=1091</p>
 <p>courseno=0762</p>
