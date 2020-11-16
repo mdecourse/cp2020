@@ -1973,6 +1973,14 @@ for i in range(len(dropStud)):
 
 </pre>
 <p></p><h3>W8</h3>
+<p>本週有三項重點:</p>
+<ol>
+<li>如何在 kaggle 寫 Python 程式?</li>
+<li>如何將近端 data upload  到 kaggle 取用?</li>
+<li>如何在 kaggle 讀取網際伺服器上的資料?</li>
+</ol>
+<p><a href="https://kaggle.com">https://kaggle.com</a> 採用 Jupyter notebook 建立, 而 Jupyter 源自三種用於 data science 或 data computation 的計算機程式語言, 也就是 <a href="https://julialang.org/">Julia</a>, <a href="https://www.python.org/">Python</a> 與 <a href="https://www.r-project.org/">R.</a></p>
+<p style="text-align: left; padding-left: 30px;"><a href="https://jupyter.org/">Jupyter</a> = <a href="https://julialang.org/">Julia</a> + <a href="https://www.python.org/">Python</a> +  <a href="https://www.r-project.org/">R</a></p>
 <p>以下與課程相關的網路架構圖是採用 <a href="https://app.diagrams.net/">https://app.diagrams.net/ </a>建立. 主要呈現課程倉儲可以分別同步到 Github, Gitlab 與 Heroku 雲端主機, 其中利用 Github Pages 與 Gitlab Pages 伺服靜態網頁, 之後則可以利用 Heroku 伺服靜態網頁或執行動態網頁內容.</p>
 <p><img alt="" height="681" src="/images/kmol_env.png" width="600"/></p>
 <p>cp2020w8</p>
@@ -2595,33 +2603,38 @@ print(output)</pre>
 <p>在 <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 專案中, Flask 網際程式被用來建立動態內容管理系統, 並結合 bs4 與 lxml 模組功能, 將動態網頁轉為靜態網頁, 使用者可以將靜態網頁部署在 Github Pages, Gitlab Pages 或 Heroku. 而靜態網頁可以再結合 Leo Editor 大綱管理程式, 用於整合 pelian 網誌與 reveal.js 網際簡報系統.</p>
 <p>CMSiMDE 是一套網際內容管理, 這裡所謂的網際指的是 Web-based, 也就是可以透過瀏覽器進行內容的管理.</p>
 <p>CMSiMDE 的內容管理是透過 Python 程式結合 Flask 網際框架編寫而成, 從 <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 可以見到其目錄結構:</p>
-<p>static 目錄主要放置網頁呈現內容所需的 Javascirpt</p>
-<p>up_dir 所放置的資料是使用者可以更動的內容</p>
-<p style="padding-left: 30px;">blog</p>
-<p style="padding-left: 30px;">config</p>
-<p style="padding-left: 30px;">content</p>
-<p style="padding-left: 30px;">downloads</p>
-<p style="padding-left: 30px;">images</p>
-<p style="padding-left: 30px;">markdown</p>
-<p style="padding-left: 30px;">plugin</p>
-<p style="padding-left: 30px;">reveal</p>
-<p style="padding-left: 30px;">templates</p>
-<p style="padding-left: 30px;">theme</p>
-<p style="padding-left: 30px;">.gitignore</p>
-<p style="padding-left: 30px;">LICENSE</p>
-<p style="padding-left: 30px;">http-server.py</p>
-<p style="padding-left: 30px;">index.html</p>
-<p style="padding-left: 30px;">init.py</p>
-<p style="padding-left: 30px;">local_publishconf.py</p>
-<p style="padding-left: 30px;">pelicanconfig.py</p>
-<p style="padding-left: 30px;">publishconf.py</p>
-<p style="padding-left: 30px;">user.leo</p>
-<p style="padding-left: 30px;">user.py</p>
+<p><span style="background-color: #ffff00;">static</span> 目錄主要放置網頁呈現內容所需的 Javascirpt</p>
+<p><span style="background-color: #ffff00;">up_dir</span> 所放置的資料是使用者可以更動的內容</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">blog</span> 存放由 Pelican 網誌系統轉出的網誌檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">config</span> </p>
+<p style="padding-left: 60px;"><span style="background-color: #ffff00;">config</span></p>
+<p style="padding-left: 60px;">content.htm</p>
+<p style="padding-left: 60px;">content_backup.htm</p>
+<p style="padding-left: 60px;">pelican.leo</p>
+<p style="padding-left: 60px;">reveal.leo</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">content</span> 存放由 generate_pages 按鈕所轉出的靜態網頁內容</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">downloads</span> 存放上傳檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">images</span> 存放上傳影像檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">markdown</span> 存放原始網誌 Markdown 檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">plugin</span> 存放 Pelican plugin 檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">reveal</span> 存放 reveal.js 網際簡報檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">templates</span> 存放 Flask templates 檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">theme</span> 存放 Pelican theme 檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">.gitignore</span> 宣告倉儲 ignore 檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">LICENSE</span> 倉儲使用授權</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">http-server.py</span> 用於靜態網頁檢視用的伺服程式</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">index.html</span> 靜態網頁的根目錄超文件檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">init.py</span> 用於設定 Flask 一般執行或 uwsgi 執行, 可用於修改靜態網頁 title</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">local_publishconf.py</span> 區網 Pelican 設定檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">pelicanconf.py</span> Pelican 設定檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">publishconf.py</span> 廣域網路的 Pelican 設定檔案</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">user.leo</span> 使用者開發 Leo Editor 所使用的專案檔</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">user.py</span> 預計採用 Blueprint 架構開發的測試檔案</p>
 <p>.gitignore</p>
 <p>LICENSE</p>
 <p>README.md</p>
 <p>cmsimde.leo</p>
-<p>flaskapp.py</p>
+<p><span style="background-color: #ffff00;">flaskapp.py</span> 為 CMSiMDE 主程式</p>
 <p>localhost.crt</p>
 <p>localhost.key</p>
 <p>nocache.py</p>
