@@ -1,0 +1,33 @@
+1. 建立個人在 github 與 gitlab 的永久網站
+identity
+account.github.io
+account.gitlab.io
+
+git clone --recurse-submodules URL
+
+=
+
+git clone URL
++
+git submodule init
++
+git submodule update
+
+git remote add gitlab https://gitlab.com/coursemdetw/coursemdetw.gitlab.io.git
+
+2. 利用 mdecourse/cmstemplate 建立永久網站
+
+gitlab pages: https://about.gitlab.com/stages-devops-lifecycle/pages/
+
+啟用自己帳號下的:
+帳號.github.io
+以及
+帳號.gitlab.io (目前尚未啟動, 隨後再檢查)
+
+2.1 github 新增 discussion 功能, 可以用來取代 gitter 討論區.
+
+3. 設定 cmsimde 的 pelican 與 reveal 網誌與網際簡報系統
+
+4. 設定 Heroku 帳號, 可以建立五個雲端 apps, 其中一個可以與個人或分組靜態網站同步 (至多 500MB)
+
+5. 利用程式套件強化競爭力
