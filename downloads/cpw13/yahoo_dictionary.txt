@@ -1,0 +1,13 @@
+https://tw.dictionary.search.yahoo.com/search?p=obligation&en_ch
+https://tw.dictionary.search.yahoo.com/search?p=obligation&en_en
+
+https://www.collinsdictionary.com/dictionary/english/prohibit
+
+<span class=" fz-24 fw-500 c-black lh-24">forbit</span></h3> </div>
+
+<div class="compList mb-25 p-rel" >
+<ul ><li class="lh-22 mh-22 mt-12 mb-12 mr-25 last">
+<div class=" fz-16 fl-l dictionaryExplanation">禁止</div> 
+</li>
+</ul>
+</div>
