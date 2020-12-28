@@ -2404,7 +2404,44 @@ for item in top:
 print("done")</pre>
 <p></p><h2>W15-W18</h2>
 <p><span>分組總結報告</span></p>
-<h3>HW4</h3>
+<h3>scissor-rock-paper</h3>
+<h4><a href="https://www.practicepython.org/exercise/2014/03/26/08-rock-paper-scissors.html">Exercise 8</a></h4>
+<p>Make a two-player Rock-Paper-Scissors game. (Hint: Ask for player plays (using input), compare them, print out a message of congratulations to the winner, and ask if the players want to start a new game)<br/><br/>Remember the rules:<br/><br/>    Rock beats scissors<br/>    Scissors beats paper<br/>    Paper beats rock</p>
+<h4>利用網際程式並部署到 Heroku:</h4>
+<p>版本一: <a href="https://scissor-rock-paper.herokuapp.com/">https://scissor-rock-paper.herokuapp.com/</a> (<a href="https://github.com/mdecourse/cp2020/discussions/10#discussioncomment-228476">discussion</a>)</p>
+<p></p>
+<p>版本二:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sys
+
+user1 = input("What's your name?")
+user2 = input("And your name?")
+user1_answer = input("%s, do yo want to choose rock, paper or scissors?" % user1)
+user2_answer = input("%s, do you want to choose rock, paper or scissors?" % user2)
+
+def compare(u1, u2):
+    if u1 == u2:
+        return("It's a tie!")
+    elif u1 == 'rock':
+        if u2 == 'scissors':
+            return("Rock wins!")
+        else:
+            return("Paper wins!")
+    elif u1 == 'scissors':
+        if u2 == 'paper':
+            return("Scissors win!")
+        else:
+            return("Rock wins!")
+    elif u1 == 'paper':
+        if u2 == 'rock':
+            return("Paper wins!")
+        else:
+            return("Scissors win!")
+    else:
+        return("Invalid input! You have not entered rock, paper or scissors, try again.")
+        sys.exit()
+
+print(compare(user1_answer, user2_answer))</pre>
+<p></p><h3>HW4</h3>
 <p>我們是否能夠透過 <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>, 將 <a href="http://mde.tw/cp2020/content/HW3.html">HW3</a> 所寫的程式轉為網際架構, 並且部署在 <a href="https://ubuntu.com/">Ubuntu</a> 20.04 與 <a href="https://www.heroku.com/">Heroku</a>?</p>
 <h4>參考:</h4>
 <p style="padding-left: 30px;"><a href="https://github.com/mdecourse/nfulist">https://github.com/mdecourse/nfulist</a></p>
@@ -2414,7 +2451,7 @@ print("done")</pre>
 <p style="padding-left: 60px;"><a href="https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776">https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776</a></p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/lab/blog/use-github-and-gitlab-pages.html">同步資料到 gitlab</a></p>
 <p style="padding-left: 30px;">用 <a href="https://www.authorea.com/">Authorea</a> 寫分組報告</p>
-<p><a href="https://raw.githubusercontent.com/mdecourse/nfulist/master/wsgi.py">https://raw.githubusercontent.com/mdecourse/nfulist/master/wsgi.py</a> </p>
+<p><a href="https://raw.githubusercontent.com/mdecourse/nfulist/master/wsgi.py">https://raw.githubusercontent.com/mdecourse/nfulist/master/wsgi.py</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from flask import Flask, request 
 from flask_cors import CORS
   

@@ -133,27 +133,44 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W5Video << <a href='W5Video.html'>Previous</a> <a href='W8Video.html'>Next</a> >> W8Video<br /><h1>W7Video</h1>
-<p><a href="https://drive.google.com/file/d/1AAfYEPbJ3053wT0I4qhQ38F9SlMr0iTG/view?usp=sharing">12bw7_gitlab_remote_add_kaggle_intro.mp4</a></p>
-<p style="padding-left: 30px;">說明如何在 <a href="https://gitlab.com">https://gitlab.com</a> 建立一個與 <a href="https://github.com">https://github.com</a> 同名的空倉儲, 然後利用 git remote add 設定一個名稱為 gitlab 的遠端倉儲連線, 然後在 git push 時就可以將近端版本同步一份到 gitlab.com</p>
-<p style="padding-left: 30px;">假如希望啟用 gitlab 倉儲上的 <a href="https://docs.gitlab.com/ee/user/project/pages/">gitlab pages</a>, 請參考: <a href="https://mde.tw/lab/blog/use-github-and-gitlab-pages.html">https://mde.tw/lab/blog/use-github-and-gitlab-pages.html</a></p>
-<p style="padding-left: 30px;">必須在倉儲根目錄中放入 .gitlab-ci.yml 設定檔案:</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pages:
-  stage: deploy
-  script:
-  - mkdir .public
-  - cp -r * .public
-  - mv .public public
-  artifacts:
-    paths:
-    - public
-  only:
-  - master
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive</pre>
-<p>在原 github 倉儲中加入 .gitlab-ci.yml 並將資料推送至 gitlab 倉儲後, 就可以見到 <a href="https://mdecourse.gitlab.io/cp2020/">https://mdecourse.gitlab.io/cp2020/</a> </p>
-<p><a href="https://drive.google.com/file/d/1_lnRQCjMOWIyxtHiMyX5leSJE6kMjoZI/view?usp=sharing">13bw7_print_function_demo.mp4</a></p>
-<p style="padding-left: 30px;">說明如何使用 print() 函式</p><br />W5Video << <a href='W5Video.html'>Previous</a> <a href='W8Video.html'>Next</a> >> W8Video</div>
+    <div id="tipue_search_content">W15-W18 << <a href='W15-W18.html'>Previous</a> <a href='HW4.html'>Next</a> >> HW4<br /><h1>scissor-rock-paper</h1>
+<h4><a href="https://www.practicepython.org/exercise/2014/03/26/08-rock-paper-scissors.html">Exercise 8</a></h4>
+<p>Make a two-player Rock-Paper-Scissors game. (Hint: Ask for player plays (using input), compare them, print out a message of congratulations to the winner, and ask if the players want to start a new game)<br/><br/>Remember the rules:<br/><br/>    Rock beats scissors<br/>    Scissors beats paper<br/>    Paper beats rock</p>
+<h4>利用網際程式並部署到 Heroku:</h4>
+<p>版本一: <a href="https://scissor-rock-paper.herokuapp.com/">https://scissor-rock-paper.herokuapp.com/</a> (<a href="https://github.com/mdecourse/cp2020/discussions/10#discussioncomment-228476">discussion</a>)</p>
+<p></p>
+<p>版本二:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sys
+
+user1 = input("What's your name?")
+user2 = input("And your name?")
+user1_answer = input("%s, do yo want to choose rock, paper or scissors?" % user1)
+user2_answer = input("%s, do you want to choose rock, paper or scissors?" % user2)
+
+def compare(u1, u2):
+    if u1 == u2:
+        return("It's a tie!")
+    elif u1 == 'rock':
+        if u2 == 'scissors':
+            return("Rock wins!")
+        else:
+            return("Paper wins!")
+    elif u1 == 'scissors':
+        if u2 == 'paper':
+            return("Scissors win!")
+        else:
+            return("Rock wins!")
+    elif u1 == 'paper':
+        if u2 == 'rock':
+            return("Paper wins!")
+        else:
+            return("Scissors win!")
+    else:
+        return("Invalid input! You have not entered rock, paper or scissors, try again.")
+        sys.exit()
+
+print(compare(user1_answer, user2_answer))</pre>
+<p></p><br />W15-W18 << <a href='W15-W18.html'>Previous</a> <a href='HW4.html'>Next</a> >> HW4</div>
         
     <!-- footer -->
       <div class="container">
