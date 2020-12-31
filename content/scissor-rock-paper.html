@@ -136,10 +136,71 @@ img.add_border {
     <div id="tipue_search_content">W15-W18 << <a href='W15-W18.html'>Previous</a> <a href='HW4.html'>Next</a> >> HW4<br /><h1>scissor-rock-paper</h1>
 <h4><a href="https://www.practicepython.org/exercise/2014/03/26/08-rock-paper-scissors.html">Exercise 8</a></h4>
 <p>Make a two-player Rock-Paper-Scissors game. (Hint: Ask for player plays (using input), compare them, print out a message of congratulations to the winner, and ask if the players want to start a new game)<br/><br/>Remember the rules:<br/><br/>    Rock beats scissors<br/>    Scissors beats paper<br/>    Paper beats rock</p>
+<p>針對此一練習, 衍生下列思考:</p>
+<ol>
+<li>能不能改為與電腦對玩?</li>
+<li>能不能轉為網際程式, 讓操作者與電腦猜拳對玩? (可以在近端執行, 也可以部署到 Heroku)</li>
+<li>能不能轉為網際程式, 讓兩名操作找猜拳對玩? (可以在近端執行, 也可以部署到 Heroku)</li>
+</ol>
+<p>利用 flask scissor rock paper game 搜尋, 可以找到 <a href="https://github.com/prof-rossetti/rock-paper-scissors-flask">https://github.com/prof-rossetti/rock-paper-scissors-flask</a>, 套用 <a href="https://github.com/s2t2/game-utils-py">https://github.com/s2t2/game-utils-py</a> 模組, 先將程式 clone 下來看看. 並將初步結果放入 <a href="https://github.com/mdecourse/scissor-rock-paper">https://github.com/mdecourse/scissor-rock-paper</a> 倉儲.</p>
+<p>接下來要在 <a href="http://mde.tw/cp2020/content/Heroku.html" rel="nofollow">http://mde.tw/cp2020/content/Heroku.html</a> 與 <a href="https://github.com/mdecourse/nfulist">https://github.com/mdecourse/nfulist</a> 資料的協助下, 將這個遊戲部署到 Heroku.</p>
+<p>目前一個 Heroku 帳號只能免費建立 5 個應用程式.</p>
+<p>目前 Heroku 帳號綁定如下:</p>
+<p>cp2020 -- mdecourse At Gmail<br/> cad2020 -- heroku1 At Mde dot TW (含 cad2021 ~ cad2024)<br/> cp2021 ~ cp2025 -- heroku2 At Mde dot TW<br/> cad2025, mdecp, mdecad, mdewcm, mdecd -- heroku3 At Mde dot TW</p>
+<p>因此將 scissor-rock-paper 網際程式部署到 Heroku, 並以 heroku4 AT Mde dot TW 綁定, 成為 <a href="https://scissor-rock-paper.herokuapp.com/" rel="nofollow">https://scissor-rock-paper.herokuapp.com/</a></p>
+<p>之後除了可以再延伸為線上兩人猜拳遊戲外, 也可以將網際遊戲中的文字回應改為圖形回應, 並且加入音效或其他動畫增加可玩性, 並且再納入<a href="https://elements.heroku.com/addons/heroku-postgresql" rel="nofollow">線上資料庫</a>, 儲存遊戲紀錄.</p>
+<p>此一案例的學習要點:</p>
+<ol>
+<li><a href="https://github.com/mdecourse/scissor-rock-paper/tree/main/game_utils">https://github.com/mdecourse/scissor-rock-paper/tree/main/game_utils</a> 模組是如何建立的?</li>
+<li>如何將一個 Flask 網際程式部署到 Heroku?</li>
+<li>如何在 Heroku 中將 Flask 程式結果存入 PostgreSQL 資料庫中?</li>
+<li>這樣的網際程式是否能夠應用到機械設計流程中?</li>
+</ol>
 <h4>利用網際程式並部署到 Heroku:</h4>
 <p>版本一: <a href="https://scissor-rock-paper.herokuapp.com/">https://scissor-rock-paper.herokuapp.com/</a> (<a href="https://github.com/mdecourse/cp2020/discussions/10#discussioncomment-228476">discussion</a>)</p>
-<p></p>
+<p>版本一只是將 <a href="https://github.com/prof-rossetti/rock-paper-scissors-flask">https://github.com/prof-rossetti/rock-paper-scissors-flask</a> 稍微修改為初學者較容易理解的程式架構, 但是其中仍包含 Python 模組的建立與導入引用, 且程式主要判斷邏輯使用 <a href="https://github.com/s2t2/game-utils-py">https://github.com/s2t2/game-utils-py</a> 模組的內容.</p>
 <p>版本二:</p>
+<p>首先看一下最基本的 Flask 網際程式架構:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+app.run(host='127.0.0.1', port=5000)</pre>
+<p>接下來讓電腦可以 randomly 產生 scissor, rock or paper</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+# convert 0, 1, 2 into "scissor, rock or paper"
+def srp(number):
+    data = ["scissor", "rock", "paper"]
+    return data[number]
+    
+@app.route('/computer')
+def computer():
+    # must retrun sting
+    # random number 1, 2, 3
+    return srp((random.randint(0,2)))
+    
+''' now the problem becomes how to get
+user's input through form or url variables
+'''
+
+app.run(host='127.0.0.1', port=5000)</pre>
+<p>接下來必須了解網際程式如何取得使用者的 inputs:</p>
+<p style="padding-left: 30px;"><a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/#variable-rules">https://flask.palletsprojects.com/en/1.1.x/quickstart/#variable-rules</a></p>
+<p style="padding-left: 30px;"><a href="https://www.askpython.com/python-modules/flask/flask-forms">https://www.askpython.com/python-modules/flask/flask-forms</a></p>
+<p style="padding-left: 30px;"><a href="https://stackoverflow.com/questions/24892035/how-can-i-get-the-named-parameters-from-a-url-using-flask">https://stackoverflow.com/questions/24892035/how-can-i-get-the-named-parameters-from-a-url-using-flask</a></p>
+<p style="padding-left: 30px;"><a href="https://stackoverflow.com/questions/47363492/flask-url-with-variable-input">https://stackoverflow.com/questions/47363492/flask-url-with-variable-input</a></p>
+<p>而且還必須了解網際程式如何透過 session 在使用者點擊過程中儲存變數資料:</p>
+<p style="padding-left: 30px;"><a href="https://pythonbasics.org/flask-sessions/">https://pythonbasics.org/flask-sessions/</a> </p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sys
 
 user1 = input("What's your name?")
