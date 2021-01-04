@@ -2441,7 +2441,8 @@ def hello_world():
 
 app.run(host='127.0.0.1', port=5000)</pre>
 <p>接下來讓電腦可以 randomly 產生 scissor, rock or paper</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from flask import Flask
+import random
 
 app = Flask(__name__)
 
@@ -2471,37 +2472,126 @@ app.run(host='127.0.0.1', port=5000)</pre>
 <p style="padding-left: 30px;"><a href="https://stackoverflow.com/questions/24892035/how-can-i-get-the-named-parameters-from-a-url-using-flask">https://stackoverflow.com/questions/24892035/how-can-i-get-the-named-parameters-from-a-url-using-flask</a></p>
 <p style="padding-left: 30px;"><a href="https://stackoverflow.com/questions/47363492/flask-url-with-variable-input">https://stackoverflow.com/questions/47363492/flask-url-with-variable-input</a></p>
 <p>而且還必須了解網際程式如何透過 session 在使用者點擊過程中儲存變數資料:</p>
-<p style="padding-left: 30px;"><a href="https://pythonbasics.org/flask-sessions/">https://pythonbasics.org/flask-sessions/</a> </p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sys
+<p style="padding-left: 30px;"><a href="https://pythonbasics.org/flask-sessions/">https://pythonbasics.org/flask-sessions/</a></p>
+<p>加入 flask session 與 request 之後, 可以記錄電腦亂數產生的剪刀石頭或布, 並透過  URL 取得使用者輸入:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from flask import Flask, session, request
+# in order to save computer generated data, import session
+# in order to get user URL input, import request
+import random
+import os
 
-user1 = input("What's your name?")
-user2 = input("And your name?")
-user1_answer = input("%s, do yo want to choose rock, paper or scissors?" % user1)
-user2_answer = input("%s, do you want to choose rock, paper or scissors?" % user2)
 
-def compare(u1, u2):
-    if u1 == u2:
-        return("It's a tie!")
-    elif u1 == 'rock':
-        if u2 == 'scissors':
-            return("Rock wins!")
-        else:
-            return("Paper wins!")
-    elif u1 == 'scissors':
-        if u2 == 'paper':
-            return("Scissors win!")
-        else:
-            return("Rock wins!")
-    elif u1 == 'paper':
-        if u2 == 'rock':
-            return("Paper wins!")
-        else:
-            return("Scissors win!")
+app = Flask(__name__)
+# to get session working need to set secret_key for app
+app.secret_key = os.urandom(32)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+ 
+# convert 0, 1, 2 into "scissor, rock or paper"
+def srp(number):
+    data = ["scissor", "rock", "paper"]
+    return data[number]
+     
+@app.route('/computer')
+def computer():
+    # must retrun sting
+    # random number 1, 2, 3
+    #computer generated data: cgd
+    user = request.args.get('user')
+    cgd = srp((random.randint(0,2)))
+    session["computer"] = cgd
+    return "computer: " + str(cgd) + " and user: " + str(user)
+
+@app.route('/compare')
+def compare():
+    if session.get('computer') != None:
+        # get cgd from session
+        return session.get('computer')
     else:
-        return("Invalid input! You have not entered rock, paper or scissors, try again.")
-        sys.exit()
+        return "no computer session"
+        
+ 
+app.run(host='127.0.0.1', port=5000)</pre>
+<p>上列 Flask 網際程式只要再納入 computer 與 user 出拳內容的輸贏比較, 就可以得出結果, 讓使用者與電腦對玩.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'''
+default user input is 'scissor'
+http://localhost:5000
+http://localhost:5000/?user=paper
+'''
+from flask import Flask, session, request
+# in order to save computer generated data, import session
+# in order to get user URL input, import request
+import random
+import os
+ 
+ 
+app = Flask(__name__)
+# to get session working need to set secret_key for app
+app.secret_key = os.urandom(32)
 
-print(compare(user1_answer, user2_answer))</pre>
+def compare(computer, user):
+    if computer == user:
+        return("It's a tie!")
+    elif computer == 'rock':
+        if user == 'scissor':
+            return("Computer wins!")
+        else:
+            # user = 'paper'
+            return("Human wins!")
+    elif computer == 'scissor':
+        if user == 'paper':
+            return("Computer win!")
+        else:
+            #user = 'rock'
+            return("Human wins!")
+    elif computer == 'paper':
+        if user == 'rock':
+            return("Computer wins!")
+        else:
+            #user ='scissor'
+            return("Human win!")
+    else:
+        return("Invalid input! You have not entered rock, paper or scissor, try again.")
+    
+@app.route('/index')
+def index():
+    return 'Hello, World!'
+  
+# convert 0, 1, 2 into "scissor, rock or paper"
+def srp(number):
+    data = ["scissor", "rock", "paper"]
+    return data[number]
+      
+@app.route('/')
+def computer():
+    # must retrun sting
+    # random number 1, 2, 3
+    #computer generated data: cgd
+    user = request.args.get('user')
+    # dedault user input is 'scissor'
+    if user == None:
+        user = 'scissor'
+    cgd = srp((random.randint(0,2)))
+    session["computer"] = cgd
+    # compare message
+    cp = compare(cgd, user)
+    result = "default user input is 'scissor', add ?user=rock or ?user=paper to change user input &lt;br /&gt;&lt;br /&gt;"
+    result += "computer: " + str(cgd) + " and user: " + str(user) + "&lt;br /&gt;&lt;br /&gt;"
+    result += cp
+    return result
+ 
+@app.route('/check')
+def check():
+    if session.get('computer') != None:
+        # get cgd from session
+        return session.get('computer')
+    else:
+        return "no computer session"
+         
+  
+app.run(host='127.0.0.1', port=5000)</pre>
 <p></p><h3>Flask-Flutter</h3>
 <p>利用 Flutter 當作前端, Flask 當作後端, 可以簡化機械設計工程師在收集與產品開發相關過程中許多工作.</p>
 <p>問題在於, 要建立一套合用的 Windows Flutter 可攜程式開發工具並不簡單, 而且只能用於開發 Android 專用的手機程式, 若要利用 Flutter 開發 iphone 上的 App, 則可以透過 <a href="https://medium.com/flutter-community/deploying-flutter-ios-apps-with-fastlane-and-github-actions-2e87465e056e">https://medium.com/flutter-community/deploying-flutter-ios-apps-with-fastlane-and-github-actions-2e87465e056e</a></p>
